@@ -4,13 +4,17 @@ import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.testng.*;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.*;
 
 public class ExcelTestListener implements ITestListener {
 
-    private List<TestResultData> testResults = new ArrayList<>();
+    private final List<TestResultData> testResults = new ArrayList<>();
+
+    @Override
+    public void onTestStart(ITestResult result) {}
 
     @Override
     public void onTestSuccess(ITestResult result) {
@@ -32,7 +36,19 @@ public class ExcelTestListener implements ITestListener {
     }
 
     @Override
+    public void onTestFailedButWithinSuccessPercentage(ITestResult result) {}
+
+    @Override
+    public void onTestFailedWithTimeout(ITestResult result) {
+        onTestFailure(result);
+    }
+
+    @Override
+    public void onStart(ITestContext context) {}
+
+    @Override
     public void onFinish(ITestContext context) {
+        System.out.println("ExcelTestListener: Generating Excel report...");
         writeResultsToExcel();
     }
 
@@ -55,15 +71,24 @@ public class ExcelTestListener implements ITestListener {
             row.createCell(3).setCellValue(data.duration);
         }
 
-        try (FileOutputStream out = new FileOutputStream("TestReport.xlsx")) {
+        try {
+            File outputDir = new File("test-output");
+            if (!outputDir.exists()) {
+                outputDir.mkdirs();
+            }
+
+            FileOutputStream out = new FileOutputStream("test-output/TestReport.xlsx");
             workbook.write(out);
+            out.close();
             workbook.close();
-            System.out.println("Test report generated: TestReport.xlsx");
+            System.out.println("Test report generated: test-output/TestReport.xlsx");
         } catch (IOException e) {
+            System.err.println("Error while writing Excel test report: " + e.getMessage());
             e.printStackTrace();
         }
     }
 
+    // Helper class to store test result data
     static class TestResultData {
         String testName;
         String status;
