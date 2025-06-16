@@ -2,19 +2,14 @@ package FO;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-import java.io.File;
-import java.io.IOException;
 import java.time.Duration;
 
 public class Login {
@@ -22,6 +17,8 @@ public class Login {
     WebDriver driver;
     WebDriverWait wait;
 
+    
+    
     @BeforeClass
     public void setup() {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Jeeva\\eclipse-workspace\\Wincloud_FO\\Chromedriver\\chromedriver.exe");
@@ -104,7 +101,7 @@ public class Login {
             driver.quit();
         }
     }
-    private void takeScreenshot(String methodName) throws IOException {
+  /*  private void takeScreenshot(String methodName) throws IOException {
 	    TakesScreenshot ts = (TakesScreenshot) driver;
 	    File srcFile = ts.getScreenshotAs(OutputType.FILE);
 
@@ -112,5 +109,5 @@ public class Login {
 
 	    FileHandler.copy(srcFile, new File(filePath));
 	    System.out.println("Screenshot saved at: " + filePath);
-}
+}*/
 }
