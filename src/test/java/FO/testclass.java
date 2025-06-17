@@ -127,7 +127,7 @@ public class testclass {
 			System.out.println("Reserve No: " + reserveNoValue);
 			Assert.assertNotNull(reserveNoValue, "Reserve No field is null.");
 			Assert.assertFalse(reserveNoValue.trim().isEmpty(), "Reserve No is empty - Reservation not created.");
-		}*/
+		}
 
 		@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 2)
 		public void test_open_and_amend_saved_reservation_TC_RS_02() throws AWTException, InterruptedException {
@@ -252,7 +252,6 @@ public class testclass {
 
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-save']"))).click();
 		
-			
 			WebElement button = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//button[@class='webix_button webix_img_btn'])[1]")));
 			Assert.assertTrue(button.isDisplayed(), "❌ Button is not visible on the page");
 			button.click();
@@ -1024,7 +1023,7 @@ public class testclass {
 		
 		// Assert that the number of child elements is 2
 		Assert.assertEquals(childCells.size(), 2, "The number of child grid cells inside the parent column is not 2.");
-	}
+	}*/
 
 
 
@@ -1057,7 +1056,7 @@ public class testclass {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-search ExpBkGridIconBtn']"))).click();
 
 		WebElement doubleClick = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@aria-rowindex='5'])[1]")));
-		new Actions(driver).doubleClick(doubleClick).perform();
+		actions.doubleClick(doubleClick).perform();
 
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='OK']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='OK']"))).click();
@@ -1079,9 +1078,6 @@ public class testclass {
 		filterInput.click();
 		Thread.sleep(2000);
 
-		Robot robot = new Robot();
-		robot.setAutoDelay(200);
-
 		for (char ch : reserveNoValue1.toCharArray()) {
 			typeCharWithRobot(ch);
 		}
@@ -1093,36 +1089,20 @@ public class testclass {
 		WebElement dynamicElement = wait.until(ExpectedConditions.elementToBeClickable(dynamicLocator));
 
 		// Scroll into view (optional)
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", dynamicElement);
+		js.executeScript("arguments[0].scrollIntoView(true);", dynamicElement);
 
 		// Re-fetch right before interacting
 		dynamicElement = driver.findElement(dynamicLocator);
 
 		// Perform double-click (or JavaScript click if needed)
-		Actions actions = new Actions(driver);
 		actions.moveToElement(dynamicElement).doubleClick().perform();
-
-		// Use Robot to type each character of reserveNoValue1
-		
-
-		//WebElement dynamicElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='" + reserveNoValue1 + "']")));
-
-		//	    Thread.sleep(1000);
-		//	    Actions actions = new Actions(driver);
-		//	    actions.doubleClick(dynamicElement).perform();
-
-
-
 
 		System.out.println("executed");
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='Ledger']"))).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='Payment']"))).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//button[text()='Advance'])[2]"))).click();
-
-		Thread.sleep(2000);
-		Robot robot1 = new Robot();
-		robot1.setAutoDelay(200);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@type=\"password\"]"))).click();
 
 		typeCharWithRobot('r');
 		typeCharWithRobot('b');
@@ -1130,8 +1110,8 @@ public class testclass {
 		typeCharWithRobot('g');
 		typeCharWithRobot('o');
 
-		robot1.keyPress(KeyEvent.VK_ENTER);
-		robot1.keyRelease(KeyEvent.VK_ENTER);
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.keyRelease(KeyEvent.VK_ENTER);
 
 		// Switch to iframe and enter amount
 		WebElement iframe = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//iframe[contains(@src, 'TravelAgentBlock/FoResAdvance')]")));
@@ -1204,9 +1184,9 @@ public class testclass {
 		}
 		WebElement dynamicElement1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='" + lastFiveChars + "']")));
 
-		Thread.sleep(1000);
-		Actions actions1 = new Actions(driver);
-		actions1.doubleClick(dynamicElement1).perform();
+	
+	
+		actions.doubleClick(dynamicElement1).perform();
 
 		
 		Thread.sleep(1000);
@@ -1230,7 +1210,7 @@ public class testclass {
 		Assert.assertEquals(Actual, expected, "Amount mismatch between expected and actual bill value!");
 
 	}
-	*/
+	
 	
 	
 	
