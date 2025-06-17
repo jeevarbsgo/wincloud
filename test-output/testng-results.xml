@@ -1,119 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="16" passed="16" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-17T11:57:09 IST" name="Test Suite with Chart Reporter" finished-at="2025-06-17T12:01:39 IST" duration-ms="270157">
+  <suite started-at="2025-06-17T15:18:48 IST" name="Default suite" finished-at="2025-06-17T15:19:17 IST" duration-ms="29379">
     <groups>
     </groups>
-    <test started-at="2025-06-17T11:57:09 IST" name="Login Test Cases" finished-at="2025-06-17T12:01:39 IST" duration-ms="270157">
-      <class name="FO.Login">
-        <test-method is-config="true" signature="setup()[pri:0, instance:FO.Login@31f9b85e]" started-at="2025-06-17T11:57:09 IST" name="setup" finished-at="2025-06-17T11:57:11 IST" duration-ms="2490" status="PASS">
+    <test started-at="2025-06-17T15:18:48 IST" name="Default test" finished-at="2025-06-17T15:19:17 IST" duration-ms="29379">
+      <class name="FO.testclass">
+        <test-method is-config="true" signature="setup()[pri:0, instance:FO.testclass@385e9564]" started-at="2025-06-17T15:18:48 IST" name="setup" finished-at="2025-06-17T15:18:51 IST" duration-ms="2745" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="loadLoginPage()[pri:0, instance:FO.Login@31f9b85e]" started-at="2025-06-17T11:57:11 IST" name="loadLoginPage" finished-at="2025-06-17T11:57:14 IST" duration-ms="2958" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loadLoginPage -->
-        <test-method signature="testloginpage()[pri:0, instance:FO.Login@31f9b85e]" started-at="2025-06-17T11:57:14 IST" name="testloginpage" finished-at="2025-06-17T11:57:15 IST" duration-ms="418" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testloginpage -->
-        <test-method is-config="true" signature="loadLoginPage()[pri:0, instance:FO.Login@31f9b85e]" started-at="2025-06-17T11:57:15 IST" name="loadLoginPage" finished-at="2025-06-17T11:57:15 IST" duration-ms="350" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loadLoginPage -->
-        <test-method signature="testnegativelogin()[pri:0, instance:FO.Login@31f9b85e]" started-at="2025-06-17T11:57:15 IST" name="testnegativelogin" finished-at="2025-06-17T11:57:15 IST" duration-ms="388" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testnegativelogin -->
-        <test-method is-config="true" signature="loadLoginPage()[pri:0, instance:FO.Login@31f9b85e]" started-at="2025-06-17T11:57:15 IST" name="loadLoginPage" finished-at="2025-06-17T11:57:16 IST" duration-ms="260" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loadLoginPage -->
-        <test-method signature="testnegativepassword()[pri:0, instance:FO.Login@31f9b85e]" started-at="2025-06-17T11:57:16 IST" name="testnegativepassword" finished-at="2025-06-17T11:57:19 IST" duration-ms="2957" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testnegativepassword -->
-        <test-method is-config="true" signature="loadLoginPage()[pri:0, instance:FO.Login@31f9b85e]" started-at="2025-06-17T11:57:19 IST" name="loadLoginPage" finished-at="2025-06-17T11:57:19 IST" duration-ms="503" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loadLoginPage -->
-        <test-method signature="testnegativeuserid()[pri:0, instance:FO.Login@31f9b85e]" started-at="2025-06-17T11:57:19 IST" name="testnegativeuserid" finished-at="2025-06-17T11:57:20 IST" duration-ms="864" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testnegativeuserid -->
-        <test-method is-config="true" signature="loadLoginPage()[pri:0, instance:FO.Login@31f9b85e]" started-at="2025-06-17T11:57:20 IST" name="loadLoginPage" finished-at="2025-06-17T11:57:21 IST" duration-ms="468" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loadLoginPage -->
-        <test-method signature="testpositivepassword()[pri:0, instance:FO.Login@31f9b85e]" started-at="2025-06-17T11:57:21 IST" name="testpositivepassword" finished-at="2025-06-17T11:57:22 IST" duration-ms="1078" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testpositivepassword -->
-        <test-method is-config="true" signature="loadLoginPage()[pri:0, instance:FO.Login@31f9b85e]" started-at="2025-06-17T11:57:22 IST" name="loadLoginPage" finished-at="2025-06-17T11:57:22 IST" duration-ms="495" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loadLoginPage -->
-        <test-method signature="testpositiveuserid()[pri:0, instance:FO.Login@31f9b85e]" started-at="2025-06-17T11:57:22 IST" name="testpositiveuserid" finished-at="2025-06-17T11:57:23 IST" duration-ms="935" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testpositiveuserid -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:FO.Login@31f9b85e]" started-at="2025-06-17T11:57:23 IST" name="tearDown" finished-at="2025-06-17T11:57:23 IST" duration-ms="423" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- FO.Login -->
-      <class name="FO.Reservation">
-        <test-method is-config="true" signature="setup()[pri:0, instance:FO.Reservation@15ca7889]" started-at="2025-06-17T11:57:23 IST" name="setup" finished-at="2025-06-17T11:57:25 IST" duration-ms="1629" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="Test_Sucessfull_Login()[pri:0, instance:FO.Reservation@15ca7889]" started-at="2025-06-17T11:57:25 IST" name="Test_Sucessfull_Login" finished-at="2025-06-17T11:57:31 IST" duration-ms="5860" status="PASS">
+        <test-method signature="Test_Sucessfull_Login()[pri:0, instance:FO.testclass@385e9564]" started-at="2025-06-17T15:18:51 IST" name="Test_Sucessfull_Login" finished-at="2025-06-17T15:18:54 IST" duration-ms="3275" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test_Sucessfull_Login -->
-        <test-method signature="Test_Registration_page()[pri:1, instance:FO.Reservation@15ca7889]" started-at="2025-06-17T11:57:31 IST" name="Test_Registration_page" finished-at="2025-06-17T11:57:36 IST" depends-on-methods="FO.Reservation.Test_Sucessfull_Login" duration-ms="5448" status="PASS">
+        <test-method signature="test_addon_reservation_after_account_date_TC_RS_10()[pri:10, instance:FO.testclass@385e9564]" started-at="2025-06-17T15:18:54 IST" name="test_addon_reservation_after_account_date_TC_RS_10" finished-at="2025-06-17T15:19:17 IST" depends-on-methods="FO.testclass.Test_Sucessfull_Login" duration-ms="23277" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Test_Registration_page -->
-        <test-method signature="test_create_reservation_new_mode_mandatory_fields_TC_RS_01()[pri:1, instance:FO.Reservation@15ca7889]" started-at="2025-06-17T11:57:36 IST" name="test_create_reservation_new_mode_mandatory_fields_TC_RS_01" finished-at="2025-06-17T11:57:48 IST" depends-on-methods="FO.Reservation.Test_Sucessfull_Login" duration-ms="11581" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_create_reservation_new_mode_mandatory_fields_TC_RS_01 -->
-        <test-method signature="test_open_and_amend_saved_reservation_TC_RS_02()[pri:2, instance:FO.Reservation@15ca7889]" started-at="2025-06-17T11:57:48 IST" name="test_open_and_amend_saved_reservation_TC_RS_02" finished-at="2025-06-17T11:58:26 IST" depends-on-methods="FO.Reservation.Test_Sucessfull_Login" duration-ms="38340" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_open_and_amend_saved_reservation_TC_RS_02 -->
-        <test-method signature="test_verify_updated_details_open_mode_TC_RS_03()[pri:4, instance:FO.Reservation@15ca7889]" started-at="2025-06-17T11:58:26 IST" name="test_verify_updated_details_open_mode_TC_RS_03" finished-at="2025-06-17T11:59:07 IST" depends-on-methods="FO.Reservation.Test_Sucessfull_Login" duration-ms="41110" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_verify_updated_details_open_mode_TC_RS_03 -->
-        <test-method signature="test_cancel_reservation_with_reason_TC_RS_04()[pri:5, instance:FO.Reservation@15ca7889]" started-at="2025-06-17T11:59:07 IST" name="test_cancel_reservation_with_reason_TC_RS_04" finished-at="2025-06-17T11:59:27 IST" depends-on-methods="FO.Reservation.Test_Sucessfull_Login" duration-ms="19169" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_cancel_reservation_with_reason_TC_RS_04 -->
-        <test-method signature="test_verify_cancelled_reservation_visibility_TC_RS_05()[pri:6, instance:FO.Reservation@15ca7889]" started-at="2025-06-17T11:59:27 IST" name="test_verify_cancelled_reservation_visibility_TC_RS_05" finished-at="2025-06-17T12:00:12 IST" depends-on-methods="FO.Reservation.Test_Sucessfull_Login" duration-ms="45767" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_verify_cancelled_reservation_visibility_TC_RS_05 -->
-        <test-method signature="test_create_addon_reservation_from_existing_TC_RS_06()[pri:7, instance:FO.Reservation@15ca7889]" started-at="2025-06-17T12:00:12 IST" name="test_create_addon_reservation_from_existing_TC_RS_06" finished-at="2025-06-17T12:00:22 IST" depends-on-methods="FO.Reservation.Test_Sucessfull_Login" duration-ms="9526" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_create_addon_reservation_from_existing_TC_RS_06 -->
-        <test-method signature="test_verify_reservation_view_mode_TC_RS_11()[pri:8, instance:FO.Reservation@15ca7889]" started-at="2025-06-17T12:00:22 IST" name="test_verify_reservation_view_mode_TC_RS_11" finished-at="2025-06-17T12:00:39 IST" depends-on-methods="FO.Reservation.Test_Sucessfull_Login" duration-ms="17024" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_verify_reservation_view_mode_TC_RS_11 -->
-        <test-method signature="test_reinstate_cancelled_reservation_TC_RS_08()[pri:9, instance:FO.Reservation@15ca7889]" started-at="2025-06-17T12:00:39 IST" name="test_reinstate_cancelled_reservation_TC_RS_08" finished-at="2025-06-17T12:01:38 IST" depends-on-methods="FO.Reservation.Test_Sucessfull_Login" duration-ms="59429" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_reinstate_cancelled_reservation_TC_RS_08 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:FO.Reservation@15ca7889]" started-at="2025-06-17T12:01:38 IST" name="tearDown" finished-at="2025-06-17T12:01:39 IST" duration-ms="498" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- FO.Reservation -->
-    </test> <!-- Login Test Cases -->
-  </suite> <!-- Test Suite with Chart Reporter -->
+        </test-method> <!-- test_addon_reservation_after_account_date_TC_RS_10 -->
+      </class> <!-- FO.testclass -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

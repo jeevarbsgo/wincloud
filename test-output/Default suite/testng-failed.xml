@@ -6,7 +6,7 @@
       <class name="FO.testclass">
         <methods>
           <include name="setup"/>
-          <include name="test_verify_reservation_view_mode_TC_RS_11"/>
+          <include name="test_addon_reservation_after_account_date_TC_RS_10"/>
           <include name="Test_Sucessfull_Login"/>
         </methods>
       </class> <!-- FO.testclass -->
