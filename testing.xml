@@ -12,6 +12,7 @@
     <test name="Login Test Cases">
         <classes>
             <class name="FO.Login"/>
+             <class name="FO.Reservation"/>
             
         </classes>
     </test>

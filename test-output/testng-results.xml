@@ -1,91 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
+<testng-results ignored="0" total="16" passed="16" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-16T12:16:49 IST" name="Default suite" finished-at="2025-06-16T12:17:35 IST" duration-ms="45510">
+  <suite started-at="2025-06-17T11:57:09 IST" name="Test Suite with Chart Reporter" finished-at="2025-06-17T12:01:39 IST" duration-ms="270157">
     <groups>
     </groups>
-    <test started-at="2025-06-16T12:16:49 IST" name="Default test" finished-at="2025-06-16T12:17:35 IST" duration-ms="45510">
-      <class name="FO.testclass">
-        <test-method is-config="true" signature="setup()[pri:0, instance:FO.testclass@385e9564]" started-at="2025-06-16T12:16:49 IST" name="setup" finished-at="2025-06-16T12:16:52 IST" duration-ms="3099" status="PASS">
+    <test started-at="2025-06-17T11:57:09 IST" name="Login Test Cases" finished-at="2025-06-17T12:01:39 IST" duration-ms="270157">
+      <class name="FO.Login">
+        <test-method is-config="true" signature="setup()[pri:0, instance:FO.Login@31f9b85e]" started-at="2025-06-17T11:57:09 IST" name="setup" finished-at="2025-06-17T11:57:11 IST" duration-ms="2490" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Test_Sucessfull_Login()[pri:0, instance:FO.testclass@385e9564]" started-at="2025-06-16T12:16:52 IST" name="Test_Sucessfull_Login" finished-at="2025-06-16T12:17:01 IST" duration-ms="8448" status="PASS">
+        <test-method is-config="true" signature="loadLoginPage()[pri:0, instance:FO.Login@31f9b85e]" started-at="2025-06-17T11:57:11 IST" name="loadLoginPage" finished-at="2025-06-17T11:57:14 IST" duration-ms="2958" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadLoginPage -->
+        <test-method signature="testloginpage()[pri:0, instance:FO.Login@31f9b85e]" started-at="2025-06-17T11:57:14 IST" name="testloginpage" finished-at="2025-06-17T11:57:15 IST" duration-ms="418" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testloginpage -->
+        <test-method is-config="true" signature="loadLoginPage()[pri:0, instance:FO.Login@31f9b85e]" started-at="2025-06-17T11:57:15 IST" name="loadLoginPage" finished-at="2025-06-17T11:57:15 IST" duration-ms="350" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadLoginPage -->
+        <test-method signature="testnegativelogin()[pri:0, instance:FO.Login@31f9b85e]" started-at="2025-06-17T11:57:15 IST" name="testnegativelogin" finished-at="2025-06-17T11:57:15 IST" duration-ms="388" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testnegativelogin -->
+        <test-method is-config="true" signature="loadLoginPage()[pri:0, instance:FO.Login@31f9b85e]" started-at="2025-06-17T11:57:15 IST" name="loadLoginPage" finished-at="2025-06-17T11:57:16 IST" duration-ms="260" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadLoginPage -->
+        <test-method signature="testnegativepassword()[pri:0, instance:FO.Login@31f9b85e]" started-at="2025-06-17T11:57:16 IST" name="testnegativepassword" finished-at="2025-06-17T11:57:19 IST" duration-ms="2957" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testnegativepassword -->
+        <test-method is-config="true" signature="loadLoginPage()[pri:0, instance:FO.Login@31f9b85e]" started-at="2025-06-17T11:57:19 IST" name="loadLoginPage" finished-at="2025-06-17T11:57:19 IST" duration-ms="503" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadLoginPage -->
+        <test-method signature="testnegativeuserid()[pri:0, instance:FO.Login@31f9b85e]" started-at="2025-06-17T11:57:19 IST" name="testnegativeuserid" finished-at="2025-06-17T11:57:20 IST" duration-ms="864" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testnegativeuserid -->
+        <test-method is-config="true" signature="loadLoginPage()[pri:0, instance:FO.Login@31f9b85e]" started-at="2025-06-17T11:57:20 IST" name="loadLoginPage" finished-at="2025-06-17T11:57:21 IST" duration-ms="468" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadLoginPage -->
+        <test-method signature="testpositivepassword()[pri:0, instance:FO.Login@31f9b85e]" started-at="2025-06-17T11:57:21 IST" name="testpositivepassword" finished-at="2025-06-17T11:57:22 IST" duration-ms="1078" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testpositivepassword -->
+        <test-method is-config="true" signature="loadLoginPage()[pri:0, instance:FO.Login@31f9b85e]" started-at="2025-06-17T11:57:22 IST" name="loadLoginPage" finished-at="2025-06-17T11:57:22 IST" duration-ms="495" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadLoginPage -->
+        <test-method signature="testpositiveuserid()[pri:0, instance:FO.Login@31f9b85e]" started-at="2025-06-17T11:57:22 IST" name="testpositiveuserid" finished-at="2025-06-17T11:57:23 IST" duration-ms="935" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testpositiveuserid -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:FO.Login@31f9b85e]" started-at="2025-06-17T11:57:23 IST" name="tearDown" finished-at="2025-06-17T11:57:23 IST" duration-ms="423" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- FO.Login -->
+      <class name="FO.Reservation">
+        <test-method is-config="true" signature="setup()[pri:0, instance:FO.Reservation@15ca7889]" started-at="2025-06-17T11:57:23 IST" name="setup" finished-at="2025-06-17T11:57:25 IST" duration-ms="1629" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Test_Sucessfull_Login()[pri:0, instance:FO.Reservation@15ca7889]" started-at="2025-06-17T11:57:25 IST" name="Test_Sucessfull_Login" finished-at="2025-06-17T11:57:31 IST" duration-ms="5860" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test_Sucessfull_Login -->
-        <test-method signature="test_open_and_amend_saved_reservation_TC_RS_02()[pri:2, instance:FO.testclass@385e9564]" started-at="2025-06-16T12:17:01 IST" name="test_open_and_amend_saved_reservation_TC_RS_02" finished-at="2025-06-16T12:17:34 IST" depends-on-methods="FO.testclass.Test_Sucessfull_Login" duration-ms="33611" status="FAIL">
-          <exception class="org.openqa.selenium.StaleElementReferenceException">
-            <message>
-              <![CDATA[stale element reference: stale element not found
-  (Session info: chrome=137.0.7151.104)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
-Build info: version: '4.33.0', revision: '2c6aaad03a'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [59a86797c24e8350d67a67bab7cd415b, getElementAttribute {id=f.FF536AD88C54C71F64B680CA03FE6254.d.6CAB1BA4E5B391111A7F1126AE7FF6F2.e.214, name=value}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58392}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58392/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (59a86797c24e8350d67a67bab7cd415b)] -> xpath: //label[text()='Reserve No']/following-sibling::input]
-Session ID: 59a86797c24e8350d67a67bab7cd415b]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
-  (Session info: chrome=137.0.7151.104)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
-Build info: version: '4.33.0', revision: '2c6aaad03a'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [59a86797c24e8350d67a67bab7cd415b, getElementAttribute {id=f.FF536AD88C54C71F64B680CA03FE6254.d.6CAB1BA4E5B391111A7F1126AE7FF6F2.e.214, name=value}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58392}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58392/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (59a86797c24e8350d67a67bab7cd415b)] -> xpath: //label[text()='Reserve No']/following-sibling::input]
-Session ID: 59a86797c24e8350d67a67bab7cd415b
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-at org.openqa.selenium.remote.RemoteWebElement.getAttribute(RemoteWebElement.java:149)
-at FO.testclass.test_open_and_amend_saved_reservation_TC_RS_02(testclass.java:250)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:739)
-at org.testng.TestRunner.run(TestRunner.java:614)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
+        <test-method signature="Test_Registration_page()[pri:1, instance:FO.Reservation@15ca7889]" started-at="2025-06-17T11:57:31 IST" name="Test_Registration_page" finished-at="2025-06-17T11:57:36 IST" depends-on-methods="FO.Reservation.Test_Sucessfull_Login" duration-ms="5448" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test_Registration_page -->
+        <test-method signature="test_create_reservation_new_mode_mandatory_fields_TC_RS_01()[pri:1, instance:FO.Reservation@15ca7889]" started-at="2025-06-17T11:57:36 IST" name="test_create_reservation_new_mode_mandatory_fields_TC_RS_01" finished-at="2025-06-17T11:57:48 IST" depends-on-methods="FO.Reservation.Test_Sucessfull_Login" duration-ms="11581" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_create_reservation_new_mode_mandatory_fields_TC_RS_01 -->
+        <test-method signature="test_open_and_amend_saved_reservation_TC_RS_02()[pri:2, instance:FO.Reservation@15ca7889]" started-at="2025-06-17T11:57:48 IST" name="test_open_and_amend_saved_reservation_TC_RS_02" finished-at="2025-06-17T11:58:26 IST" depends-on-methods="FO.Reservation.Test_Sucessfull_Login" duration-ms="38340" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_open_and_amend_saved_reservation_TC_RS_02 -->
-      </class> <!-- FO.testclass -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        <test-method signature="test_verify_updated_details_open_mode_TC_RS_03()[pri:4, instance:FO.Reservation@15ca7889]" started-at="2025-06-17T11:58:26 IST" name="test_verify_updated_details_open_mode_TC_RS_03" finished-at="2025-06-17T11:59:07 IST" depends-on-methods="FO.Reservation.Test_Sucessfull_Login" duration-ms="41110" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_verify_updated_details_open_mode_TC_RS_03 -->
+        <test-method signature="test_cancel_reservation_with_reason_TC_RS_04()[pri:5, instance:FO.Reservation@15ca7889]" started-at="2025-06-17T11:59:07 IST" name="test_cancel_reservation_with_reason_TC_RS_04" finished-at="2025-06-17T11:59:27 IST" depends-on-methods="FO.Reservation.Test_Sucessfull_Login" duration-ms="19169" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_cancel_reservation_with_reason_TC_RS_04 -->
+        <test-method signature="test_verify_cancelled_reservation_visibility_TC_RS_05()[pri:6, instance:FO.Reservation@15ca7889]" started-at="2025-06-17T11:59:27 IST" name="test_verify_cancelled_reservation_visibility_TC_RS_05" finished-at="2025-06-17T12:00:12 IST" depends-on-methods="FO.Reservation.Test_Sucessfull_Login" duration-ms="45767" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_verify_cancelled_reservation_visibility_TC_RS_05 -->
+        <test-method signature="test_create_addon_reservation_from_existing_TC_RS_06()[pri:7, instance:FO.Reservation@15ca7889]" started-at="2025-06-17T12:00:12 IST" name="test_create_addon_reservation_from_existing_TC_RS_06" finished-at="2025-06-17T12:00:22 IST" depends-on-methods="FO.Reservation.Test_Sucessfull_Login" duration-ms="9526" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_create_addon_reservation_from_existing_TC_RS_06 -->
+        <test-method signature="test_verify_reservation_view_mode_TC_RS_11()[pri:8, instance:FO.Reservation@15ca7889]" started-at="2025-06-17T12:00:22 IST" name="test_verify_reservation_view_mode_TC_RS_11" finished-at="2025-06-17T12:00:39 IST" depends-on-methods="FO.Reservation.Test_Sucessfull_Login" duration-ms="17024" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_verify_reservation_view_mode_TC_RS_11 -->
+        <test-method signature="test_reinstate_cancelled_reservation_TC_RS_08()[pri:9, instance:FO.Reservation@15ca7889]" started-at="2025-06-17T12:00:39 IST" name="test_reinstate_cancelled_reservation_TC_RS_08" finished-at="2025-06-17T12:01:38 IST" depends-on-methods="FO.Reservation.Test_Sucessfull_Login" duration-ms="59429" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_reinstate_cancelled_reservation_TC_RS_08 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:FO.Reservation@15ca7889]" started-at="2025-06-17T12:01:38 IST" name="tearDown" finished-at="2025-06-17T12:01:39 IST" duration-ms="498" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- FO.Reservation -->
+    </test> <!-- Login Test Cases -->
+  </suite> <!-- Test Suite with Chart Reporter -->
 </testng-results>
