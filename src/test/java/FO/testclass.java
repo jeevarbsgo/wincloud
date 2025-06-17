@@ -649,8 +649,14 @@ public class testclass {
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@type=\"checkbox\"])[7]"))).click();
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class=\"webix_button webix_img_btn\"])[4]"))).click();
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class=\"webix_button webix_img_btn\"])[1]"))).click();
-
-			js.executeScript("arguments[0].scrollIntoView(true);", element);
+			
+			// Used to test the method what if there is 3 row in the cell using the below method
+		/*	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class=\"webix_button\"])[18]"))).click();
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//label[text()=\"Add On\"])[2]"))).click();
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[65]/div/div[2]/div/div[3]/div[2]/div/button"))).click();
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[7]/div/div[2]/div/div/div/div[3]/div[2]/div/button"))).click();
+*/
+		/*	js.executeScript("arguments[0].scrollIntoView(true);", element);
 			// Locate the parent column
 			WebElement parentColumn = driver.findElement(By.xpath("(//div[@column=\"0\"])[4]"));
 
@@ -847,7 +853,7 @@ public class testclass {
 			} catch (TimeoutException e) {
 				System.out.println("The dynamic element is not clickable. Test passed.");
 			}
-		}*/
+		}
 
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 10)
 	public void test_addon_reservation_after_account_date_TC_RS_10() throws AWTException, InterruptedException {
@@ -922,7 +928,7 @@ public class testclass {
 
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-save']"))).click();
 
-	
+
 		By rateLocator = By.xpath("/html/body/div[45]/div/div[2]/div/div[2]/div[2]/div[2]/div/div[5]/div");
 
 		// Re-find after all page activity
@@ -933,35 +939,93 @@ public class testclass {
 		// Now locate the editable input field inside the editor popup
 		WebElement input = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class,'webix_dt_editor')]/input")));input.clear();
 		input.sendKeys("100");
-		
+
 		WebElement tipElement = driver.findElement(By.id("zs-fl-tip"));
 		actions.moveToElement(tipElement).perform();
 		driver.findElement(By.id("zs-tip-close")).click();
 		Thread.sleep(2000);
-	
+
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()=\"Save\"]"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-save']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class=\"webix_button webix_img_btn\"])[1]"))).click();
-		
+
 
 		WebElement reserveNoInput1 = driver.findElement(By.xpath("//label[text()='Reserve No']/following-sibling::input"));
 		String AddreserveNoValue = reserveNoInput1.getAttribute("value");
 		System.out.println("Add-on Reserve No: " + AddreserveNoValue);
-	
+
 		Assert.assertNotEquals(reserveNoValue, AddreserveNoValue, "Add-on reservation number should differ from the original.");
 	}
 
+	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 11)
+	public void test_split_reservation_multiple_rooms_TC_RS_07() throws AWTException, InterruptedException {
+		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
+		System.out.println("Executing Test Method: " + methodName);
 
+		driver.get("https://test1dns.wincloudpms.net/TravelAgentBlock/FOReservation?VN=3.04.025");
+		WebElement add = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='webix_el_box'])[2]")));
+		add.click();
 
+		WebElement arrivalDate = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@aria-label='Arrival']")));
+		js.executeScript("arguments[0].click();", arrivalDate);
 
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='webix_cal_month_name']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='webix_cal_month_name']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='2023']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Sep']"))).click();
 
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[text()='29'])[2]"))).click();
 
+		String noNightsBeforeSave = "2";
+		WebElement nightsInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//label[text()='Nights']/following-sibling::input")));
+		nightsInput.clear();
+		nightsInput.sendKeys(noNightsBeforeSave);
 
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@aria-label='RoomType']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@webix_l_id='DXR']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-search ExpBkGridIconBtn']"))).click();
 
+		WebElement doubleClick1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@aria-rowindex='5'])[1]")));
+		js.executeScript("arguments[0].scrollIntoView(true);", doubleClick1);
+		actions.doubleClick(doubleClick1).perform();
 
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='OK']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='OK']"))).click();
 
+		WebElement rooms = driver.findElement(By.xpath("//label[text()='Rooms']/following-sibling::input"));
+		rooms.clear();
+		rooms.sendKeys("2");
 
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-save']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class='webix_button webix_img_btn'])[1]"))).click();
 
+		WebElement reserveNoInput = driver.findElement(By.xpath("//label[text()='Reserve No']/following-sibling::input"));
+		String reserveNoValue = reserveNoInput.getAttribute("value");
+		System.out.println("Original Reserve No: " + reserveNoValue);
+		
+		WebElement scrollElement = driver.findElement(By.xpath("(//div[@class='webix_vscroll_body'])[3]"));
+		js.executeScript("arguments[0].scrollIntoView(true);", scrollElement);
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-plus']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@view_id='chkNRSplitRes']"))).click();
+		WebElement noOfSplitInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[text()='No of Split']/following-sibling::input")));
+		noOfSplitInput.sendKeys(Keys.chord(Keys.CONTROL, "a"), "2");
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class=\"webix_button webix_img_btn\"])[4]"))).click();
+
+		WebElement element = driver.findElement(By.xpath("(//div[@class='webix_ss_hscroll webix_vscroll_x'])[2]"));
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
+		Thread.sleep(1000);
+		
+		WebElement parentColumn1 = driver.findElement(By.xpath("(//div[@column=\"0\"])[4]"));
+
+		// Find all child divs with role='gridcell' inside the parent
+		List<WebElement> childCells = parentColumn1.findElements(By.xpath("./div[@role='gridcell']"));
+		
+		// Assert that the number of child elements is 2
+		Assert.assertEquals(childCells.size(), 2, "The number of child grid cells inside the parent column is not 2.");
+	}
+
+*/
 
 
 

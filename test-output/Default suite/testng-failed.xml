@@ -5,8 +5,8 @@
     <classes>
       <class name="FO.testclass">
         <methods>
+          <include name="test_split_reservation_multiple_rooms_TC_RS_07"/>
           <include name="setup"/>
-          <include name="test_addon_reservation_after_account_date_TC_RS_10"/>
           <include name="Test_Sucessfull_Login"/>
         </methods>
       </class> <!-- FO.testclass -->

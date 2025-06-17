@@ -976,7 +976,75 @@ public class Reservation {
 		System.out.println("Add-on Reserve No: " + AddreserveNoValue);
 	
 		Assert.assertNotEquals(reserveNoValue, AddreserveNoValue, "Add-on reservation number should differ from the original.");
-	}	
+	}
+	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 11)
+	public void test_split_reservation_multiple_rooms_TC_RS_07() throws AWTException, InterruptedException {
+		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
+		System.out.println("Executing Test Method: " + methodName);
+
+		driver.get("https://test1dns.wincloudpms.net/TravelAgentBlock/FOReservation?VN=3.04.025");
+		WebElement add = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='webix_el_box'])[2]")));
+		add.click();
+
+		WebElement arrivalDate = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@aria-label='Arrival']")));
+		js.executeScript("arguments[0].click();", arrivalDate);
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='webix_cal_month_name']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='webix_cal_month_name']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='2023']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Sep']"))).click();
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[text()='29'])[2]"))).click();
+
+		String noNightsBeforeSave = "2";
+		WebElement nightsInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//label[text()='Nights']/following-sibling::input")));
+		nightsInput.clear();
+		nightsInput.sendKeys(noNightsBeforeSave);
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@aria-label='RoomType']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@webix_l_id='DXR']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-search ExpBkGridIconBtn']"))).click();
+
+		WebElement doubleClick1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@aria-rowindex='5'])[1]")));
+		js.executeScript("arguments[0].scrollIntoView(true);", doubleClick1);
+		actions.doubleClick(doubleClick1).perform();
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='OK']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='OK']"))).click();
+
+		WebElement rooms = driver.findElement(By.xpath("//label[text()='Rooms']/following-sibling::input"));
+		rooms.clear();
+		rooms.sendKeys("2");
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-save']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class='webix_button webix_img_btn'])[1]"))).click();
+
+		WebElement reserveNoInput = driver.findElement(By.xpath("//label[text()='Reserve No']/following-sibling::input"));
+		String reserveNoValue = reserveNoInput.getAttribute("value");
+		System.out.println("Original Reserve No: " + reserveNoValue);
+		
+		WebElement scrollElement = driver.findElement(By.xpath("(//div[@class='webix_vscroll_body'])[3]"));
+		js.executeScript("arguments[0].scrollIntoView(true);", scrollElement);
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-plus']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@view_id='chkNRSplitRes']"))).click();
+		WebElement noOfSplitInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[text()='No of Split']/following-sibling::input")));
+		noOfSplitInput.sendKeys(Keys.chord(Keys.CONTROL, "a"), "2");
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class=\"webix_button webix_img_btn\"])[4]"))).click();
+
+		WebElement element = driver.findElement(By.xpath("(//div[@class='webix_ss_hscroll webix_vscroll_x'])[2]"));
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
+		Thread.sleep(1000);
+		
+		WebElement parentColumn1 = driver.findElement(By.xpath("(//div[@column=\"0\"])[4]"));
+
+		// Find all child divs with role='gridcell' inside the parent
+		List<WebElement> childCells = parentColumn1.findElements(By.xpath("./div[@role='gridcell']"));
+		
+		// Assert that the number of child elements is 2
+		Assert.assertEquals(childCells.size(), 2, "The number of child grid cells inside the parent column is not 2.");
+	}
+
 
 
 
