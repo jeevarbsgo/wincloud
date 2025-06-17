@@ -154,8 +154,7 @@ public class Reservation {
 
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 3)
 	public void test_open_and_amend_saved_reservation_TC_RS_02() throws AWTException, InterruptedException {
-		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
-		System.out.println("Executing Test Method: " + methodName);
+		System.out.println("Executing test_open_and_amend_saved_reservation_TC_RS_02");
 
 		driver.get("https://test1dns.wincloudpms.net/TravelAgentBlock/FOReservation?VN=3.04.025");
 		WebElement add = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='webix_el_box'])[2]")));
@@ -263,7 +262,7 @@ public class Reservation {
 
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-search ExpBkGridIconBtn']"))).click();
 
-		WebElement doubleClick11 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@aria-rowindex=\"6\"])[11]")));
+		WebElement doubleClick11 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@aria-rowindex=\"6\"])[23]")));
 		actions.doubleClick(doubleClick11).perform();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='OK']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='OK']"))).click();
@@ -275,7 +274,10 @@ public class Reservation {
 		rooms.sendKeys(Keys.chord(Keys.CONTROL, "a"), "2");
 
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-save']"))).click();
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class='webix_button webix_img_btn'])[1]"))).click();
+	
+		WebElement button = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//button[@class='webix_button webix_img_btn'])[1]")));
+		Assert.assertTrue(button.isDisplayed(), "❌ Button is not visible on the page");
+		button.click();
 
 		// Capture updated values
 		String reserveNoValue2 = driver.findElement(By.xpath("//label[text()='Reserve No']/following-sibling::input")).getAttribute("value");
@@ -293,10 +295,6 @@ public class Reservation {
 		System.out.println("Rooms Value After: " + roomsValue2);
 		System.out.println("Status After: " + statusValue2);
 		System.out.println("Last Name After: " + lastname2);
-
-		// Assertions
-
-		System.out.println("The Fields are editable and document got sucessfully saved after editing");
 
 	}
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 4)
