@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="FO.testclass">
+      <class name="FO.Reservation_checkIN">
         <methods>
-          <include name="test_ledger_transactions_modify_open_mode_TC_RS_12_Advance"/>
+          <include name="test_checkin_allowed_on_matching_arrival_and_account_date_TC_CI_01"/>
           <include name="setup"/>
           <include name="Test_Sucessfull_Login"/>
         </methods>
-      </class> <!-- FO.testclass -->
+      </class> <!-- FO.Reservation_checkIN -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

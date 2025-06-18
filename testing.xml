@@ -13,7 +13,7 @@
         <classes>
             <class name="FO.Login"/>
              <class name="FO.Reservation"/>
-            
+            <class name="FO.Reservation_checkIN"/>
         </classes>
     </test>
 </suite>
