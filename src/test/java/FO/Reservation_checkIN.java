@@ -331,6 +331,51 @@ public class Reservation_checkIN {
 			driver.switchTo().window(mainWindow);
 			
 		}
+		@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 4)
+		public void test_create_walkin_reservation_and_checkin_TC_WI_01() throws InterruptedException, AWTException {
+			String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
+			System.out.println("Executing Test Method: " + methodName);
+			
+			driver.get("https://test1dns.wincloudpms.net/TravelAgentBlock/FOReservation?MODE=WCN&VN=3.04.025");
+			
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@aria-label='RoomType']"))).click();
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@webix_l_id='DXR']"))).click();
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-search ExpBkGridIconBtn']"))).click();
+
+			WebElement doubleClick = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@aria-rowindex='5'])[1]")));
+			actions.doubleClick(doubleClick).perform();
+
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='OK']"))).click();
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='OK']"))).click();
+
+			 wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//span[@class=\"webix_input_icon wxi-search\"])[1]")));
+				driver.findElement(By.xpath("(//span[@class=\"webix_input_icon wxi-search\"])[1]")).click();
+
+
+				List<WebElement> vacantRooms = driver.findElements(By.cssSelector(".RmBgColorV1"));
+				if (!vacantRooms.isEmpty()) {
+					WebElement firstVacantRoom = vacantRooms.get(0);
+					js.executeScript("arguments[0].scrollIntoView(true);", firstVacantRoom);
+					firstVacantRoom.click();
+					System.out.println(firstVacantRoom + "First vacant room selected.");
+
+				} else {
+					System.out.println("No vacant rooms found.");
+				}
+				driver.findElement(By.xpath("//button[text()=\"Select\"]")).click();
+				driver.findElement(By.xpath("//span[text()=\"CheckIn\"]")).click();
+				
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@style=\"text-align:center !important;font-weight:bold;width:100%;color:#fb2510\"]")));
+				WebElement regnum = driver.findElement(By.xpath("//div[@style=\"text-align:center !important;font-weight:bold;width:100%;color:#fb2510\"]"));
+				String regText = regnum.getText();    
+				System.out.println(regText);  
+
+				Assert.assertTrue(regnum.isDisplayed(), "The alert element is not displayed!");
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//input[@type='checkbox'])[6]")));
+				driver.findElement(By.xpath("(//input[@type=\"checkbox\"])[6]")).click();
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='webix_button webix_img_btn']")));
+				driver.findElement(By.xpath("//button[@class=\"webix_button webix_img_btn\"]")).click();
+		}
 		
 		
 		
