@@ -13,7 +13,6 @@
           <include name="Test_Sucessfull_Login"/>
           <include name="setup"/>
           <include name="tearDown"/>
-          <include name="test_verify_updated_details_open_mode_TC_RS_03"/>
           <include name="test_open_and_amend_saved_reservation_TC_RS_02"/>
         </methods>
       </class> <!-- FO.Reservation -->

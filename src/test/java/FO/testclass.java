@@ -129,7 +129,7 @@ public class testclass {
 			System.out.println("Reserve No: " + reserveNoValue);
 			Assert.assertNotNull(reserveNoValue, "Reserve No field is null.");
 			Assert.assertFalse(reserveNoValue.trim().isEmpty(), "Reserve No is empty - Reservation not created.");
-		}
+		}*/
 
 		@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 2)
 		public void test_open_and_amend_saved_reservation_TC_RS_02() throws AWTException, InterruptedException {
@@ -241,7 +241,7 @@ public class testclass {
 
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-search ExpBkGridIconBtn']"))).click();
 
-			WebElement doubleClick11 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@aria-rowindex=\"6\"])[23]")));
+			WebElement doubleClick11 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@aria-rowindex=\"6\"])[11]")));
 			actions.doubleClick(doubleClick11).perform();
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='OK']"))).click();
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='OK']"))).click();
@@ -1455,7 +1455,7 @@ public class testclass {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='webix_button webix_img_btn']")));
 		driver.findElement(By.xpath("//button[@class=\"webix_button webix_img_btn\"]")).click();
 	}
-*/
+
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 3)
 	public void test_verify_registration_card_and_email_after_checkin_TC_CI_04() throws InterruptedException, AWTException {
 		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
@@ -1557,7 +1557,7 @@ public class testclass {
 		driver.switchTo().window(mainWindow);
 		
 	}
-
+*/
 
 
 

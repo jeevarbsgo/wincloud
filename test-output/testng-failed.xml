@@ -5,7 +5,7 @@
     <classes>
       <class name="FO.testclass">
         <methods>
-          <include name="test_verify_registration_card_and_email_after_checkin_TC_CI_04"/>
+          <include name="test_open_and_amend_saved_reservation_TC_RS_02"/>
           <include name="setup"/>
           <include name="Test_Sucessfull_Login"/>
         </methods>
