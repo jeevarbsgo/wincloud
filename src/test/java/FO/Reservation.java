@@ -1,6 +1,5 @@
 package FO;
 
-
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
@@ -8,7 +7,6 @@ import java.time.Duration;
 import java.util.List;
 import org.testng.annotations.Listeners;
 import org.openqa.selenium.interactions.Actions;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
@@ -47,7 +45,6 @@ public class Reservation {
 		actions = new Actions(driver);
 		js = (JavascriptExecutor) driver;
 	}
-
 	// ✅ Common Robot typing method
 	protected void typeCharWithRobot(char ch) {
 		int keyCode = KeyEvent.getExtendedKeyCodeForChar(ch);
@@ -67,27 +64,22 @@ public class Reservation {
 			robot.keyRelease(KeyEvent.VK_SHIFT);
 		}
 	}
-
 	// ✅ Getter for Actions
 	public Actions getActions() {
 		return actions;
 	}
-
 	// ✅ Getter for JavaScriptExecutor
 	public JavascriptExecutor getJSExecutor() {
 		return js;
 	}
-
 	// ✅ Getter for WebDriverWait
 	public WebDriverWait getWait() {
 		return wait;
 	}
-
 	// ✅ Getter for Robot
 	public Robot getRobot() {
 		return robot;
 	}
-
 	@Test
 	public void Test_Sucessfull_Login() {
 		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
@@ -106,21 +98,17 @@ public class Reservation {
 
 		Assert.assertTrue(logo.isDisplayed(), "Login was not successful - Wincloud logo not displayed.");
 	}
-
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 1)
 	public void Test_Registration_page() {
 		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
 		System.out.println("Executing Test Method: " + methodName);
 		driver.get("https://test1dns.wincloudpms.net/TravelAgentBlock/FOReservation?VN=3.04.025");
 
-		// Wait for the element to be visible
 		WebElement add = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='webix_el_box'])[2]")));
 		add.click();
 
-		// Assert that the element is displayed (or you can check another element after clicking)
 		Assert.assertTrue(add.isDisplayed(), "Failed in opening new registration");
 	}
-
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 2)
 	public void test_create_reservation_new_mode_mandatory_fields_TC_RS_01() {
 		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
@@ -129,6 +117,7 @@ public class Reservation {
 
 		WebElement add = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='webix_el_box'])[2]")));
 		add.click();
+		
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@aria-label='RoomType']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@webix_l_id='DXR']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-search ExpBkGridIconBtn']"))).click();
@@ -151,7 +140,6 @@ public class Reservation {
 		Assert.assertNotNull(reserveNoValue, "Reserve No field is null.");
 		Assert.assertFalse(reserveNoValue.trim().isEmpty(), "Reserve No is empty - Reservation not created.");
 	}
-
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 3)
 	public void test_open_and_amend_saved_reservation_TC_RS_02() throws AWTException, InterruptedException {
 		System.out.println("Executing test_open_and_amend_saved_reservation_TC_RS_02");
@@ -167,7 +155,6 @@ public class Reservation {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='webix_cal_month_name']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='2023']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Sep']"))).click();
-
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[text()='29'])[2]"))).click();
 
 		String noNightsBeforeSave = "2";
@@ -177,8 +164,8 @@ public class Reservation {
 
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@aria-label='RoomType']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@webix_l_id='DXR']"))).click();
+		
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-search ExpBkGridIconBtn']"))).click();
-
 		WebElement doubleClick1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@aria-rowindex='5'])[1]")));
 		js.executeScript("arguments[0].scrollIntoView(true);", doubleClick1);
 		actions.doubleClick(doubleClick1).perform();
@@ -248,10 +235,7 @@ public class Reservation {
 
 		// Wait until the "Due Date" element is clickable
 		WebElement dueDate = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@aria-label='Due Date']")));
-
-		// Click on the Due Date element using JavaScriptExecutor
 		js.executeScript("arguments[0].click();", dueDate);
-
 
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='webix_cal_month_name']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='webix_cal_month_name']"))).click();
@@ -261,7 +245,6 @@ public class Reservation {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[text()='29'])[2]"))).click();
 
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-search ExpBkGridIconBtn']"))).click();
-
 		WebElement doubleClick11 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@aria-rowindex=\"6\"])[23]")));
 		actions.doubleClick(doubleClick11).perform();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='OK']"))).click();
@@ -313,7 +296,6 @@ public class Reservation {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='webix_cal_month_name']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='2023']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Sep']"))).click();
-
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[text()='29'])[2]"))).click();
 
 		String noNightsBeforeSave = "2";
@@ -393,20 +375,15 @@ public class Reservation {
 		js.executeScript("arguments[0].scrollIntoView(true);", scrollElement);
 
 		WebElement dueDate = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@aria-label='Due Date']")));
-
-		// Click on the Due Date element using JavaScriptExecutor
 		js.executeScript("arguments[0].click();", dueDate);
-
-
+		
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='webix_cal_month_name']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='webix_cal_month_name']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='2023']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Sep']"))).click();
-
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[text()='29'])[2]"))).click();
 
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-search ExpBkGridIconBtn']"))).click();
-
 		WebElement doubleClick11 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@aria-rowindex=\"6\"])[11]")));
 		actions.doubleClick(doubleClick11).perform();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='OK']"))).click();
@@ -439,7 +416,6 @@ public class Reservation {
 		System.out.println("Last Name After: " + lastname2);
 
 		// Assertions
-
 		Assert.assertNotEquals(rateCodeValue2, rateCodeValue, "Rate Code did not change.");
 		Assert.assertNotEquals(roomType2, roomType, "Room Type did not change.");
 		Assert.assertNotEquals(adultValue2, adultValue, "Adult value did not change.");
@@ -447,7 +423,6 @@ public class Reservation {
 		Assert.assertNotEquals(statusValue2, statusValue, "Status value did not change.");
 		Assert.assertNotEquals(lastname2, lastname, "Last name did not change.");
 	}
-
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 5)
 	public void test_cancel_reservation_with_reason_TC_RS_04() throws AWTException, InterruptedException {
 		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
@@ -464,7 +439,6 @@ public class Reservation {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='webix_cal_month_name']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='2023']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Sep']"))).click();
-
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[text()='29'])[2]"))).click();
 
 		String noNightsBeforeSave = "2";
@@ -501,13 +475,11 @@ public class Reservation {
 		driver.findElement(By.xpath("//span[@class=\" fa fa-folder-open\"]")).click();
 
 		WebElement filterInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[1]")));
-
-		filterInput.click(); Thread.sleep(2000);
+		filterInput.click(); Thread.sleep(1000);
 
 		for (char ch : reserveNoValue.toCharArray()) {
 			typeCharWithRobot(ch); // ✅ correct
 		}
-
 		WebElement dynamicElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='" + reserveNoValue + "']")));
 		actions.doubleClick(dynamicElement).perform();
 
@@ -532,7 +504,6 @@ public class Reservation {
 		// Click the first button with class "webix_button webix_img_btn"
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class='webix_button webix_img_btn'])[1]"))).click();
 	}
-
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 6)
 	public void test_verify_cancelled_reservation_visibility_TC_RS_05() throws AWTException, InterruptedException {
 		driver.get("https://test1dns.wincloudpms.net/TravelAgentBlock/FOReservation?VN=3.04.025");
@@ -551,7 +522,6 @@ public class Reservation {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='webix_cal_month_name']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='2023']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Sep']"))).click();
-
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[text()='29'])[2]"))).click();
 
 		String noNightsBeforeSave = "2";
@@ -586,9 +556,7 @@ public class Reservation {
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class=\" fa fa-folder-open\"]")));
 		driver.findElement(By.xpath("//span[@class=\" fa fa-folder-open\"]")).click();
-
 		WebElement filterInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[1]")));
-
 		filterInput.click(); Thread.sleep(2000);
 
 		for (char ch : reserveNoValue.toCharArray()) {
@@ -638,7 +606,6 @@ public class Reservation {
 		}
 
 	}
-
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 7)
 	public void test_create_addon_reservation_from_existing_TC_RS_06() throws AWTException, InterruptedException {
 		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
@@ -684,7 +651,6 @@ public class Reservation {
 		Assert.assertEquals(childCells.size(), 2, "The number of child grid cells inside the parent column is not 2.");
 
 	}
-
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 8)
 	public void test_verify_reservation_view_mode_TC_RS_11() throws AWTException, InterruptedException {
 
@@ -758,7 +724,6 @@ public class Reservation {
 
 
 	}
-
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 9)
 	public void test_reinstate_cancelled_reservation_TC_RS_08() throws AWTException, InterruptedException {
 		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
@@ -776,7 +741,6 @@ public class Reservation {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='webix_cal_month_name']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='2023']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Sep']"))).click();
-
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[text()='29'])[2]"))).click();
 
 		String noNightsBeforeSave = "2";
@@ -873,7 +837,6 @@ public class Reservation {
 			System.out.println("The dynamic element is not clickable. Test passed.");
 		}
 	}
-
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 10)
 	public void test_addon_reservation_after_account_date_TC_RS_10() throws AWTException, InterruptedException {
 		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
@@ -891,7 +854,6 @@ public class Reservation {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='webix_cal_month_name']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='2023']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Sep']"))).click();
-
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[text()='29'])[2]"))).click();
 
 		String noNightsBeforeSave = "2";
@@ -991,7 +953,6 @@ public class Reservation {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='webix_cal_month_name']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='2023']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Sep']"))).click();
-
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[text()='29'])[2]"))).click();
 
 		String noNightsBeforeSave = "2";
@@ -1041,6 +1002,162 @@ public class Reservation {
 		
 		// Assert that the number of child elements is 2
 		Assert.assertEquals(childCells.size(), 2, "The number of child grid cells inside the parent column is not 2.");
+	}
+	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 12)
+	public void test_ledger_transactions_modify_open_mode_TC_RS_12_Advance() throws AWTException, InterruptedException {
+		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
+		System.out.println("Executing Test Method: " + methodName);
+		driver.get("https://test1dns.wincloudpms.net/TravelAgentBlock/FOReservation?VN=3.04.025");
+
+		WebElement add = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='webix_el_box'])[2]")));
+		add.click();
+
+		WebElement arrivalDate = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@aria-label='Arrival']")));
+		js.executeScript("arguments[0].click();", arrivalDate);
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='webix_cal_month_name']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='webix_cal_month_name']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='2023']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Sep']"))).click();
+
+		WebElement day = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[text()='29'])[2]")));
+		day.click();
+
+		WebElement nightsInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//label[text()='Nights']/following-sibling::input")));
+		nightsInput.clear();
+		nightsInput.sendKeys("2");
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@aria-label='RoomType']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@webix_l_id='DXR']"))).click();
+		
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-search ExpBkGridIconBtn']"))).click();
+		WebElement doubleClick = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@aria-rowindex='5'])[1]")));
+		actions.doubleClick(doubleClick).perform();
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='OK']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='OK']"))).click();
+
+		// Click the save button once
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-save']"))).click();
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class='webix_button webix_img_btn'])[1]"))).click();
+
+		WebElement reserveNoInput1 = driver.findElement(By.xpath("//label[text()='Reserve No']/following-sibling::input"));
+		String reserveNoValue = reserveNoInput1.getAttribute("value");
+		System.out.println("Reserve No: " + reserveNoValue);
+
+		driver.navigate().to("https://test1dns.wincloudpms.net/TravelAgentBlock/FOReservation?MODE=C&VN=3.04.025");
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class=' fa fa-folder-open']"))).click();
+		WebElement filterInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row='1'])[1]")));
+		filterInput.click();
+		Thread.sleep(1000);
+
+		for (char ch : reserveNoValue.toCharArray()) {
+			typeCharWithRobot(ch);
+		}
+
+		WebElement dynamicElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='" + reserveNoValue + "']")));
+		actions.doubleClick(dynamicElement).perform();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='Ledger']"))).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='Payment']"))).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//button[text()='Advance'])[2]"))).click();
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@type=\"password\"]"))).click();
+		Thread.sleep(1000);
+		typeCharWithRobot('r');
+		typeCharWithRobot('b');
+		typeCharWithRobot('s');
+		typeCharWithRobot('g');
+		typeCharWithRobot('o');
+
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.keyRelease(KeyEvent.VK_ENTER);
+
+		// Switch to iframe and enter amount
+		WebElement iframe = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//iframe[contains(@src, 'TravelAgentBlock/FoResAdvance')]")));
+		driver.switchTo().frame(iframe);
+
+		String expected = "300.000";
+
+		WebElement amountInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[text()='Amount']/following-sibling::input[@type='text']")));
+		amountInput.click();
+		amountInput.sendKeys(expected);
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-plus']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Ok']"))).click();
+
+
+		WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement saveButton = wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[.//span[contains(@class, 'fa-save')]]")));
+		saveButton.click();
+
+		wait.until(ExpectedConditions.elementToBeClickable( By.xpath("(//button[text()=\"Ok\"])[2]"))).click();
+		driver.switchTo().defaultContent();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//span[@class=\"webix_icon webix_icon wxi-close\"])[1]"))).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//span[@class=\"webix_input_icon wxi-search\"])[1]")));
+		driver.findElement(By.xpath("(//span[@class=\"webix_input_icon wxi-search\"])[1]")).click();
+
+		List<WebElement> vacantRooms = driver.findElements(By.cssSelector(".RmBgColorV1"));
+		if (!vacantRooms.isEmpty()) {
+			WebElement firstVacantRoom = vacantRooms.get(0);
+			js.executeScript("arguments[0].scrollIntoView(true);", firstVacantRoom);
+			firstVacantRoom.click();
+			System.out.println("First vacant room selected.");
+		} else {
+			System.out.println("No vacant rooms found.");
+		}
+
+		driver.findElement(By.xpath("//button[text()='Select']")).click();
+		driver.findElement(By.xpath("//span[text()='CheckIn']")).click();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@style='text-align:center !important;font-weight:bold;width:100%;color:#fb2510']")));
+		WebElement regnum = driver.findElement(By.xpath("//div[@style='text-align:center !important;font-weight:bold;width:100%;color:#fb2510']"));
+		String regText = regnum.getText();
+		System.out.println(regText);
+
+		String lastFiveChars = regText.substring(regText.length() - 5);
+		System.out.println("Last 5 characters: " + lastFiveChars);
+
+		//Assert.assertTrue(regnum.isDisplayed(), "The alert element is not displayed!");
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//input[@type='checkbox'])[6]"))).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='webix_button webix_img_btn']"))).click();
+
+		driver.navigate().to("https://test1dns.wincloudpms.net/TravelAgentBlock/FoInHouseGuest?VN=3.04.025");
+		WebElement filterInput1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row='1'])[1]")));
+		filterInput1.click();
+
+		{
+			for (char ch : lastFiveChars.toCharArray()) {
+				typeCharWithRobot(ch);
+			}
+
+			WebElement dynamicElement1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='" + lastFiveChars + "']")));
+			actions.doubleClick(dynamicElement1).perform();
+
+			Thread.sleep(1000);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()=\"Bill Details\"]"))).click();
+
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class=\"webix_last_topcell webix_topcell webix_cell FBDTotRow\"])[2]")));
+			WebElement bill_amount = driver.findElement(By.xpath("(//div[@class=\"webix_last_topcell webix_topcell webix_cell FBDTotRow\"])[2]"));
+
+			String Actual = bill_amount.getText();
+			System.out.println("Original Bill amount: " + Actual);
+
+					// Remove first character if possible and assign back to Actual
+					if (Actual.length() > 1) {
+					    Actual = Actual.substring(1);
+					    System.out.println("Bill without first character: " + Actual);
+					} else {
+					    System.out.println("Bill value is too short to remove first character: " + Actual);
+					}
+
+			// Now assert using Actual without first char
+			Assert.assertEquals(Actual, expected, "Amount mismatch between expected and actual bill value!");
+
+		}
 	}
 
 

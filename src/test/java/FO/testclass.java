@@ -251,7 +251,7 @@ public class testclass {
 			rooms.sendKeys(Keys.chord(Keys.CONTROL, "a"), "2");
 
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-save']"))).click();
-		
+
 			WebElement button = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//button[@class='webix_button webix_img_btn'])[1]")));
 			Assert.assertTrue(button.isDisplayed(), "❌ Button is not visible on the page");
 			button.click();
@@ -649,14 +649,14 @@ public class testclass {
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@type=\"checkbox\"])[7]"))).click();
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class=\"webix_button webix_img_btn\"])[4]"))).click();
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class=\"webix_button webix_img_btn\"])[1]"))).click();
-			
+
 			// Used to test the method what if there is 3 row in the cell using the below method
 		/*	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class=\"webix_button\"])[18]"))).click();
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//label[text()=\"Add On\"])[2]"))).click();
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[65]/div/div[2]/div/div[3]/div[2]/div/button"))).click();
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[7]/div/div[2]/div/div/div/div[3]/div[2]/div/button"))).click();
-*/
-		/*	js.executeScript("arguments[0].scrollIntoView(true);", element);
+	 */
+	/*	js.executeScript("arguments[0].scrollIntoView(true);", element);
 			// Locate the parent column
 			WebElement parentColumn = driver.findElement(By.xpath("(//div[@column=\"0\"])[4]"));
 
@@ -1002,7 +1002,7 @@ public class testclass {
 		WebElement reserveNoInput = driver.findElement(By.xpath("//label[text()='Reserve No']/following-sibling::input"));
 		String reserveNoValue = reserveNoInput.getAttribute("value");
 		System.out.println("Original Reserve No: " + reserveNoValue);
-		
+
 		WebElement scrollElement = driver.findElement(By.xpath("(//div[@class='webix_vscroll_body'])[3]"));
 		js.executeScript("arguments[0].scrollIntoView(true);", scrollElement);
 
@@ -1015,12 +1015,12 @@ public class testclass {
 		WebElement element = driver.findElement(By.xpath("(//div[@class='webix_ss_hscroll webix_vscroll_x'])[2]"));
 		js.executeScript("arguments[0].scrollIntoView(true);", element);
 		Thread.sleep(1000);
-		
+
 		WebElement parentColumn1 = driver.findElement(By.xpath("(//div[@column=\"0\"])[4]"));
 
 		// Find all child divs with role='gridcell' inside the parent
 		List<WebElement> childCells = parentColumn1.findElements(By.xpath("./div[@role='gridcell']"));
-		
+
 		// Assert that the number of child elements is 2
 		Assert.assertEquals(childCells.size(), 2, "The number of child grid cells inside the parent column is not 2.");
 	}*/
@@ -1067,43 +1067,28 @@ public class testclass {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class='webix_button webix_img_btn'])[1]"))).click();
 
 		WebElement reserveNoInput1 = driver.findElement(By.xpath("//label[text()='Reserve No']/following-sibling::input"));
-		String reserveNoValue1 = reserveNoInput1.getAttribute("value");
-		System.out.println("Reserve No: " + reserveNoValue1);
+		String reserveNoValue = reserveNoInput1.getAttribute("value");
+		System.out.println("Reserve No: " + reserveNoValue);
 
 		driver.navigate().to("https://test1dns.wincloudpms.net/TravelAgentBlock/FOReservation?MODE=C&VN=3.04.025");
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class=' fa fa-folder-open']"))).click();
-
 		WebElement filterInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row='1'])[1]")));
 		filterInput.click();
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 
-		for (char ch : reserveNoValue1.toCharArray()) {
+		for (char ch : reserveNoValue.toCharArray()) {
 			typeCharWithRobot(ch);
 		}
-		
-		// Wait until the element is present and clickable
-		By dynamicLocator = By.xpath("//div[text()='" + reserveNoValue1 + "']");
 
-		// Retry-safe click action
-		WebElement dynamicElement = wait.until(ExpectedConditions.elementToBeClickable(dynamicLocator));
-
-		// Scroll into view (optional)
-		js.executeScript("arguments[0].scrollIntoView(true);", dynamicElement);
-
-		// Re-fetch right before interacting
-		dynamicElement = driver.findElement(dynamicLocator);
-
-		// Perform double-click (or JavaScript click if needed)
-		actions.moveToElement(dynamicElement).doubleClick().perform();
-
-		System.out.println("executed");
+		WebElement dynamicElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='" + reserveNoValue + "']")));
+		actions.doubleClick(dynamicElement).perform();
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='Ledger']"))).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='Payment']"))).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//button[text()='Advance'])[2]"))).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@type=\"password\"]"))).click();
-
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@type=\"password\"]"))).click();
+		Thread.sleep(1000);
 		typeCharWithRobot('r');
 		typeCharWithRobot('b');
 		typeCharWithRobot('s');
@@ -1116,7 +1101,7 @@ public class testclass {
 		// Switch to iframe and enter amount
 		WebElement iframe = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//iframe[contains(@src, 'TravelAgentBlock/FoResAdvance')]")));
 		driver.switchTo().frame(iframe);
-		
+
 		String expected = "300.000";
 
 		WebElement amountInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[text()='Amount']/following-sibling::input[@type='text']")));
@@ -1135,9 +1120,7 @@ public class testclass {
 		driver.switchTo().defaultContent();
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//span[@class=\"webix_icon webix_icon wxi-close\"])[1]"))).click();
-
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//span[@class=\"webix_input_icon wxi-search\"])[1]")));
-
 		driver.findElement(By.xpath("(//span[@class=\"webix_input_icon wxi-search\"])[1]")).click();
 
 		List<WebElement> vacantRooms = driver.findElements(By.cssSelector(".RmBgColorV1"));
@@ -1169,72 +1152,60 @@ public class testclass {
 		driver.navigate().to("https://test1dns.wincloudpms.net/TravelAgentBlock/FoInHouseGuest?VN=3.04.025");
 		WebElement filterInput1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row='1'])[1]")));
 		filterInput1.click();
-	
-		
-		try {
-			Robot robot11 = new Robot();
-			Thread.sleep(500);
 
-			for (char ch : reserveNoValue1.toCharArray()) {
+		{
+			for (char ch : lastFiveChars.toCharArray()) {
 				typeCharWithRobot(ch);
 			}
 
-		} catch (AWTException | InterruptedException e) {
-			e.printStackTrace();
+			WebElement dynamicElement1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='" + lastFiveChars + "']")));
+			actions.doubleClick(dynamicElement1).perform();
+
+			Thread.sleep(1000);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()=\"Bill Details\"]"))).click();
+
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class=\"webix_last_topcell webix_topcell webix_cell FBDTotRow\"])[2]")));
+			WebElement bill_amount = driver.findElement(By.xpath("(//div[@class=\"webix_last_topcell webix_topcell webix_cell FBDTotRow\"])[2]"));
+
+			String Actual = bill_amount.getText();
+			System.out.println("Original Bill amount: " + Actual);
+
+					// Remove first character if possible and assign back to Actual
+					if (Actual.length() > 1) {
+					    Actual = Actual.substring(1);
+					    System.out.println("Bill without first character: " + Actual);
+					} else {
+					    System.out.println("Bill value is too short to remove first character: " + Actual);
+					}
+
+			// Now assert using Actual without first char
+			Assert.assertEquals(Actual, expected, "Amount mismatch between expected and actual bill value!");
+
 		}
-		WebElement dynamicElement1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='" + lastFiveChars + "']")));
+	}
 
-	
-	
-		actions.doubleClick(dynamicElement1).perform();
 
-		
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()=\"Bill Details\"]"))).click();
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class=\"webix_last_topcell webix_topcell webix_cell FBDTotRow\"])[2]")));
-		WebElement bill_amount = driver.findElement(By.xpath("(//div[@class=\"webix_last_topcell webix_topcell webix_cell FBDTotRow\"])[2]"));
 
-		String Actual = bill_amount.getText();
-		System.out.println("Original Bill amount: " + Actual);
 
-		// Remove first character if possible and assign back to Actual
-		if (Actual.length() > 1) {
-		    Actual = Actual.substring(1);
-		    System.out.println("Bill without first character: " + Actual);
-		} else {
-		    System.out.println("Bill value is too short to remove first character: " + Actual);
-		}
 
-		// Now assert using Actual without first char
-		Assert.assertEquals(Actual, expected, "Amount mismatch between expected and actual bill value!");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		
-	}
-	
 
 
 
@@ -1259,5 +1230,6 @@ public class testclass {
 
 
 
-	
+
+
 

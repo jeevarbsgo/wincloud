@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\Jeeva\AppData\Local\Temp\testng-eclipse--27687531\testng-customsuite.xml</span>
+                    <span>C:\Users\Jeeva\AppData\Local\Temp\testng-eclipse-1168014962\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -143,15 +143,13 @@
                   <a name="test_ledger_transactions_modify_open_mode_TC_RS_12_Advance">
                   </a> <!-- test_ledger_transactions_modify_open_mode_TC_RS_12_Advance -->
                   <span class="method-name">test_ledger_transactions_modify_open_mode_TC_RS_12_Advance</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //button[text()=&apos;Ledger&apos;] (tried for 20 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64939}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64939/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: fe86689b24be1a966847baff1286ba64
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at FO.testclass.test_ledger_transactions_modify_open_mode_TC_RS_12_Advance(testclass.java:1102)
+                  <div class="stack-trace">java.lang.AssertionError: Amount mismatch between expected and actual bill value! expected [300.000] but found [-300.000]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at FO.testclass.test_ledger_transactions_modify_open_mode_TC_RS_12_Advance(testclass.java:1185)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -202,7 +200,7 @@ Session ID: fe86689b24be1a966847baff1286ba64
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Jeeva\AppData\Local\Temp\testng-eclipse--27687531\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Jeeva\AppData\Local\Temp\testng-eclipse-1168014962\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -255,16 +253,16 @@ data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'test_ledger_transactions_modify_open_mode_TC_RS_12_Advance')
 data.setCell(0, 2, 'FO.testclass')
-data.setCell(0, 3, 38105);
+data.setCell(0, 3, 29431);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'Test_Sucessfull_Login')
 data.setCell(1, 2, 'FO.testclass')
-data.setCell(1, 3, 3758);
+data.setCell(1, 3, 2567);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 41 seconds</span>
+              <span class="suite-total-time">Total running time: 31 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -297,13 +295,13 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">Test_Sucessfull_Login</span>
-                <span class="method-start">1315 ms</span>
+                <span class="method-start">1768 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">test_ledger_transactions_modify_open_mode_TC_RS_12_Advance</span>
-                <span class="method-start">5079 ms</span>
+                <span class="method-start">4352 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
