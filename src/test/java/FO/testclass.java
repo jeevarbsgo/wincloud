@@ -7,6 +7,7 @@ import java.awt.event.KeyEvent;
 import java.text.DecimalFormat;
 import java.time.Duration;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.openqa.selenium.Alert;
@@ -1528,12 +1529,32 @@ public class testclass {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@style=\"text-align:center !important;font-weight:bold;width:100%;color:#fb2510\"]")));
 		WebElement regnum = driver.findElement(By.xpath("//div[@style=\"text-align:center !important;font-weight:bold;width:100%;color:#fb2510\"]"));
 		String regText = regnum.getText();    
-		System.out.println(regText);  
-
+		System.out.println(regText); 
+		
+		String lastFiveChars = regText.substring(regText.length() - 5);
+		System.out.println("Last 5 characters: " + lastFiveChars);
 		
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='webix_button webix_img_btn']")));
 		driver.findElement(By.xpath("//button[@class=\"webix_button webix_img_btn\"]")).click();
 		
+		String mainWindow = driver.getWindowHandle();
+
+		// Wait for new window (assuming it opens automatically after reservation)
+		Set<String> allWindows = driver.getWindowHandles();
+		for (String window : allWindows) {
+		    if (!window.equals(mainWindow)) {
+		        driver.switchTo().window(window);
+		        break;
+		    }
+		}
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@style=\"max-width:42.96pt;height:14.32pt;display:flex;align-items:center;text-align:left;justify-content:flex-start;\"])[1]")));
+		WebElement reg_no = driver.findElement(By.xpath("(//div[@style=\"max-width:42.96pt;height:14.32pt;display:flex;align-items:center;text-align:left;justify-content:flex-start;\"])[1]"));
+		String card_reg_no = reg_no.getText();
+		System.out.println(card_reg_no);
+		
+		Assert.assertEquals(card_reg_no, lastFiveChars, "The number generated and the number in the card does not matches");
+		driver.close();
+		driver.switchTo().window(mainWindow);
 		
 	}
 
