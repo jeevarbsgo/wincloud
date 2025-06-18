@@ -1029,7 +1029,7 @@ public class testclass {
 
 
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 12)
-	public void test_ledger_transactions_modify_open_mode_TC_RS_12_Advance() throws AWTException, InterruptedException {
+	public void test_ledger_transactions_modify_open_mode_TC_RS_12() throws AWTException, InterruptedException {
 		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
 		System.out.println("Executing Test Method: " + methodName);
 		driver.get("https://test1dns.wincloudpms.net/TravelAgentBlock/FOReservation?VN=3.04.025");
@@ -1090,7 +1090,7 @@ public class testclass {
 		// initiating and making entry in advance
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='Payment']"))).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//button[text()='Advance'])[2]"))).click();
-		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@type=\"password\"]"))).click();
+
 		Thread.sleep(1000);
 		typeCharWithRobot('r');robot.delay(500);
 		typeCharWithRobot('b');robot.delay(500);
@@ -1126,7 +1126,6 @@ public class testclass {
 		// Initiating and making entries in refund
 		wait.until(ExpectedConditions.elementToBeClickable( By.xpath("//button[text()=\"Refund\"]"))).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//button[text()='Advance'])[2]"))).click();
-		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@type=\"password\"]"))).click();
 		Thread.sleep(1000);
 		typeCharWithRobot('r');robot.delay(500);
 		typeCharWithRobot('b');robot.delay(500);
@@ -1182,7 +1181,8 @@ public class testclass {
 		// Click and send the value '1000'
 		billAmtInput.click();
 		billAmtInput.clear(); // Optional: Clear existing value if needed
-		billAmtInput.sendKeys("1000");
+		String extra_charge = "1000";
+		billAmtInput.sendKeys(extra_charge);
 
 		WebElement saveButton11 = wait11.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[.//span[contains(@class, 'fa-save')]]")));
 		saveButton11.click();
@@ -1214,8 +1214,6 @@ public class testclass {
 
 		String lastFiveChars = regText.substring(regText.length() - 5);
 		System.out.println("Last 5 characters: " + lastFiveChars);
-
-		//Assert.assertTrue(regnum.isDisplayed(), "The alert element is not displayed!");
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//input[@type='checkbox'])[6]"))).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='webix_button webix_img_btn']"))).click();
@@ -1277,6 +1275,34 @@ public class testclass {
 			// Assert the refund amount is what you expect (use a delta for float comparison)
 			Assert.assertEquals(formattedRefund, remainingAmountStr, "Refund amount calculation mismatch!");
 
+			// ==============================
+			// Step 3: Extra Charges
+			// ==============================
+			
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@aria-rowindex=\"4\"])[2]")));
+			WebElement vatamt =driver.findElement(By.xpath("(//div[@aria-rowindex=\"4\"])[2]"));
+			String vat = vatamt.getText();
+			double actual_vat = Double.parseDouble(vat);
+			
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@aria-rowindex=\"5\"])[2]")));
+			WebElement sc =driver.findElement(By.xpath("(//div[@aria-rowindex=\"5\"])[2]"));
+			String ser_charge = sc.getText();
+			
+			double actual_ser_charge = Double.parseDouble(ser_charge);
+			
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@aria-rowindex=\"6\"])[2]")));
+			WebElement excharge =driver.findElement(By.xpath("(//div[@aria-rowindex=\"6\"])[2]"));
+			String ex_charge = excharge.getText();
+			
+			double actual_excharge = Double.parseDouble(ex_charge);
+			
+			double total_charge = actual_vat+actual_ser_charge+actual_excharge;
+			double actual_charge = Double.parseDouble(extra_charge);
+			
+			System.out.println(total_charge);
+			System.out.println(actual_charge);
+			
+			Assert.assertEquals(actual_charge, total_charge, "There is a mismatch in actual and expected charge");
 
 		}
 	}

@@ -3,6 +3,7 @@ package FO;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import java.text.DecimalFormat;
 import java.time.Duration;
 import java.util.List;
 import org.testng.annotations.Listeners;
@@ -1156,6 +1157,284 @@ public class Reservation {
 
 			// Now assert using Actual without first char
 			Assert.assertEquals(Actual, expected, "Amount mismatch between expected and actual bill value!");
+
+		}
+	}
+	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 12)
+	public void test_ledger_transactions_modify_open_mode_TC_RS_12() throws AWTException, InterruptedException {
+		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
+		System.out.println("Executing Test Method: " + methodName);
+		driver.get("https://test1dns.wincloudpms.net/TravelAgentBlock/FOReservation?VN=3.04.025");
+
+		WebElement add = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='webix_el_box'])[2]")));
+		add.click();
+
+		WebElement arrivalDate = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@aria-label='Arrival']")));
+		js.executeScript("arguments[0].click();", arrivalDate);
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='webix_cal_month_name']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='webix_cal_month_name']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='2023']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Sep']"))).click();
+
+		WebElement day = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[text()='29'])[2]")));
+		day.click();
+
+		WebElement nightsInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//label[text()='Nights']/following-sibling::input")));
+		nightsInput.clear();
+		nightsInput.sendKeys("2");
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@aria-label='RoomType']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@webix_l_id='DXR']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-search ExpBkGridIconBtn']"))).click();
+
+		WebElement doubleClick = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@aria-rowindex='5'])[1]")));
+		actions.doubleClick(doubleClick).perform();
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='OK']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='OK']"))).click();
+
+		// Click the save button once
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-save']"))).click();
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class='webix_button webix_img_btn'])[1]"))).click();
+
+		WebElement reserveNoInput1 = driver.findElement(By.xpath("//label[text()='Reserve No']/following-sibling::input"));
+		String reserveNoValue = reserveNoInput1.getAttribute("value");
+		System.out.println("Reserve No: " + reserveNoValue);
+
+		driver.navigate().to("https://test1dns.wincloudpms.net/TravelAgentBlock/FOReservation?MODE=C&VN=3.04.025");
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class=' fa fa-folder-open']"))).click();
+		WebElement filterInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row='1'])[1]")));
+		filterInput.click();
+		Thread.sleep(1000);
+
+		for (char ch : reserveNoValue.toCharArray()) {
+			typeCharWithRobot(ch);
+		}
+
+		WebElement dynamicElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='" + reserveNoValue + "']")));
+		actions.doubleClick(dynamicElement).perform();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='Ledger']"))).click();
+
+		// initiating and making entry in advance
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='Payment']"))).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//button[text()='Advance'])[2]"))).click();
+
+		Thread.sleep(1000);
+		typeCharWithRobot('r');robot.delay(500);
+		typeCharWithRobot('b');robot.delay(500);
+		typeCharWithRobot('s');robot.delay(500);
+		typeCharWithRobot('g');robot.delay(500);
+		typeCharWithRobot('o');robot.delay(500);
+
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.keyRelease(KeyEvent.VK_ENTER);
+
+		// Switch to iframe and enter amount
+		WebElement iframe = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//iframe[contains(@src, 'TravelAgentBlock/FoResAdvance')]")));
+		driver.switchTo().frame(iframe);
+
+		String expected = "300.000";
+
+		WebElement amountInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[text()='Amount']/following-sibling::input[@type='text']")));
+		amountInput.click();
+		amountInput.sendKeys(expected);
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-plus']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Ok']"))).click();
+
+
+		WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(5));
+		WebElement saveButton = wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[.//span[contains(@class, 'fa-save')]]")));
+		saveButton.click();
+
+		wait.until(ExpectedConditions.elementToBeClickable( By.xpath("(//button[text()=\"Ok\"])[2]"))).click();
+
+		driver.switchTo().defaultContent();
+
+		// Initiating and making entries in refund
+		wait.until(ExpectedConditions.elementToBeClickable( By.xpath("//button[text()=\"Refund\"]"))).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//button[text()='Advance'])[2]"))).click();
+		Thread.sleep(1000);
+		typeCharWithRobot('r');robot.delay(500);
+		typeCharWithRobot('b');robot.delay(500);
+		typeCharWithRobot('s');robot.delay(500);
+		typeCharWithRobot('g');robot.delay(500);
+		typeCharWithRobot('o');robot.delay(500);
+
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.keyRelease(KeyEvent.VK_ENTER);
+
+		WebElement iframe1 = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//iframe[contains(@src, 'FoResAdvance') and contains(@src, 'MODE=RF')]")));
+		driver.switchTo().frame(iframe1);
+
+		String Refund = "150.000";
+		WebElement RefundInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[text()='Amount']/following-sibling::input[@type='text']")));
+		RefundInput.click();
+		RefundInput.clear();
+		RefundInput.sendKeys(Refund);
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-plus']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Ok']"))).click();
+
+
+		WebDriverWait wait11 = new WebDriverWait(driver, Duration.ofSeconds(5));
+		WebElement saveButton1 = wait11.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[.//span[contains(@class, 'fa-save')]]")));
+		saveButton1.click();
+
+		wait.until(ExpectedConditions.elementToBeClickable( By.xpath("(//button[text()=\"Ok\"])[2]"))).click();
+
+		driver.switchTo().defaultContent();
+
+		// making entries in charges
+		wait.until(ExpectedConditions.elementToBeClickable( By.xpath("//button[text()=\"Charges\"]"))).click();
+		Thread.sleep(1000);
+		typeCharWithRobot('r');robot.delay(500);
+		typeCharWithRobot('b');robot.delay(500);
+		typeCharWithRobot('s');robot.delay(500);
+		typeCharWithRobot('g');robot.delay(500);
+		typeCharWithRobot('o');robot.delay(500);
+
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.keyRelease(KeyEvent.VK_ENTER);
+
+		WebElement iframe2 = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//iframe[contains(@src, '/TravelAgentBlock/FoGuestCharges')]")));
+		driver.switchTo().frame(iframe2);
+		WebElement searchIcon = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[3]/div/div/div[2]/div/div/div/div/div/div/div[1]/div[1]/div[2]/div/div[2]/div/div[1]/div/span")));
+		searchIcon.click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()=\"Desert Safari\"]")));
+		WebElement outlettype = driver.findElement(By.xpath("//div[text()=\"Desert Safari\"]"));
+		actions.doubleClick(outlettype).perform();
+
+		WebElement billAmtInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[text()='Bill Amt']/following-sibling::input[@type='text']")));
+		// Click and send the value '1000'
+		billAmtInput.click();
+		billAmtInput.clear(); // Optional: Clear existing value if needed
+		String extra_charge = "1000";
+		billAmtInput.sendKeys(extra_charge);
+
+		WebElement saveButton11 = wait11.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[.//span[contains(@class, 'fa-save')]]")));
+		saveButton11.click();
+		wait.until(ExpectedConditions.elementToBeClickable( By.xpath("//button[text()=\"Ok\"]"))).click();
+
+		driver.switchTo().defaultContent();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//span[@class=\"webix_icon webix_icon wxi-close\"])[1]"))).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//span[@class=\"webix_input_icon wxi-search\"])[1]")));
+		driver.findElement(By.xpath("(//span[@class=\"webix_input_icon wxi-search\"])[1]")).click();
+
+		List<WebElement> vacantRooms = driver.findElements(By.cssSelector(".RmBgColorV1"));
+		if (!vacantRooms.isEmpty()) {
+			WebElement firstVacantRoom = vacantRooms.get(0);
+			js.executeScript("arguments[0].scrollIntoView(true);", firstVacantRoom);
+			firstVacantRoom.click();
+			System.out.println("First vacant room selected.");
+		} else {
+			System.out.println("No vacant rooms found.");
+		}
+
+		driver.findElement(By.xpath("//button[text()='Select']")).click();
+		driver.findElement(By.xpath("//span[text()='CheckIn']")).click();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@style='text-align:center !important;font-weight:bold;width:100%;color:#fb2510']")));
+		WebElement regnum = driver.findElement(By.xpath("//div[@style='text-align:center !important;font-weight:bold;width:100%;color:#fb2510']"));
+		String regText = regnum.getText();
+		System.out.println(regText);
+
+		String lastFiveChars = regText.substring(regText.length() - 5);
+		System.out.println("Last 5 characters: " + lastFiveChars);
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//input[@type='checkbox'])[6]"))).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='webix_button webix_img_btn']"))).click();
+
+		driver.navigate().to("https://test1dns.wincloudpms.net/TravelAgentBlock/FoInHouseGuest?VN=3.04.025");
+		WebElement filterInput1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row='1'])[1]")));
+		filterInput1.click();
+
+		{
+			for (char ch : lastFiveChars.toCharArray()) {
+				typeCharWithRobot(ch);
+			}
+
+			WebElement dynamicElement1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='" + lastFiveChars + "']")));
+			actions.doubleClick(dynamicElement1).perform();
+
+			Thread.sleep(1000);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()=\"Bill Details\"]"))).click();
+
+			// ==============================
+			// Step 1: Verify Original Bill Amount (String to String)
+			// ==============================
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@aria-rowindex=\"3\"])[2]")));
+			WebElement bill_amount = driver.findElement(By.xpath("(//div[@aria-rowindex=\"3\"])[2]"));
+
+			String actualAmountStr = bill_amount.getText().trim();
+			System.out.println("Original Bill amount: " + actualAmountStr);
+
+			// Remove first character only if it's not a digit (like a currency symbol)
+			if (actualAmountStr.length() > 1 && !Character.isDigit(actualAmountStr.charAt(0))) {
+				actualAmountStr = actualAmountStr.substring(1);
+				System.out.println("Bill amount after removing symbol " + actualAmountStr);
+			}
+			Assert.assertEquals(actualAmountStr, expected, "Amount mismatch between expected and actual bill value (String to String)!");
+
+			// ==============================
+			// Step 2: Verify Refund Calculation (Number Comparison)
+			// ==============================
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@aria-rowindex=\"2\"])[2]")));
+			WebElement bill_amount_after_refund = driver.findElement(By.xpath("(//div[@aria-rowindex=\"2\"])[2]"));
+
+			String remainingAmountStr = bill_amount_after_refund.getText().trim();
+			System.out.println("Bill amount after refund: " + remainingAmountStr);
+
+			if (remainingAmountStr.length() > 1 && !Character.isDigit(remainingAmountStr.charAt(0))) {
+				remainingAmountStr = remainingAmountStr.substring(1);
+			}
+
+			DecimalFormat df = new DecimalFormat("0.000");
+
+			double originalAmount = Double.parseDouble(expected);     // e.g., 300.000
+			double remainingAmount = Double.parseDouble(remainingAmountStr);   // e.g., 150.000
+			double calculatedRefund = originalAmount - remainingAmount;        // 150.000
+
+			String formattedRefund = df.format(calculatedRefund); // Will be "150.000"
+
+			System.out.println("Calculated Refund Amount: " + formattedRefund);
+
+			// Assert the refund amount is what you expect (use a delta for float comparison)
+			Assert.assertEquals(formattedRefund, remainingAmountStr, "Refund amount calculation mismatch!");
+
+			// ==============================
+			// Step 3: Extra Charges
+			// ==============================
+			
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@aria-rowindex=\"4\"])[2]")));
+			WebElement vatamt =driver.findElement(By.xpath("(//div[@aria-rowindex=\"4\"])[2]"));
+			String vat = vatamt.getText();
+			double actual_vat = Double.parseDouble(vat);
+			
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@aria-rowindex=\"5\"])[2]")));
+			WebElement sc =driver.findElement(By.xpath("(//div[@aria-rowindex=\"5\"])[2]"));
+			String ser_charge = sc.getText();
+			
+			double actual_ser_charge = Double.parseDouble(ser_charge);
+			
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@aria-rowindex=\"6\"])[2]")));
+			WebElement excharge =driver.findElement(By.xpath("(//div[@aria-rowindex=\"6\"])[2]"));
+			String ex_charge = excharge.getText();
+			
+			double actual_excharge = Double.parseDouble(ex_charge);
+			
+			double total_charge = actual_vat+actual_ser_charge+actual_excharge;
+			double actual_charge = Double.parseDouble(extra_charge);
+			
+			System.out.println(total_charge);
+			System.out.println(actual_charge);
+			
+			Assert.assertEquals(actual_charge, total_charge, "There is a mismatch in actual and expected charge");
 
 		}
 	}
