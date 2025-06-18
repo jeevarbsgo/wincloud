@@ -4,6 +4,7 @@ package FO;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import java.text.DecimalFormat;
 import java.time.Duration;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -1023,8 +1024,8 @@ public class testclass {
 
 		// Assert that the number of child elements is 2
 		Assert.assertEquals(childCells.size(), 2, "The number of child grid cells inside the parent column is not 2.");
-	}*/
-
+	}
+	 */
 
 
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 12)
@@ -1085,15 +1086,17 @@ public class testclass {
 		actions.doubleClick(dynamicElement).perform();
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='Ledger']"))).click();
+
+		// initiating and making entry in advance
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='Payment']"))).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//button[text()='Advance'])[2]"))).click();
 		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@type=\"password\"]"))).click();
 		Thread.sleep(1000);
-		typeCharWithRobot('r');
-		typeCharWithRobot('b');
-		typeCharWithRobot('s');
-		typeCharWithRobot('g');
-		typeCharWithRobot('o');
+		typeCharWithRobot('r');robot.delay(500);
+		typeCharWithRobot('b');robot.delay(500);
+		typeCharWithRobot('s');robot.delay(500);
+		typeCharWithRobot('g');robot.delay(500);
+		typeCharWithRobot('o');robot.delay(500);
 
 		robot.keyPress(KeyEvent.VK_ENTER);
 		robot.keyRelease(KeyEvent.VK_ENTER);
@@ -1112,11 +1115,79 @@ public class testclass {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Ok']"))).click();
 
 
-		WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(5));
 		WebElement saveButton = wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[.//span[contains(@class, 'fa-save')]]")));
 		saveButton.click();
 
 		wait.until(ExpectedConditions.elementToBeClickable( By.xpath("(//button[text()=\"Ok\"])[2]"))).click();
+
+		driver.switchTo().defaultContent();
+
+		// Initiating and making entries in refund
+		wait.until(ExpectedConditions.elementToBeClickable( By.xpath("//button[text()=\"Refund\"]"))).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//button[text()='Advance'])[2]"))).click();
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@type=\"password\"]"))).click();
+		Thread.sleep(1000);
+		typeCharWithRobot('r');robot.delay(500);
+		typeCharWithRobot('b');robot.delay(500);
+		typeCharWithRobot('s');robot.delay(500);
+		typeCharWithRobot('g');robot.delay(500);
+		typeCharWithRobot('o');robot.delay(500);
+
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.keyRelease(KeyEvent.VK_ENTER);
+
+		WebElement iframe1 = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//iframe[contains(@src, 'FoResAdvance') and contains(@src, 'MODE=RF')]")));
+		driver.switchTo().frame(iframe1);
+
+		String Refund = "150.000";
+		WebElement RefundInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[text()='Amount']/following-sibling::input[@type='text']")));
+		RefundInput.click();
+		RefundInput.clear();
+		RefundInput.sendKeys(Refund);
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-plus']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Ok']"))).click();
+
+
+		WebDriverWait wait11 = new WebDriverWait(driver, Duration.ofSeconds(5));
+		WebElement saveButton1 = wait11.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[.//span[contains(@class, 'fa-save')]]")));
+		saveButton1.click();
+
+		wait.until(ExpectedConditions.elementToBeClickable( By.xpath("(//button[text()=\"Ok\"])[2]"))).click();
+
+		driver.switchTo().defaultContent();
+
+		// making entries in charges
+		wait.until(ExpectedConditions.elementToBeClickable( By.xpath("//button[text()=\"Charges\"]"))).click();
+		Thread.sleep(1000);
+		typeCharWithRobot('r');robot.delay(500);
+		typeCharWithRobot('b');robot.delay(500);
+		typeCharWithRobot('s');robot.delay(500);
+		typeCharWithRobot('g');robot.delay(500);
+		typeCharWithRobot('o');robot.delay(500);
+
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.keyRelease(KeyEvent.VK_ENTER);
+
+		WebElement iframe2 = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//iframe[contains(@src, '/TravelAgentBlock/FoGuestCharges')]")));
+		driver.switchTo().frame(iframe2);
+		WebElement searchIcon = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[3]/div/div/div[2]/div/div/div/div/div/div/div[1]/div[1]/div[2]/div/div[2]/div/div[1]/div/span")));
+		searchIcon.click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()=\"Desert Safari\"]")));
+		WebElement outlettype = driver.findElement(By.xpath("//div[text()=\"Desert Safari\"]"));
+		actions.doubleClick(outlettype).perform();
+
+		WebElement billAmtInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[text()='Bill Amt']/following-sibling::input[@type='text']")));
+		// Click and send the value '1000'
+		billAmtInput.click();
+		billAmtInput.clear(); // Optional: Clear existing value if needed
+		billAmtInput.sendKeys("1000");
+
+		WebElement saveButton11 = wait11.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[.//span[contains(@class, 'fa-save')]]")));
+		saveButton11.click();
+		wait.until(ExpectedConditions.elementToBeClickable( By.xpath("//button[text()=\"Ok\"]"))).click();
+
 		driver.switchTo().defaultContent();
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//span[@class=\"webix_icon webix_icon wxi-close\"])[1]"))).click();
@@ -1164,22 +1235,48 @@ public class testclass {
 			Thread.sleep(1000);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()=\"Bill Details\"]"))).click();
 
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class=\"webix_last_topcell webix_topcell webix_cell FBDTotRow\"])[2]")));
-			WebElement bill_amount = driver.findElement(By.xpath("(//div[@class=\"webix_last_topcell webix_topcell webix_cell FBDTotRow\"])[2]"));
+			// ==============================
+			// Step 1: Verify Original Bill Amount (String to String)
+			// ==============================
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@aria-rowindex=\"3\"])[2]")));
+			WebElement bill_amount = driver.findElement(By.xpath("(//div[@aria-rowindex=\"3\"])[2]"));
 
-			String Actual = bill_amount.getText();
-			System.out.println("Original Bill amount: " + Actual);
+			String actualAmountStr = bill_amount.getText().trim();
+			System.out.println("Original Bill amount: " + actualAmountStr);
 
-					// Remove first character if possible and assign back to Actual
-					if (Actual.length() > 1) {
-					    Actual = Actual.substring(1);
-					    System.out.println("Bill without first character: " + Actual);
-					} else {
-					    System.out.println("Bill value is too short to remove first character: " + Actual);
-					}
+			// Remove first character only if it's not a digit (like a currency symbol)
+			if (actualAmountStr.length() > 1 && !Character.isDigit(actualAmountStr.charAt(0))) {
+				actualAmountStr = actualAmountStr.substring(1);
+				System.out.println("Bill amount after removing symbol " + actualAmountStr);
+			}
+			Assert.assertEquals(actualAmountStr, expected, "Amount mismatch between expected and actual bill value (String to String)!");
 
-			// Now assert using Actual without first char
-			Assert.assertEquals(Actual, expected, "Amount mismatch between expected and actual bill value!");
+			// ==============================
+			// Step 2: Verify Refund Calculation (Number Comparison)
+			// ==============================
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@aria-rowindex=\"2\"])[2]")));
+			WebElement bill_amount_after_refund = driver.findElement(By.xpath("(//div[@aria-rowindex=\"2\"])[2]"));
+
+			String remainingAmountStr = bill_amount_after_refund.getText().trim();
+			System.out.println("Bill amount after refund: " + remainingAmountStr);
+
+			if (remainingAmountStr.length() > 1 && !Character.isDigit(remainingAmountStr.charAt(0))) {
+				remainingAmountStr = remainingAmountStr.substring(1);
+			}
+
+			DecimalFormat df = new DecimalFormat("0.000");
+
+			double originalAmount = Double.parseDouble(expected);     // e.g., 300.000
+			double remainingAmount = Double.parseDouble(remainingAmountStr);   // e.g., 150.000
+			double calculatedRefund = originalAmount - remainingAmount;        // 150.000
+
+			String formattedRefund = df.format(calculatedRefund); // Will be "150.000"
+
+			System.out.println("Calculated Refund Amount: " + formattedRefund);
+
+			// Assert the refund amount is what you expect (use a delta for float comparison)
+			Assert.assertEquals(formattedRefund, remainingAmountStr, "Refund amount calculation mismatch!");
+
 
 		}
 	}
@@ -1205,7 +1302,9 @@ public class testclass {
 
 
 
-	}
+
+
+}
 
 
 
