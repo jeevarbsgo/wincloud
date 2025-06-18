@@ -81,7 +81,7 @@ public class Reservation {
 	public Robot getRobot() {
 		return robot;
 	}
-	@Test
+	@Test(priority = 0)
 	public void Test_Sucessfull_Login() {
 		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
 		System.out.println("Executing Test Method: " + methodName);

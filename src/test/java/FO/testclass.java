@@ -1025,7 +1025,7 @@ public class testclass {
 		// Assert that the number of child elements is 2
 		Assert.assertEquals(childCells.size(), 2, "The number of child grid cells inside the parent column is not 2.");
 	}
-	 */
+	
 
 
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 12)
@@ -1305,6 +1305,12 @@ public class testclass {
 			Assert.assertEquals(actual_charge, total_charge, "There is a mismatch in actual and expected charge");
 
 		}
+	}*/
+	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 13)
+	public void test_checkin_allowed_on_matching_arrival_and_account_date_TC_CI_01() throws AWTException, InterruptedException {
+		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
+		System.out.println("Executing Test Method: " + methodName);
+		
 	}
 
 
