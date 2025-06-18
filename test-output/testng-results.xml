@@ -2,36 +2,36 @@
 <testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-18T17:45:14 IST" name="Default suite" finished-at="2025-06-18T17:46:46 IST" duration-ms="91421">
+  <suite started-at="2025-06-18T18:04:27 IST" name="Default suite" finished-at="2025-06-18T18:06:04 IST" duration-ms="97362">
     <groups>
     </groups>
-    <test started-at="2025-06-18T17:45:14 IST" name="Default test" finished-at="2025-06-18T17:46:46 IST" duration-ms="91421">
+    <test started-at="2025-06-18T18:04:27 IST" name="Default test" finished-at="2025-06-18T18:06:04 IST" duration-ms="97362">
       <class name="FO.testclass">
-        <test-method is-config="true" signature="setup()[pri:0, instance:FO.testclass@385e9564]" started-at="2025-06-18T17:45:14 IST" name="setup" finished-at="2025-06-18T17:45:16 IST" duration-ms="1465" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:FO.testclass@385e9564]" started-at="2025-06-18T18:04:27 IST" name="setup" finished-at="2025-06-18T18:04:29 IST" duration-ms="1487" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Test_Sucessfull_Login()[pri:0, instance:FO.testclass@385e9564]" started-at="2025-06-18T17:45:16 IST" name="Test_Sucessfull_Login" finished-at="2025-06-18T17:45:20 IST" duration-ms="3966" status="PASS">
+        <test-method signature="Test_Sucessfull_Login()[pri:0, instance:FO.testclass@385e9564]" started-at="2025-06-18T18:04:29 IST" name="Test_Sucessfull_Login" finished-at="2025-06-18T18:04:34 IST" duration-ms="5381" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test_Sucessfull_Login -->
-        <test-method signature="test_print_registration_card_with_filters_TC_RC_01()[pri:5, instance:FO.testclass@385e9564]" started-at="2025-06-18T17:45:20 IST" name="test_print_registration_card_with_filters_TC_RC_01" finished-at="2025-06-18T17:46:45 IST" depends-on-methods="FO.testclass.Test_Sucessfull_Login" duration-ms="85759" status="FAIL">
+        <test-method signature="test_print_registration_card_with_filters_TC_RC_01()[pri:5, instance:FO.testclass@385e9564]" started-at="2025-06-18T18:04:34 IST" name="test_print_registration_card_with_filters_TC_RC_01" finished-at="2025-06-18T18:06:04 IST" depends-on-methods="FO.testclass.Test_Sucessfull_Login" duration-ms="90275" status="FAIL">
           <exception class="org.openqa.selenium.TimeoutException">
             <message>
               <![CDATA[Expected condition failed: waiting for element to be clickable: By.xpath: (//div[@aria-rowindex='5'])[1] (tried for 20 second(s) with 500 milliseconds interval)
 Build info: version: '4.33.0', revision: '2c6aaad03a'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64759}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64759/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 075fd04fd21af6a5954e9fed0d860329]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49907}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49907/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 74b5e8057518580b79d68b27a93221d4]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: (//div[@aria-rowindex='5'])[1] (tried for 20 second(s) with 500 milliseconds interval)
 Build info: version: '4.33.0', revision: '2c6aaad03a'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64759}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64759/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 075fd04fd21af6a5954e9fed0d860329
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49907}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49907/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 74b5e8057518580b79d68b27a93221d4
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 at FO.testclass.test_print_registration_card_with_filters_TC_RC_01(testclass.java:1634)

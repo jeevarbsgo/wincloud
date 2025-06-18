@@ -1661,7 +1661,7 @@ public class testclass {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//span[@class=\"webix_input_icon wxi-search\"])[1]")));
 		driver.findElement(By.xpath("(//span[@class=\"webix_input_icon wxi-search\"])[1]")).click();
-
+																								
 
 		List<WebElement> vacantRooms = driver.findElements(By.cssSelector(".RmBgColorV1"));
 		if (!vacantRooms.isEmpty()) {
@@ -1681,7 +1681,6 @@ public class testclass {
 		String regText = regnum.getText();    
 		System.out.println(regText);  
 		
-
 		String lastFiveChars = regText.substring(regText.length() - 5);
 		System.out.println("Last 5 characters: " + lastFiveChars);
 
