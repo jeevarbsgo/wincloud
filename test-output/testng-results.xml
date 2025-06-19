@@ -1,25 +1,837 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="26" passed="6" failed="2" skipped="18">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-19T11:29:06 IST" name="Default suite" finished-at="2025-06-19T11:31:28 IST" duration-ms="141861">
+  <suite started-at="2025-06-19T14:14:12 IST" name="Test Suite with Chart Reporter" finished-at="2025-06-19T14:14:35 IST" duration-ms="22720">
     <groups>
     </groups>
-    <test started-at="2025-06-19T11:29:06 IST" name="Default test" finished-at="2025-06-19T11:31:28 IST" duration-ms="141861">
-      <class name="FO.testclass">
-        <test-method is-config="true" signature="setup()[pri:0, instance:FO.testclass@385e9564]" started-at="2025-06-19T11:29:06 IST" name="setup" finished-at="2025-06-19T11:29:09 IST" duration-ms="3070" status="PASS">
+    <test started-at="2025-06-19T14:14:12 IST" name="Login Test Cases" finished-at="2025-06-19T14:14:35 IST" duration-ms="22720">
+      <class name="FO.Reservation_checkIN">
+        <test-method is-config="true" signature="setup()[pri:0, instance:FO.Reservation_checkIN@2f465398]" started-at="2025-06-19T14:14:31 IST" name="setup" finished-at="2025-06-19T14:14:33 IST" duration-ms="1533" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Test_Sucessfull_Login()[pri:0, instance:FO.testclass@385e9564]" started-at="2025-06-19T11:29:09 IST" name="Test_Sucessfull_Login" finished-at="2025-06-19T11:29:18 IST" duration-ms="9169" status="PASS">
+        <test-method signature="Test_Sucessfull_Login()[pri:0, instance:FO.Reservation_checkIN@2f465398]" started-at="2025-06-19T14:14:33 IST" name="Test_Sucessfull_Login" finished-at="2025-06-19T14:14:34 IST" duration-ms="1678" status="FAIL">
+          <exception class="org.openqa.selenium.StaleElementReferenceException">
+            <message>
+              <![CDATA[stale element reference: stale element not found
+  (Session info: chrome=137.0.7151.104)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c42dd4ad12d405d980f332b51bfa77ee, sendKeysToElement {id=f.13FD43DB8C5669A2C1D283341B492EEF.d.8B14017B0DB22888207F6A26499976A0.e.39, value=[Ljava.lang.CharSequence;@30b2b76f}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50362}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50362/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (c42dd4ad12d405d980f332b51bfa77ee)] -> id: Password]
+Session ID: c42dd4ad12d405d980f332b51bfa77ee]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
+  (Session info: chrome=137.0.7151.104)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c42dd4ad12d405d980f332b51bfa77ee, sendKeysToElement {id=f.13FD43DB8C5669A2C1D283341B492EEF.d.8B14017B0DB22888207F6A26499976A0.e.39, value=[Ljava.lang.CharSequence;@30b2b76f}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50362}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50362/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (c42dd4ad12d405d980f332b51bfa77ee)] -> id: Password]
+Session ID: c42dd4ad12d405d980f332b51bfa77ee
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+at FO.Reservation_checkIN.Test_Sucessfull_Login(Reservation_checkIN.java:82)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test_Sucessfull_Login -->
-        <test-method signature="test_ledger_transactions_modify_open_mode_TC_RS_12()[pri:12, instance:FO.testclass@385e9564]" started-at="2025-06-19T11:29:18 IST" name="test_ledger_transactions_modify_open_mode_TC_RS_12" finished-at="2025-06-19T11:31:28 IST" depends-on-methods="FO.testclass.Test_Sucessfull_Login" duration-ms="129537" status="PASS">
+        <test-method signature="test_checkin_allowed_on_matching_arrival_and_account_date_TC_CI_01()[pri:1, instance:FO.Reservation_checkIN@2f465398]" started-at="2025-06-19T14:14:35 IST" name="test_checkin_allowed_on_matching_arrival_and_account_date_TC_CI_01" finished-at="2025-06-19T14:14:35 IST" depends-on-methods="FO.Reservation_checkIN.Test_Sucessfull_Login" duration-ms="1" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method FO.Reservation_checkIN.test_checkin_allowed_on_matching_arrival_and_account_date_TC_CI_01() on instance FO.Reservation_checkIN@2f465398 depends on not successfully finished methods 
+[FO.Reservation_checkIN.Test_Sucessfull_Login() on instance FO.Reservation_checkIN@2f465398]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method FO.Reservation_checkIN.test_checkin_allowed_on_matching_arrival_and_account_date_TC_CI_01() on instance FO.Reservation_checkIN@2f465398 depends on not successfully finished methods 
+[FO.Reservation_checkIN.Test_Sucessfull_Login() on instance FO.Reservation_checkIN@2f465398]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_checkin_allowed_on_matching_arrival_and_account_date_TC_CI_01 -->
+        <test-method signature="test_perform_checkin_on_matching_dates_TC_CI_02()[pri:2, instance:FO.Reservation_checkIN@2f465398]" started-at="2025-06-19T14:14:35 IST" name="test_perform_checkin_on_matching_dates_TC_CI_02" finished-at="2025-06-19T14:14:35 IST" depends-on-methods="FO.Reservation_checkIN.Test_Sucessfull_Login" duration-ms="1" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method FO.Reservation_checkIN.test_perform_checkin_on_matching_dates_TC_CI_02() on instance FO.Reservation_checkIN@2f465398 depends on not successfully finished methods 
+[FO.Reservation_checkIN.Test_Sucessfull_Login() on instance FO.Reservation_checkIN@2f465398]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method FO.Reservation_checkIN.test_perform_checkin_on_matching_dates_TC_CI_02() on instance FO.Reservation_checkIN@2f465398 depends on not successfully finished methods 
+[FO.Reservation_checkIN.Test_Sucessfull_Login() on instance FO.Reservation_checkIN@2f465398]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_perform_checkin_on_matching_dates_TC_CI_02 -->
+        <test-method signature="test_verify_registration_card_and_email_after_checkin_TC_CI_04()[pri:3, instance:FO.Reservation_checkIN@2f465398]" started-at="2025-06-19T14:14:35 IST" name="test_verify_registration_card_and_email_after_checkin_TC_CI_04" finished-at="2025-06-19T14:14:35 IST" depends-on-methods="FO.Reservation_checkIN.Test_Sucessfull_Login" duration-ms="1" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method FO.Reservation_checkIN.test_verify_registration_card_and_email_after_checkin_TC_CI_04() on instance FO.Reservation_checkIN@2f465398 depends on not successfully finished methods 
+[FO.Reservation_checkIN.Test_Sucessfull_Login() on instance FO.Reservation_checkIN@2f465398]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method FO.Reservation_checkIN.test_verify_registration_card_and_email_after_checkin_TC_CI_04() on instance FO.Reservation_checkIN@2f465398 depends on not successfully finished methods 
+[FO.Reservation_checkIN.Test_Sucessfull_Login() on instance FO.Reservation_checkIN@2f465398]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_verify_registration_card_and_email_after_checkin_TC_CI_04 -->
+        <test-method signature="test_create_walkin_reservation_and_checkin_TC_WI_01()[pri:4, instance:FO.Reservation_checkIN@2f465398]" started-at="2025-06-19T14:14:35 IST" name="test_create_walkin_reservation_and_checkin_TC_WI_01" finished-at="2025-06-19T14:14:35 IST" depends-on-methods="FO.Reservation_checkIN.Test_Sucessfull_Login" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method FO.Reservation_checkIN.test_create_walkin_reservation_and_checkin_TC_WI_01() on instance FO.Reservation_checkIN@2f465398 depends on not successfully finished methods 
+[FO.Reservation_checkIN.Test_Sucessfull_Login() on instance FO.Reservation_checkIN@2f465398]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method FO.Reservation_checkIN.test_create_walkin_reservation_and_checkin_TC_WI_01() on instance FO.Reservation_checkIN@2f465398 depends on not successfully finished methods 
+[FO.Reservation_checkIN.Test_Sucessfull_Login() on instance FO.Reservation_checkIN@2f465398]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_create_walkin_reservation_and_checkin_TC_WI_01 -->
+        <test-method signature="test_print_registration_card_with_filters_TC_RC_01()[pri:5, instance:FO.Reservation_checkIN@2f465398]" started-at="2025-06-19T14:14:35 IST" name="test_print_registration_card_with_filters_TC_RC_01" finished-at="2025-06-19T14:14:35 IST" depends-on-methods="FO.Reservation_checkIN.Test_Sucessfull_Login" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method FO.Reservation_checkIN.test_print_registration_card_with_filters_TC_RC_01() on instance FO.Reservation_checkIN@2f465398 depends on not successfully finished methods 
+[FO.Reservation_checkIN.Test_Sucessfull_Login() on instance FO.Reservation_checkIN@2f465398]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method FO.Reservation_checkIN.test_print_registration_card_with_filters_TC_RC_01() on instance FO.Reservation_checkIN@2f465398 depends on not successfully finished methods 
+[FO.Reservation_checkIN.Test_Sucessfull_Login() on instance FO.Reservation_checkIN@2f465398]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_print_registration_card_with_filters_TC_RC_01 -->
+      </class> <!-- FO.Reservation_checkIN -->
+      <class name="FO.Login">
+        <test-method is-config="true" signature="setup()[pri:0, instance:FO.Login@7a675056]" started-at="2025-06-19T14:14:12 IST" name="setup" finished-at="2025-06-19T14:14:15 IST" duration-ms="2754" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="loadLoginPage()[pri:0, instance:FO.Login@7a675056]" started-at="2025-06-19T14:14:15 IST" name="loadLoginPage" finished-at="2025-06-19T14:14:16 IST" duration-ms="1135" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadLoginPage -->
+        <test-method signature="testloginpage()[pri:0, instance:FO.Login@7a675056]" started-at="2025-06-19T14:14:16 IST" name="testloginpage" finished-at="2025-06-19T14:14:16 IST" duration-ms="421" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testloginpage -->
+        <test-method is-config="true" signature="loadLoginPage()[pri:0, instance:FO.Login@7a675056]" started-at="2025-06-19T14:14:16 IST" name="loadLoginPage" finished-at="2025-06-19T14:14:17 IST" duration-ms="270" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadLoginPage -->
+        <test-method signature="testnegativelogin()[pri:0, instance:FO.Login@7a675056]" started-at="2025-06-19T14:14:17 IST" name="testnegativelogin" finished-at="2025-06-19T14:14:17 IST" duration-ms="343" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testnegativelogin -->
+        <test-method is-config="true" signature="loadLoginPage()[pri:0, instance:FO.Login@7a675056]" started-at="2025-06-19T14:14:17 IST" name="loadLoginPage" finished-at="2025-06-19T14:14:17 IST" duration-ms="229" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadLoginPage -->
+        <test-method signature="testnegativepassword()[pri:0, instance:FO.Login@7a675056]" started-at="2025-06-19T14:14:17 IST" name="testnegativepassword" finished-at="2025-06-19T14:14:20 IST" duration-ms="2905" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testnegativepassword -->
+        <test-method is-config="true" signature="loadLoginPage()[pri:0, instance:FO.Login@7a675056]" started-at="2025-06-19T14:14:20 IST" name="loadLoginPage" finished-at="2025-06-19T14:14:20 IST" duration-ms="228" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadLoginPage -->
+        <test-method signature="testnegativeuserid()[pri:0, instance:FO.Login@7a675056]" started-at="2025-06-19T14:14:20 IST" name="testnegativeuserid" finished-at="2025-06-19T14:14:21 IST" duration-ms="569" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testnegativeuserid -->
+        <test-method is-config="true" signature="loadLoginPage()[pri:0, instance:FO.Login@7a675056]" started-at="2025-06-19T14:14:21 IST" name="loadLoginPage" finished-at="2025-06-19T14:14:21 IST" duration-ms="229" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadLoginPage -->
+        <test-method signature="testpositivepassword()[pri:0, instance:FO.Login@7a675056]" started-at="2025-06-19T14:14:21 IST" name="testpositivepassword" finished-at="2025-06-19T14:14:22 IST" duration-ms="1209" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testpositivepassword -->
+        <test-method is-config="true" signature="loadLoginPage()[pri:0, instance:FO.Login@7a675056]" started-at="2025-06-19T14:14:22 IST" name="loadLoginPage" finished-at="2025-06-19T14:14:23 IST" duration-ms="249" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadLoginPage -->
+        <test-method signature="testpositiveuserid()[pri:0, instance:FO.Login@7a675056]" started-at="2025-06-19T14:14:23 IST" name="testpositiveuserid" finished-at="2025-06-19T14:14:23 IST" duration-ms="719" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testpositiveuserid -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:FO.Login@7a675056]" started-at="2025-06-19T14:14:23 IST" name="tearDown" finished-at="2025-06-19T14:14:24 IST" duration-ms="471" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- FO.Login -->
+      <class name="FO.Reservation">
+        <test-method is-config="true" signature="setup()[pri:0, instance:FO.Reservation@313b2ea6]" started-at="2025-06-19T14:14:24 IST" name="setup" finished-at="2025-06-19T14:14:27 IST" duration-ms="3090" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Test_Sucessfull_Login()[pri:0, instance:FO.Reservation@313b2ea6]" started-at="2025-06-19T14:14:27 IST" name="Test_Sucessfull_Login" finished-at="2025-06-19T14:14:29 IST" duration-ms="1885" status="FAIL">
+          <exception class="org.openqa.selenium.StaleElementReferenceException">
+            <message>
+              <![CDATA[stale element reference: stale element not found
+  (Session info: chrome=137.0.7151.104)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [89697af667ba8bb4da6571ca7c2c2d4a, sendKeysToElement {id=f.45E4801E91148868183ACBF75D4D34ED.d.23F94A60EC18FB95FA56D88631819FC0.e.37, value=[Ljava.lang.CharSequence;@51e37590}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50308}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50308/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (89697af667ba8bb4da6571ca7c2c2d4a)] -> id: Password]
+Session ID: 89697af667ba8bb4da6571ca7c2c2d4a]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
+  (Session info: chrome=137.0.7151.104)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [89697af667ba8bb4da6571ca7c2c2d4a, sendKeysToElement {id=f.45E4801E91148868183ACBF75D4D34ED.d.23F94A60EC18FB95FA56D88631819FC0.e.37, value=[Ljava.lang.CharSequence;@51e37590}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50308}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50308/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (89697af667ba8bb4da6571ca7c2c2d4a)] -> id: Password]
+Session ID: 89697af667ba8bb4da6571ca7c2c2d4a
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+at FO.Reservation.Test_Sucessfull_Login(Reservation.java:96)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test_Sucessfull_Login -->
+        <test-method signature="Test_Registration_page()[pri:1, instance:FO.Reservation@313b2ea6]" started-at="2025-06-19T14:14:30 IST" name="Test_Registration_page" finished-at="2025-06-19T14:14:30 IST" depends-on-methods="FO.Reservation.Test_Sucessfull_Login" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method FO.Reservation.Test_Registration_page() on instance FO.Reservation@313b2ea6 depends on not successfully finished methods 
+[FO.Reservation.Test_Sucessfull_Login() on instance FO.Reservation@313b2ea6]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method FO.Reservation.Test_Registration_page() on instance FO.Reservation@313b2ea6 depends on not successfully finished methods 
+[FO.Reservation.Test_Sucessfull_Login() on instance FO.Reservation@313b2ea6]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test_Registration_page -->
+        <test-method signature="test_create_reservation_new_mode_mandatory_fields_TC_RS_01()[pri:2, instance:FO.Reservation@313b2ea6]" started-at="2025-06-19T14:14:30 IST" name="test_create_reservation_new_mode_mandatory_fields_TC_RS_01" finished-at="2025-06-19T14:14:30 IST" depends-on-methods="FO.Reservation.Test_Sucessfull_Login" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method FO.Reservation.test_create_reservation_new_mode_mandatory_fields_TC_RS_01() on instance FO.Reservation@313b2ea6 depends on not successfully finished methods 
+[FO.Reservation.Test_Sucessfull_Login() on instance FO.Reservation@313b2ea6]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method FO.Reservation.test_create_reservation_new_mode_mandatory_fields_TC_RS_01() on instance FO.Reservation@313b2ea6 depends on not successfully finished methods 
+[FO.Reservation.Test_Sucessfull_Login() on instance FO.Reservation@313b2ea6]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_create_reservation_new_mode_mandatory_fields_TC_RS_01 -->
+        <test-method signature="test_open_and_amend_saved_reservation_TC_RS_02()[pri:3, instance:FO.Reservation@313b2ea6]" started-at="2025-06-19T14:14:30 IST" name="test_open_and_amend_saved_reservation_TC_RS_02" finished-at="2025-06-19T14:14:30 IST" depends-on-methods="FO.Reservation.Test_Sucessfull_Login" duration-ms="1" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method FO.Reservation.test_open_and_amend_saved_reservation_TC_RS_02() on instance FO.Reservation@313b2ea6 depends on not successfully finished methods 
+[FO.Reservation.Test_Sucessfull_Login() on instance FO.Reservation@313b2ea6]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method FO.Reservation.test_open_and_amend_saved_reservation_TC_RS_02() on instance FO.Reservation@313b2ea6 depends on not successfully finished methods 
+[FO.Reservation.Test_Sucessfull_Login() on instance FO.Reservation@313b2ea6]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_open_and_amend_saved_reservation_TC_RS_02 -->
+        <test-method signature="test_verify_updated_details_open_mode_TC_RS_03()[pri:4, instance:FO.Reservation@313b2ea6]" started-at="2025-06-19T14:14:30 IST" name="test_verify_updated_details_open_mode_TC_RS_03" finished-at="2025-06-19T14:14:30 IST" depends-on-methods="FO.Reservation.Test_Sucessfull_Login" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method FO.Reservation.test_verify_updated_details_open_mode_TC_RS_03() on instance FO.Reservation@313b2ea6 depends on not successfully finished methods 
+[FO.Reservation.Test_Sucessfull_Login() on instance FO.Reservation@313b2ea6]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method FO.Reservation.test_verify_updated_details_open_mode_TC_RS_03() on instance FO.Reservation@313b2ea6 depends on not successfully finished methods 
+[FO.Reservation.Test_Sucessfull_Login() on instance FO.Reservation@313b2ea6]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_verify_updated_details_open_mode_TC_RS_03 -->
+        <test-method signature="test_cancel_reservation_with_reason_TC_RS_04()[pri:5, instance:FO.Reservation@313b2ea6]" started-at="2025-06-19T14:14:30 IST" name="test_cancel_reservation_with_reason_TC_RS_04" finished-at="2025-06-19T14:14:30 IST" depends-on-methods="FO.Reservation.Test_Sucessfull_Login" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method FO.Reservation.test_cancel_reservation_with_reason_TC_RS_04() on instance FO.Reservation@313b2ea6 depends on not successfully finished methods 
+[FO.Reservation.Test_Sucessfull_Login() on instance FO.Reservation@313b2ea6]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method FO.Reservation.test_cancel_reservation_with_reason_TC_RS_04() on instance FO.Reservation@313b2ea6 depends on not successfully finished methods 
+[FO.Reservation.Test_Sucessfull_Login() on instance FO.Reservation@313b2ea6]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_cancel_reservation_with_reason_TC_RS_04 -->
+        <test-method signature="test_verify_cancelled_reservation_visibility_TC_RS_05()[pri:6, instance:FO.Reservation@313b2ea6]" started-at="2025-06-19T14:14:30 IST" name="test_verify_cancelled_reservation_visibility_TC_RS_05" finished-at="2025-06-19T14:14:30 IST" depends-on-methods="FO.Reservation.Test_Sucessfull_Login" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method FO.Reservation.test_verify_cancelled_reservation_visibility_TC_RS_05() on instance FO.Reservation@313b2ea6 depends on not successfully finished methods 
+[FO.Reservation.Test_Sucessfull_Login() on instance FO.Reservation@313b2ea6]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method FO.Reservation.test_verify_cancelled_reservation_visibility_TC_RS_05() on instance FO.Reservation@313b2ea6 depends on not successfully finished methods 
+[FO.Reservation.Test_Sucessfull_Login() on instance FO.Reservation@313b2ea6]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_verify_cancelled_reservation_visibility_TC_RS_05 -->
+        <test-method signature="test_create_addon_reservation_from_existing_TC_RS_06()[pri:7, instance:FO.Reservation@313b2ea6]" started-at="2025-06-19T14:14:30 IST" name="test_create_addon_reservation_from_existing_TC_RS_06" finished-at="2025-06-19T14:14:30 IST" depends-on-methods="FO.Reservation.Test_Sucessfull_Login" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method FO.Reservation.test_create_addon_reservation_from_existing_TC_RS_06() on instance FO.Reservation@313b2ea6 depends on not successfully finished methods 
+[FO.Reservation.Test_Sucessfull_Login() on instance FO.Reservation@313b2ea6]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method FO.Reservation.test_create_addon_reservation_from_existing_TC_RS_06() on instance FO.Reservation@313b2ea6 depends on not successfully finished methods 
+[FO.Reservation.Test_Sucessfull_Login() on instance FO.Reservation@313b2ea6]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_create_addon_reservation_from_existing_TC_RS_06 -->
+        <test-method signature="test_verify_reservation_view_mode_TC_RS_11()[pri:8, instance:FO.Reservation@313b2ea6]" started-at="2025-06-19T14:14:30 IST" name="test_verify_reservation_view_mode_TC_RS_11" finished-at="2025-06-19T14:14:30 IST" depends-on-methods="FO.Reservation.Test_Sucessfull_Login" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method FO.Reservation.test_verify_reservation_view_mode_TC_RS_11() on instance FO.Reservation@313b2ea6 depends on not successfully finished methods 
+[FO.Reservation.Test_Sucessfull_Login() on instance FO.Reservation@313b2ea6]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method FO.Reservation.test_verify_reservation_view_mode_TC_RS_11() on instance FO.Reservation@313b2ea6 depends on not successfully finished methods 
+[FO.Reservation.Test_Sucessfull_Login() on instance FO.Reservation@313b2ea6]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_verify_reservation_view_mode_TC_RS_11 -->
+        <test-method signature="test_reinstate_cancelled_reservation_TC_RS_08()[pri:9, instance:FO.Reservation@313b2ea6]" started-at="2025-06-19T14:14:30 IST" name="test_reinstate_cancelled_reservation_TC_RS_08" finished-at="2025-06-19T14:14:30 IST" depends-on-methods="FO.Reservation.Test_Sucessfull_Login" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method FO.Reservation.test_reinstate_cancelled_reservation_TC_RS_08() on instance FO.Reservation@313b2ea6 depends on not successfully finished methods 
+[FO.Reservation.Test_Sucessfull_Login() on instance FO.Reservation@313b2ea6]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method FO.Reservation.test_reinstate_cancelled_reservation_TC_RS_08() on instance FO.Reservation@313b2ea6 depends on not successfully finished methods 
+[FO.Reservation.Test_Sucessfull_Login() on instance FO.Reservation@313b2ea6]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_reinstate_cancelled_reservation_TC_RS_08 -->
+        <test-method signature="test_addon_reservation_after_account_date_TC_RS_10()[pri:10, instance:FO.Reservation@313b2ea6]" started-at="2025-06-19T14:14:30 IST" name="test_addon_reservation_after_account_date_TC_RS_10" finished-at="2025-06-19T14:14:30 IST" depends-on-methods="FO.Reservation.Test_Sucessfull_Login" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method FO.Reservation.test_addon_reservation_after_account_date_TC_RS_10() on instance FO.Reservation@313b2ea6 depends on not successfully finished methods 
+[FO.Reservation.Test_Sucessfull_Login() on instance FO.Reservation@313b2ea6]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method FO.Reservation.test_addon_reservation_after_account_date_TC_RS_10() on instance FO.Reservation@313b2ea6 depends on not successfully finished methods 
+[FO.Reservation.Test_Sucessfull_Login() on instance FO.Reservation@313b2ea6]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_addon_reservation_after_account_date_TC_RS_10 -->
+        <test-method signature="test_split_reservation_multiple_rooms_TC_RS_07()[pri:11, instance:FO.Reservation@313b2ea6]" started-at="2025-06-19T14:14:30 IST" name="test_split_reservation_multiple_rooms_TC_RS_07" finished-at="2025-06-19T14:14:30 IST" depends-on-methods="FO.Reservation.Test_Sucessfull_Login" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method FO.Reservation.test_split_reservation_multiple_rooms_TC_RS_07() on instance FO.Reservation@313b2ea6 depends on not successfully finished methods 
+[FO.Reservation.Test_Sucessfull_Login() on instance FO.Reservation@313b2ea6]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method FO.Reservation.test_split_reservation_multiple_rooms_TC_RS_07() on instance FO.Reservation@313b2ea6 depends on not successfully finished methods 
+[FO.Reservation.Test_Sucessfull_Login() on instance FO.Reservation@313b2ea6]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_split_reservation_multiple_rooms_TC_RS_07 -->
+        <test-method signature="test_ledger_transactions_modify_open_mode_TC_RS_12()[pri:12, instance:FO.Reservation@313b2ea6]" started-at="2025-06-19T14:14:30 IST" name="test_ledger_transactions_modify_open_mode_TC_RS_12" finished-at="2025-06-19T14:14:30 IST" depends-on-methods="FO.Reservation.Test_Sucessfull_Login" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method FO.Reservation.test_ledger_transactions_modify_open_mode_TC_RS_12() on instance FO.Reservation@313b2ea6 depends on not successfully finished methods 
+[FO.Reservation.Test_Sucessfull_Login() on instance FO.Reservation@313b2ea6]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method FO.Reservation.test_ledger_transactions_modify_open_mode_TC_RS_12() on instance FO.Reservation@313b2ea6 depends on not successfully finished methods 
+[FO.Reservation.Test_Sucessfull_Login() on instance FO.Reservation@313b2ea6]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_ledger_transactions_modify_open_mode_TC_RS_12 -->
-      </class> <!-- FO.testclass -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        <test-method signature="test_ledger_transactions_modify_open_mode_TC_RS_12_Advance()[pri:12, instance:FO.Reservation@313b2ea6]" started-at="2025-06-19T14:14:30 IST" name="test_ledger_transactions_modify_open_mode_TC_RS_12_Advance" finished-at="2025-06-19T14:14:30 IST" depends-on-methods="FO.Reservation.Test_Sucessfull_Login" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method FO.Reservation.test_ledger_transactions_modify_open_mode_TC_RS_12_Advance() on instance FO.Reservation@313b2ea6 depends on not successfully finished methods 
+[FO.Reservation.Test_Sucessfull_Login() on instance FO.Reservation@313b2ea6]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method FO.Reservation.test_ledger_transactions_modify_open_mode_TC_RS_12_Advance() on instance FO.Reservation@313b2ea6 depends on not successfully finished methods 
+[FO.Reservation.Test_Sucessfull_Login() on instance FO.Reservation@313b2ea6]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_ledger_transactions_modify_open_mode_TC_RS_12_Advance -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:FO.Reservation@313b2ea6]" started-at="2025-06-19T14:14:30 IST" name="tearDown" finished-at="2025-06-19T14:14:31 IST" duration-ms="825" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- FO.Reservation -->
+    </test> <!-- Login Test Cases -->
+  </suite> <!-- Test Suite with Chart Reporter -->
 </testng-results>

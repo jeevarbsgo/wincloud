@@ -10,32 +10,35 @@
     <classes>
       <class name="FO.Reservation_checkIN">
         <methods>
+          <include name="test_checkin_allowed_on_matching_arrival_and_account_date_TC_CI_01"/>
           <include name="setup"/>
           <include name="test_print_registration_card_with_filters_TC_RC_01"/>
           <include name="Test_Sucessfull_Login"/>
+          <include name="test_perform_checkin_on_matching_dates_TC_CI_02"/>
           <include name="test_verify_registration_card_and_email_after_checkin_TC_CI_04"/>
+          <include name="test_create_walkin_reservation_and_checkin_TC_WI_01"/>
         </methods>
       </class> <!-- FO.Reservation_checkIN -->
       <class name="FO.Reservation">
         <methods>
           <include name="Test_Sucessfull_Login"/>
+          <include name="test_create_reservation_new_mode_mandatory_fields_TC_RS_01"/>
+          <include name="test_addon_reservation_after_account_date_TC_RS_10"/>
           <include name="setup"/>
+          <include name="test_verify_reservation_view_mode_TC_RS_11"/>
+          <include name="Test_Registration_page"/>
+          <include name="test_cancel_reservation_with_reason_TC_RS_04"/>
+          <include name="test_ledger_transactions_modify_open_mode_TC_RS_12_Advance"/>
+          <include name="test_open_and_amend_saved_reservation_TC_RS_02"/>
+          <include name="test_ledger_transactions_modify_open_mode_TC_RS_12"/>
+          <include name="test_reinstate_cancelled_reservation_TC_RS_08"/>
           <include name="tearDown"/>
           <include name="test_verify_updated_details_open_mode_TC_RS_03"/>
+          <include name="test_verify_cancelled_reservation_visibility_TC_RS_05"/>
+          <include name="test_create_addon_reservation_from_existing_TC_RS_06"/>
           <include name="test_split_reservation_multiple_rooms_TC_RS_07"/>
         </methods>
       </class> <!-- FO.Reservation -->
-      <class name="FO.Login">
-        <methods>
-          <include name="testpositivepassword"/>
-          <include name="tearDown"/>
-          <include name="testnegativepassword"/>
-          <include name="testpositiveuserid"/>
-          <include name="setup"/>
-          <include name="testnegativeuserid"/>
-          <include name="loadLoginPage"/>
-        </methods>
-      </class> <!-- FO.Login -->
     </classes>
   </test> <!-- Login Test Cases(failed) -->
 </suite> <!-- Failed suite [Test Suite with Chart Reporter] -->
