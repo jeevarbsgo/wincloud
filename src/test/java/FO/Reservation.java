@@ -931,7 +931,6 @@ public class Reservation {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-save']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class=\"webix_button webix_img_btn\"])[1]"))).click();
 		
-
 		WebElement reserveNoInput1 = driver.findElement(By.xpath("//label[text()='Reserve No']/following-sibling::input"));
 		String AddreserveNoValue = reserveNoInput1.getAttribute("value");
 		System.out.println("Add-on Reserve No: " + AddreserveNoValue);

@@ -1026,7 +1026,7 @@ public class testclass {
 		// Assert that the number of child elements is 2
 		Assert.assertEquals(childCells.size(), 2, "The number of child grid cells inside the parent column is not 2.");
 	}
-	
+	*/
 
 
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 12)
@@ -1307,6 +1307,7 @@ public class testclass {
 
 		}
 	}
+	/*
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 1)
 	public void test_checkin_allowed_on_matching_arrival_and_account_date_TC_CI_01() throws AWTException, InterruptedException {
 		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
@@ -1373,7 +1374,7 @@ public class testclass {
 	
 	
 	}
-	
+	/*
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 2)
 	public void test_perform_checkin_on_matching_dates_TC_CI_02() throws InterruptedException, AWTException {
 		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
@@ -1603,7 +1604,7 @@ public class testclass {
 			driver.findElement(By.xpath("(//input[@type=\"checkbox\"])[6]")).click();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='webix_button webix_img_btn']")));
 			driver.findElement(By.xpath("//button[@class=\"webix_button webix_img_btn\"]")).click();		
-	}*/
+	}
 
 
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 5)
@@ -1723,9 +1724,9 @@ public class testclass {
 		Assert.assertEquals(card_reg_no, lastFiveChars, "The number generated and the number in the card does not matches");
 		driver.close();
 		driver.switchTo().window(mainWindow);
+*/
+}
 
-}
-}
 
 
 
