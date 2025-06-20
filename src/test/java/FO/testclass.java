@@ -1455,7 +1455,7 @@ public class testclass {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='webix_button webix_img_btn']")));
 		driver.findElement(By.xpath("//button[@class=\"webix_button webix_img_btn\"]")).click();
 	}
-
+*/
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 3)
 	public void test_verify_registration_card_and_email_after_checkin_TC_CI_04() throws InterruptedException, AWTException {
 		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
@@ -1558,7 +1558,7 @@ public class testclass {
 		
 	}
 
-
+/*
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 4)
 	public void test_create_walkin_reservation_and_checkin_TC_WI_01() throws InterruptedException, AWTException {
 		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
@@ -1925,7 +1925,7 @@ public class testclass {
 	// ✅ Assert using formatted strings (consistent precision)
 	Assert.assertEquals(formattedRefund1, distributed_adv, "Mismatch in distribution 1");
 	Assert.assertEquals(formattedRefund2, distributed_adv1, "Mismatch in distribution 2");
-	}*/
+	}
 	
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 1)
 	public void test_select_advance_type_and_reservation_room_TC_AD_01_Checkin() throws AWTException, InterruptedException {
@@ -2127,7 +2127,7 @@ public class testclass {
 	// ✅ Assert using formatted strings (consistent precision)
 	Assert.assertEquals(formattedRefund1, distributed_adv, "Mismatch in distribution 1");
 	Assert.assertEquals(formattedRefund2, distributed_adv1, "Mismatch in distribution 2");
-	}
+	}*/
 }
 
 

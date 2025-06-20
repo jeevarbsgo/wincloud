@@ -234,7 +234,7 @@ public class Reservation_checkIN {
 	public void test_verify_registration_card_and_email_after_checkin_TC_CI_04() throws InterruptedException, AWTException {
 		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
 		System.out.println("Executing Test Method: " + methodName);
-
+		
 		driver.get("https://test1dns.wincloudpms.net/TravelAgentBlock/FOReservation?VN=3.04.025");
 		WebElement add = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='webix_el_box'])[2]")));
 		add.click();
@@ -279,11 +279,11 @@ public class Reservation_checkIN {
 		for (char ch : reserveNoValue.toCharArray()) {
 			typeCharWithRobot(ch);
 		}	
-
+		
 		WebElement dynamicElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='" + reserveNoValue + "']")));
 		actions.doubleClick(dynamicElement).perform();
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//span[@class=\"webix_input_icon wxi-search\"])[1]")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//span[@class=\"webix_input_icon wxi-search\"])[1]")));
 		driver.findElement(By.xpath("(//span[@class=\"webix_input_icon wxi-search\"])[1]")).click();
 
 
@@ -304,32 +304,32 @@ public class Reservation_checkIN {
 		WebElement regnum = driver.findElement(By.xpath("//div[@style=\"text-align:center !important;font-weight:bold;width:100%;color:#fb2510\"]"));
 		String regText = regnum.getText();    
 		System.out.println(regText); 
-
+		
 		String lastFiveChars = regText.substring(regText.length() - 5);
 		System.out.println("Last 5 characters: " + lastFiveChars);
-
+		
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='webix_button webix_img_btn']")));
 		driver.findElement(By.xpath("//button[@class=\"webix_button webix_img_btn\"]")).click();
-
+		
 		String mainWindow = driver.getWindowHandle();
 
 		// Wait for new window (assuming it opens automatically after reservation)
 		Set<String> allWindows = driver.getWindowHandles();
 		for (String window : allWindows) {
-			if (!window.equals(mainWindow)) {
-				driver.switchTo().window(window);
-				break;
-			}
+		    if (!window.equals(mainWindow)) {
+		        driver.switchTo().window(window);
+		        break;
+		    }
 		}
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@style=\"max-width:42.96pt;height:14.32pt;display:flex;align-items:center;text-align:left;justify-content:flex-start;\"])[1]")));
 		WebElement reg_no = driver.findElement(By.xpath("(//div[@style=\"max-width:42.96pt;height:14.32pt;display:flex;align-items:center;text-align:left;justify-content:flex-start;\"])[1]"));
 		String card_reg_no = reg_no.getText();
 		System.out.println(card_reg_no);
-
+		
 		Assert.assertEquals(card_reg_no, lastFiveChars, "The number generated and the number in the card does not matches");
 		driver.close();
 		driver.switchTo().window(mainWindow);
-
+		
 	}
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 4)
 	public void test_create_walkin_reservation_and_checkin_TC_WI_01() throws InterruptedException, AWTException {
@@ -455,8 +455,8 @@ public class Reservation_checkIN {
 		System.out.println("Last 5 characters: " + lastFiveChars);
 
 		Assert.assertTrue(regnum.isDisplayed(), "The alert element is not displayed!");
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//input[@type='checkbox'])[6]")));
-		driver.findElement(By.xpath("(//input[@type=\"checkbox\"])[6]")).click();
+		WebElement checkbox1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@type='checkbox'])[6]")));
+		checkbox1.click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='webix_button webix_img_btn']")));
 		driver.findElement(By.xpath("//button[@class=\"webix_button webix_img_btn\"]")).click();
 
@@ -472,7 +472,8 @@ public class Reservation_checkIN {
 
 		WebElement dynamicElement11 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='" + lastFiveChars + "']")));
 		actions.doubleClick(dynamicElement11).perform();
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@type=\"checkbox\"])[6]"))).click();
+		WebElement checkbox2 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@type='checkbox'])[6]")));
+		checkbox2.click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id=\"btnPrint\"]"))).click();
 
 		String mainWindow = driver.getWindowHandle();
