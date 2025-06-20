@@ -1,28 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Test Suite with Chart Reporter]" guice-stage="DEVELOPMENT">
-  <listeners>
-    <listener class-name="FO.CustomGraphReporter"/>
-    <listener class-name="FO.ExcelTestListener"/>
-    <listener class-name="FO.ChartReporter"/>
-  </listeners>
-  <test thread-count="5" name="Login Test Cases(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="FO.Reservation_checkIN">
+      <class name="FO.testclass">
         <methods>
+          <include name="test_select_advance_type_and_reservation_room_TC_AD_01_Reservation"/>
           <include name="setup"/>
           <include name="Test_Sucessfull_Login"/>
-          <include name="test_verify_registration_card_and_email_after_checkin_TC_CI_04"/>
         </methods>
-      </class> <!-- FO.Reservation_checkIN -->
-      <class name="FO.Reservation">
-        <methods>
-          <include name="Test_Sucessfull_Login"/>
-          <include name="setup"/>
-          <include name="tearDown"/>
-          <include name="test_ledger_transactions_modify_open_mode_TC_RS_12"/>
-        </methods>
-      </class> <!-- FO.Reservation -->
+      </class> <!-- FO.testclass -->
     </classes>
-  </test> <!-- Login Test Cases(failed) -->
-</suite> <!-- Failed suite [Test Suite with Chart Reporter] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

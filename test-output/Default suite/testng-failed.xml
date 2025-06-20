@@ -5,8 +5,8 @@
     <classes>
       <class name="FO.testclass">
         <methods>
+          <include name="test_select_advance_type_and_reservation_room_TC_AD_01_Reservation"/>
           <include name="setup"/>
-          <include name="test_select_advance_type_and_reservation_room_TC_AD_01"/>
           <include name="Test_Sucessfull_Login"/>
         </methods>
       </class> <!-- FO.testclass -->
