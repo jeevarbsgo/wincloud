@@ -2140,6 +2140,7 @@ public class testclass {
 		double Dis_Amount1 = Double.parseDouble(distributed_adv);  // e.g., 150.000
 		double Dis_Amount2 = Double.parseDouble(distributed_adv1); // e.g., 150.000
 
+		
 		// Format original value (optional)
 		String formattedRefund = df.format(Actual_Amount); // e.g., "300.000"
 
@@ -2153,6 +2154,8 @@ public class testclass {
 		// ✅ Assert using formatted strings (consistent precision)
 		Assert.assertEquals(formattedRefund1, distributed_adv, "Mismatch in distribution 1");
 		Assert.assertEquals(formattedRefund2, distributed_adv1, "Mismatch in distribution 2");
+		
+		double total_dis_amount_beforeCheckin = Dis_Amount1 + Dis_Amount2;
 		
 		System.out.println("*******************Advance distribution initiated & verified in both the rooms **************************");
 
@@ -2400,7 +2403,7 @@ System.out.println("*************************Advance initiated for the room1 aft
 		
 		DecimalFormat df1 = new DecimalFormat("0.000");
 
-		double originalAmount = Double.parseDouble(expected);  
+		double originalAmount = Double.parseDouble(expected_1);  
 		String formattedRefund_1 = df.format(originalAmount);
 		double dis_amount_1 = Double.parseDouble(actualAmount_1); 
 		double dis_amount_2 = Double.parseDouble(actualAmount_2); 
@@ -2408,10 +2411,21 @@ System.out.println("*************************Advance initiated for the room1 aft
 		System.out.println(dis_amount_1);
 		System.out.println(dis_amount_2);
 		
-		double total_dis_amount = dis_amount_1 + dis_amount_2;
+		double total_dis_amount_afterCheckin = dis_amount_1 + dis_amount_2;
+		System.out.println(total_dis_amount_afterCheckin);
 		
-		Assert.assertEquals(total_dis_amount, originalAmount);
+		Assert.assertEquals(total_dis_amount_afterCheckin, originalAmount);
 		
+		
+		//=============================================================
+		// Verifying the total advance amount before and after checkin
+		//==============================================================
+		
+		double Total_Advance_paid = total_dis_amount_afterCheckin + Actual_Amount;
+		
+		System.out.println("Total advance paid before and after checkin for the same reservation " + Total_Advance_paid);
+		System.out.println("Total advance paid after checkin" + total_dis_amount_afterCheckin);
+		System.out.println("Total advance amount paid before check in " +Actual_Amount);
 		
 	}
 }
