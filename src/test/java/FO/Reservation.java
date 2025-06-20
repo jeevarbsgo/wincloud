@@ -118,7 +118,7 @@ public class Reservation {
 
 		WebElement add = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='webix_el_box'])[2]")));
 		add.click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@aria-label='RoomType']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@webix_l_id='DXR']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-search ExpBkGridIconBtn']"))).click();
@@ -165,7 +165,7 @@ public class Reservation {
 
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@aria-label='RoomType']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@webix_l_id='DXR']"))).click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-search ExpBkGridIconBtn']"))).click();
 		WebElement doubleClick1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@aria-rowindex='5'])[1]")));
 		js.executeScript("arguments[0].scrollIntoView(true);", doubleClick1);
@@ -207,7 +207,7 @@ public class Reservation {
 		for (char ch : reserveNoValue1.toCharArray()) {
 			typeCharWithRobot(ch);
 		}
-
+		Thread.sleep(1500);
 		WebElement dynamicElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='" + reserveNoValue1 + "']")));
 		actions.doubleClick(dynamicElement).perform();
 
@@ -258,7 +258,7 @@ public class Reservation {
 		rooms.sendKeys(Keys.chord(Keys.CONTROL, "a"), "2");
 
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-save']"))).click();
-	
+
 		WebElement button = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//button[@class='webix_button webix_img_btn'])[1]")));
 		Assert.assertTrue(button.isDisplayed(), "❌ Button is not visible on the page");
 		button.click();
@@ -347,7 +347,7 @@ public class Reservation {
 		for (char ch : reserveNoValue1.toCharArray()) {
 			typeCharWithRobot(ch);
 		}
-
+		Thread.sleep(1500);
 		WebElement dynamicElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='" + reserveNoValue1 + "']")));
 		actions.doubleClick(dynamicElement).perform();
 
@@ -377,7 +377,7 @@ public class Reservation {
 
 		WebElement dueDate = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@aria-label='Due Date']")));
 		js.executeScript("arguments[0].click();", dueDate);
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='webix_cal_month_name']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='webix_cal_month_name']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='2023']"))).click();
@@ -481,6 +481,7 @@ public class Reservation {
 		for (char ch : reserveNoValue.toCharArray()) {
 			typeCharWithRobot(ch); // ✅ correct
 		}
+		Thread.sleep(1500);
 		WebElement dynamicElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='" + reserveNoValue + "']")));
 		actions.doubleClick(dynamicElement).perform();
 
@@ -563,7 +564,7 @@ public class Reservation {
 		for (char ch : reserveNoValue.toCharArray()) {
 			typeCharWithRobot(ch); // ✅ correct
 		}
-
+		Thread.sleep(1500);
 		WebElement dynamicElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='" + reserveNoValue + "']")));
 		actions.doubleClick(dynamicElement).perform();
 
@@ -594,9 +595,10 @@ public class Reservation {
 		for (char ch : reserveNoValue.toCharArray()) {
 			typeCharWithRobot(ch); // ✅ correct
 		}
+		Thread.sleep(1500);
 		try {
 			// Wait for the dynamic element to be clickable
-			 wait.until(ExpectedConditions.elementToBeClickable(
+			wait.until(ExpectedConditions.elementToBeClickable(
 					By.xpath("//div[text()='" + reserveNoValue + "']")));
 
 			// If the element is clickable, the test should fail
@@ -708,6 +710,7 @@ public class Reservation {
 		for (char ch : reserveNoValue1.toCharArray()) {
 			typeCharWithRobot(ch); 
 		}
+		Thread.sleep(1500);
 		WebElement dynamicElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='" + reserveNoValue1 + "']")));
 		actions.doubleClick(dynamicElement).perform();
 
@@ -779,7 +782,7 @@ public class Reservation {
 		for (char ch : reserveNoValue.toCharArray()) {
 			typeCharWithRobot(ch); // ✅ using common method
 		}
-
+		Thread.sleep(1500);
 		WebElement dynamicElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='" + reserveNoValue + "']")));
 		actions.doubleClick(dynamicElement).perform();
 
@@ -802,7 +805,7 @@ public class Reservation {
 		for (char ch : reserveNoValue.toCharArray()) {
 			typeCharWithRobot(ch); // ✅ using common method
 		}
-
+		Thread.sleep(1500);
 		WebElement dynamicElement1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='" + reserveNoValue + "']")));
 		actions.doubleClick(dynamicElement1).perform();
 
@@ -815,7 +818,7 @@ public class Reservation {
 		for (char ch : inputText.toCharArray()) {
 			typeCharWithRobot(ch); // ✅ using common method
 		}
-
+		Thread.sleep(1500);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()=\"OK\"]"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class=\"webix_button webix_img_btn\"])[2]"))).click();
 
@@ -830,7 +833,7 @@ public class Reservation {
 		for (char ch : reserveNoValue.toCharArray()) {
 			typeCharWithRobot(ch); // ✅ using common method
 		}
-
+		Thread.sleep(1500);
 		try {
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='" + reserveNoValue + "']")));
 			Assert.fail("The dynamic element is clickable, but it should not be.");
@@ -893,7 +896,7 @@ public class Reservation {
 		for (char ch : reserveNoValue.toCharArray()) {
 			typeCharWithRobot(ch); // ✅ using common method
 		}
-
+		Thread.sleep(1500);
 		WebElement dynamicElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='" + reserveNoValue + "']")));
 		actions.doubleClick(dynamicElement).perform();
 
@@ -910,7 +913,7 @@ public class Reservation {
 
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-save']"))).click();
 
-	
+
 		By rateLocator = By.xpath("/html/body/div[45]/div/div[2]/div/div[2]/div[2]/div[2]/div/div[5]/div");
 
 		// Re-find after all page activity
@@ -921,20 +924,20 @@ public class Reservation {
 		// Now locate the editable input field inside the editor popup
 		WebElement input = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class,'webix_dt_editor')]/input")));input.clear();
 		input.sendKeys("100");
-		
+
 		WebElement tipElement = driver.findElement(By.id("zs-fl-tip"));
 		actions.moveToElement(tipElement).perform();
 		driver.findElement(By.id("zs-tip-close")).click();
 		Thread.sleep(2000);
-	
+
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()=\"Save\"]"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-save']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class=\"webix_button webix_img_btn\"])[1]"))).click();
-		
+
 		WebElement reserveNoInput1 = driver.findElement(By.xpath("//label[text()='Reserve No']/following-sibling::input"));
 		String AddreserveNoValue = reserveNoInput1.getAttribute("value");
 		System.out.println("Add-on Reserve No: " + AddreserveNoValue);
-	
+
 		Assert.assertNotEquals(reserveNoValue, AddreserveNoValue, "Add-on reservation number should differ from the original.");
 	}
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 11)
@@ -981,7 +984,7 @@ public class Reservation {
 		WebElement reserveNoInput = driver.findElement(By.xpath("//label[text()='Reserve No']/following-sibling::input"));
 		String reserveNoValue = reserveNoInput.getAttribute("value");
 		System.out.println("Original Reserve No: " + reserveNoValue);
-		
+
 		WebElement scrollElement = driver.findElement(By.xpath("(//div[@class='webix_vscroll_body'])[3]"));
 		js.executeScript("arguments[0].scrollIntoView(true);", scrollElement);
 
@@ -994,12 +997,12 @@ public class Reservation {
 		WebElement element = driver.findElement(By.xpath("(//div[@class='webix_ss_hscroll webix_vscroll_x'])[2]"));
 		js.executeScript("arguments[0].scrollIntoView(true);", element);
 		Thread.sleep(1000);
-		
+
 		WebElement parentColumn1 = driver.findElement(By.xpath("(//div[@column=\"0\"])[4]"));
 
 		// Find all child divs with role='gridcell' inside the parent
 		List<WebElement> childCells = parentColumn1.findElements(By.xpath("./div[@role='gridcell']"));
-		
+
 		// Assert that the number of child elements is 2
 		Assert.assertEquals(childCells.size(), 2, "The number of child grid cells inside the parent column is not 2.");
 	}
@@ -1029,7 +1032,7 @@ public class Reservation {
 
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@aria-label='RoomType']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@webix_l_id='DXR']"))).click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-search ExpBkGridIconBtn']"))).click();
 		WebElement doubleClick = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@aria-rowindex='5'])[1]")));
 		actions.doubleClick(doubleClick).perform();
@@ -1056,7 +1059,7 @@ public class Reservation {
 		for (char ch : reserveNoValue.toCharArray()) {
 			typeCharWithRobot(ch);
 		}
-
+		Thread.sleep(1500);
 		WebElement dynamicElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='" + reserveNoValue + "']")));
 		actions.doubleClick(dynamicElement).perform();
 
@@ -1133,7 +1136,7 @@ public class Reservation {
 			for (char ch : lastFiveChars.toCharArray()) {
 				typeCharWithRobot(ch);
 			}
-
+			Thread.sleep(1500);
 			WebElement dynamicElement1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='" + lastFiveChars + "']")));
 			actions.doubleClick(dynamicElement1).perform();
 
@@ -1146,13 +1149,13 @@ public class Reservation {
 			String Actual = bill_amount.getText();
 			System.out.println("Original Bill amount: " + Actual);
 
-					// Remove first character if possible and assign back to Actual
-					if (Actual.length() > 1) {
-					    Actual = Actual.substring(1);
-					    System.out.println("Bill without first character: " + Actual);
-					} else {
-					    System.out.println("Bill value is too short to remove first character: " + Actual);
-					}
+			// Remove first character if possible and assign back to Actual
+			if (Actual.length() > 1) {
+				Actual = Actual.substring(1);
+				System.out.println("Bill without first character: " + Actual);
+			} else {
+				System.out.println("Bill value is too short to remove first character: " + Actual);
+			}
 
 			// Now assert using Actual without first char
 			Assert.assertEquals(Actual, expected, "Amount mismatch between expected and actual bill value!");
@@ -1212,7 +1215,7 @@ public class Reservation {
 		for (char ch : reserveNoValue.toCharArray()) {
 			typeCharWithRobot(ch);
 		}
-
+		Thread.sleep(1500);
 		WebElement dynamicElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='" + reserveNoValue + "']")));
 		actions.doubleClick(dynamicElement).perform();
 
@@ -1357,7 +1360,7 @@ public class Reservation {
 			for (char ch : lastFiveChars.toCharArray()) {
 				typeCharWithRobot(ch);
 			}
-
+			Thread.sleep(1500);
 			WebElement dynamicElement1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='" + lastFiveChars + "']")));
 			actions.doubleClick(dynamicElement1).perform();
 
@@ -1409,30 +1412,30 @@ public class Reservation {
 			// ==============================
 			// Step 3: Extra Charges
 			// ==============================
-			
+
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@aria-rowindex=\"4\"])[2]")));
 			WebElement vatamt =driver.findElement(By.xpath("(//div[@aria-rowindex=\"4\"])[2]"));
 			String vat = vatamt.getText();
 			double actual_vat = Double.parseDouble(vat);
-			
+
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@aria-rowindex=\"5\"])[2]")));
 			WebElement sc =driver.findElement(By.xpath("(//div[@aria-rowindex=\"5\"])[2]"));
 			String ser_charge = sc.getText();
-			
+
 			double actual_ser_charge = Double.parseDouble(ser_charge);
-			
+
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@aria-rowindex=\"6\"])[2]")));
 			WebElement excharge =driver.findElement(By.xpath("(//div[@aria-rowindex=\"6\"])[2]"));
 			String ex_charge = excharge.getText();
-			
+
 			double actual_excharge = Double.parseDouble(ex_charge);
-			
+
 			double total_charge = actual_vat+actual_ser_charge+actual_excharge;
 			double actual_charge = Double.parseDouble(extra_charge);
-			
+
 			System.out.println(total_charge);
 			System.out.println(actual_charge);
-			
+
 			Assert.assertEquals(actual_charge, total_charge, "There is a mismatch in actual and expected charge");
 
 		}
