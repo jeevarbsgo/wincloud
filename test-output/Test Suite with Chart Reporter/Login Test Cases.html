@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Login Test Cases</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>21/5/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>20/6/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Jun 19 17:49:05 IST 2025</td>
+<td>Started on:</td><td>Thu Jun 19 18:10:37 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>576 seconds (576562 ms)</td>
+<tr><td>Total time:</td><td>470 seconds (470084 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,67 +76,16 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='FO.Reservation.test_ledger_transactions_modify_open_mode_TC_RS_12_Advance()'><b>test_ledger_transactions_modify_open_mode_TC_RS_12_Advance</b><br>Test class: FO.Reservation</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //button[text()=&apos;Ledger&apos;] (tried for 20 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50002}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50002/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 0acb488fae9f287df41ec092f8e9254e
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at FO.Reservation.test_ledger_transactions_modify_open_mode_TC_RS_12_Advance(Reservation.java:1063)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace712217251", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace712217251'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //button[text()=&apos;Ledger&apos;] (tried for 20 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50002}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50002/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 0acb488fae9f287df41ec092f8e9254e
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at FO.Reservation.test_ledger_transactions_modify_open_mode_TC_RS_12_Advance(Reservation.java:1063)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:739)
-	at org.testng.TestRunner.run(TestRunner.java:614)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>38</td>
-<td>FO.Reservation@313b2ea6</td></tr>
-<tr>
 <td title='FO.Reservation.test_verify_updated_details_open_mode_TC_RS_03()'><b>test_verify_updated_details_open_mode_TC_RS_03</b><br>Test class: FO.Reservation</td>
 <td><div><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable
   (Session info: chrome=137.0.7151.104)
 Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [0acb488fae9f287df41ec092f8e9254e, sendKeysToElement {id=f.AF2C93AABF9847FE54996401D67AD75B.d.4CF5B9E943BB374C40D3A652948E9783.e.842, value=[Ljava.lang.CharSequence;@378cfecf}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50002}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50002/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (0acb488fae9f287df41ec092f8e9254e)] -&gt; xpath: //label[text()=&apos;Nights&apos;]/following-sibling::input]
-Session ID: 0acb488fae9f287df41ec092f8e9254e
+Command: [c81b139fc71a0621d9dc13e19643e98c, sendKeysToElement {id=f.4587B421B735D798C549AAB4E621F10C.d.FC9B160D1E4482E7B826D80CE701DB4A.e.850, value=[Ljava.lang.CharSequence;@1f6917fb}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51331}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51331/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (c81b139fc71a0621d9dc13e19643e98c)] -&gt; xpath: //label[text()=&apos;Nights&apos;]/following-sibling::input]
+Session ID: c81b139fc71a0621d9dc13e19643e98c
 	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
@@ -148,16 +97,16 @@ Session ID: 0acb488fae9f287df41ec092f8e9254e
 	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
 	at FO.Reservation.test_verify_updated_details_open_mode_TC_RS_03(Reservation.java:358)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1585189917", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1585189917'><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace931987151", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace931987151'><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable
   (Session info: chrome=137.0.7151.104)
 Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [0acb488fae9f287df41ec092f8e9254e, sendKeysToElement {id=f.AF2C93AABF9847FE54996401D67AD75B.d.4CF5B9E943BB374C40D3A652948E9783.e.842, value=[Ljava.lang.CharSequence;@378cfecf}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50002}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50002/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (0acb488fae9f287df41ec092f8e9254e)] -&gt; xpath: //label[text()=&apos;Nights&apos;]/following-sibling::input]
-Session ID: 0acb488fae9f287df41ec092f8e9254e
+Command: [c81b139fc71a0621d9dc13e19643e98c, sendKeysToElement {id=f.4587B421B735D798C549AAB4E621F10C.d.FC9B160D1E4482E7B826D80CE701DB4A.e.850, value=[Ljava.lang.CharSequence;@1f6917fb}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51331}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51331/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (c81b139fc71a0621d9dc13e19643e98c)] -&gt; xpath: //label[text()=&apos;Nights&apos;]/following-sibling::input]
+Session ID: c81b139fc71a0621d9dc13e19643e98c
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -198,53 +147,30 @@ Session ID: 0acb488fae9f287df41ec092f8e9254e
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>18</td>
+<td>20</td>
 <td>FO.Reservation@313b2ea6</td></tr>
 <tr>
-<td title='FO.Reservation.test_ledger_transactions_modify_open_mode_TC_RS_12()'><b>test_ledger_transactions_modify_open_mode_TC_RS_12</b><br>Test class: FO.Reservation</td>
-<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input aria-required=&quot;true&quot; maxlength=&quot;18&quot; id=&quot;1750335887270&quot; type=&quot;text&quot; value=&quot;&quot; style=&quot;width:111px;text-align:right;&quot; oninput=&quot;fnCurFormatDecimalHtmlContFoResAdv(this, event,&apos;L&apos;,&apos;.&apos;,&apos;3&apos;) &quot;&gt; is not clickable at point (175, 297). Other element would receive the click: &lt;div class=&quot;webix_modal&quot; style=&quot;z-index: 100;&quot;&gt;&lt;/div&gt;
-  (Session info: chrome=137.0.7151.104)
+<td title='FO.Reservation.test_verify_cancelled_reservation_visibility_TC_RS_05()'><b>test_verify_cancelled_reservation_visibility_TC_RS_05</b><br>Test class: FO.Reservation</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //span[@class=&apos; fa fa-times&apos;] (tried for 20 second(s) with 500 milliseconds interval)
 Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [0acb488fae9f287df41ec092f8e9254e, clickElement {id=f.07A9DF0BD0002ECFDE14429F4BA2FCD6.d.E37AE0C1381DAFCB967497FAAAD16CC0.e.3380}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50002}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50002/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (0acb488fae9f287df41ec092f8e9254e)] -&gt; xpath: //label[text()=&apos;Amount&apos;]/following-sibling::input[@type=&apos;text&apos;]]
-Session ID: 0acb488fae9f287df41ec092f8e9254e
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at FO.Reservation.test_ledger_transactions_modify_open_mode_TC_RS_12(Reservation.java:1275)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51331}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51331/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c81b139fc71a0621d9dc13e19643e98c
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at FO.Reservation.test_verify_cancelled_reservation_visibility_TC_RS_05(Reservation.java:570)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2040329005", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2040329005'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input aria-required=&quot;true&quot; maxlength=&quot;18&quot; id=&quot;1750335887270&quot; type=&quot;text&quot; value=&quot;&quot; style=&quot;width:111px;text-align:right;&quot; oninput=&quot;fnCurFormatDecimalHtmlContFoResAdv(this, event,&apos;L&apos;,&apos;.&apos;,&apos;3&apos;) &quot;&gt; is not clickable at point (175, 297). Other element would receive the click: &lt;div class=&quot;webix_modal&quot; style=&quot;z-index: 100;&quot;&gt;&lt;/div&gt;
-  (Session info: chrome=137.0.7151.104)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1560244891", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1560244891'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //span[@class=&apos; fa fa-times&apos;] (tried for 20 second(s) with 500 milliseconds interval)
 Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [0acb488fae9f287df41ec092f8e9254e, clickElement {id=f.07A9DF0BD0002ECFDE14429F4BA2FCD6.d.E37AE0C1381DAFCB967497FAAAD16CC0.e.3380}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50002}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50002/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (0acb488fae9f287df41ec092f8e9254e)] -&gt; xpath: //label[text()=&apos;Amount&apos;]/following-sibling::input[@type=&apos;text&apos;]]
-Session ID: 0acb488fae9f287df41ec092f8e9254e
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at FO.Reservation.test_ledger_transactions_modify_open_mode_TC_RS_12(Reservation.java:1275)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51331}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51331/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c81b139fc71a0621d9dc13e19643e98c
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at FO.Reservation.test_verify_cancelled_reservation_visibility_TC_RS_05(Reservation.java:570)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -281,10 +207,10 @@ Session ID: 0acb488fae9f287df41ec092f8e9254e
 Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [0acb488fae9f287df41ec092f8e9254e, sendKeysToElement {id=f.AF2C93AABF9847FE54996401D67AD75B.d.2F16E70E36473079C9EA1F82A37F3B6D.e.570, value=[Ljava.lang.CharSequence;@470a659f}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50002}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50002/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (0acb488fae9f287df41ec092f8e9254e)] -&gt; xpath: //label[text()=&apos;Nights&apos;]/following-sibling::input]
-Session ID: 0acb488fae9f287df41ec092f8e9254e
+Command: [c81b139fc71a0621d9dc13e19643e98c, sendKeysToElement {id=f.4587B421B735D798C549AAB4E621F10C.d.3E9FFC647B0AEA33CEFD8FDFA7C6078A.e.575, value=[Ljava.lang.CharSequence;@3b2f4a93}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51331}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51331/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (c81b139fc71a0621d9dc13e19643e98c)] -&gt; xpath: //label[text()=&apos;Nights&apos;]/following-sibling::input]
+Session ID: c81b139fc71a0621d9dc13e19643e98c
 	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
@@ -296,16 +222,16 @@ Session ID: 0acb488fae9f287df41ec092f8e9254e
 	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
 	at FO.Reservation.test_open_and_amend_saved_reservation_TC_RS_02(Reservation.java:218)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1664757401", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1664757401'><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1431099210", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1431099210'><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable
   (Session info: chrome=137.0.7151.104)
 Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [0acb488fae9f287df41ec092f8e9254e, sendKeysToElement {id=f.AF2C93AABF9847FE54996401D67AD75B.d.2F16E70E36473079C9EA1F82A37F3B6D.e.570, value=[Ljava.lang.CharSequence;@470a659f}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50002}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50002/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (0acb488fae9f287df41ec092f8e9254e)] -&gt; xpath: //label[text()=&apos;Nights&apos;]/following-sibling::input]
-Session ID: 0acb488fae9f287df41ec092f8e9254e
+Command: [c81b139fc71a0621d9dc13e19643e98c, sendKeysToElement {id=f.4587B421B735D798C549AAB4E621F10C.d.3E9FFC647B0AEA33CEFD8FDFA7C6078A.e.575, value=[Ljava.lang.CharSequence;@3b2f4a93}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51331}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51331/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (c81b139fc71a0621d9dc13e19643e98c)] -&gt; xpath: //label[text()=&apos;Nights&apos;]/following-sibling::input]
+Session ID: c81b139fc71a0621d9dc13e19643e98c
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -346,7 +272,7 @@ Session ID: 0acb488fae9f287df41ec092f8e9254e
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>18</td>
+<td>20</td>
 <td>FO.Reservation@313b2ea6</td></tr>
 <tr>
 <td title='FO.Reservation.test_cancel_reservation_with_reason_TC_RS_04()'><b>test_cancel_reservation_with_reason_TC_RS_04</b><br>Test class: FO.Reservation</td>
@@ -354,19 +280,19 @@ Session ID: 0acb488fae9f287df41ec092f8e9254e
 Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50002}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50002/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 0acb488fae9f287df41ec092f8e9254e
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51331}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51331/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c81b139fc71a0621d9dc13e19643e98c
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at FO.Reservation.test_cancel_reservation_with_reason_TC_RS_04(Reservation.java:487)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1576416089", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1576416089'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //span[@class=&apos; fa fa-times&apos;] (tried for 20 second(s) with 500 milliseconds interval)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace296954388", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace296954388'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //span[@class=&apos; fa fa-times&apos;] (tried for 20 second(s) with 500 milliseconds interval)
 Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50002}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50002/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 0acb488fae9f287df41ec092f8e9254e
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51331}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51331/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c81b139fc71a0621d9dc13e19643e98c
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at FO.Reservation.test_cancel_reservation_with_reason_TC_RS_04(Reservation.java:487)
@@ -397,7 +323,155 @@ Session ID: 0acb488fae9f287df41ec092f8e9254e
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>36</td>
+<td>43</td>
+<td>FO.Reservation@313b2ea6</td></tr>
+<tr>
+<td title='FO.Reservation.test_ledger_transactions_modify_open_mode_TC_RS_12_Advance()'><b>test_ledger_transactions_modify_open_mode_TC_RS_12_Advance</b><br>Test class: FO.Reservation</td>
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;button type=&quot;button&quot; class=&quot;webix_button&quot;&gt;...&lt;/button&gt; is not clickable at point (300, 514). Other element would receive the click: &lt;div class=&quot;webix_ss_center_scroll&quot; role=&quot;rowgroup&quot; style=&quot;width: 1009px; height: 405px;&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=137.0.7151.104)
+Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c81b139fc71a0621d9dc13e19643e98c, clickElement {id=f.4587B421B735D798C549AAB4E621F10C.d.1EBB60322D810A1B9F9E5984A7426DD7.e.3712}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51331}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51331/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (c81b139fc71a0621d9dc13e19643e98c)] -&gt; xpath: //button[text()=&quot;Bill Details&quot;]]
+Session ID: c81b139fc71a0621d9dc13e19643e98c
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at FO.Reservation.test_ledger_transactions_modify_open_mode_TC_RS_12_Advance(Reservation.java:1141)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace37292467", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace37292467'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;button type=&quot;button&quot; class=&quot;webix_button&quot;&gt;...&lt;/button&gt; is not clickable at point (300, 514). Other element would receive the click: &lt;div class=&quot;webix_ss_center_scroll&quot; role=&quot;rowgroup&quot; style=&quot;width: 1009px; height: 405px;&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=137.0.7151.104)
+Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c81b139fc71a0621d9dc13e19643e98c, clickElement {id=f.4587B421B735D798C549AAB4E621F10C.d.1EBB60322D810A1B9F9E5984A7426DD7.e.3712}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51331}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51331/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (c81b139fc71a0621d9dc13e19643e98c)] -&gt; xpath: //button[text()=&quot;Bill Details&quot;]]
+Session ID: c81b139fc71a0621d9dc13e19643e98c
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at FO.Reservation.test_ledger_transactions_modify_open_mode_TC_RS_12_Advance(Reservation.java:1141)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>34</td>
+<td>FO.Reservation@313b2ea6</td></tr>
+<tr>
+<td title='FO.Reservation.test_ledger_transactions_modify_open_mode_TC_RS_12()'><b>test_ledger_transactions_modify_open_mode_TC_RS_12</b><br>Test class: FO.Reservation</td>
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span style=&quot;right:2px;height:22px;padding-top:2px;&quot; class=&quot;webix_input_icon wxi-search&quot;&gt;&lt;/span&gt; is not clickable at point (364, 132). Other element would receive the click: &lt;div class=&quot;webix_modal&quot; style=&quot;z-index: 100;&quot;&gt;&lt;/div&gt;
+  (Session info: chrome=137.0.7151.104)
+Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c81b139fc71a0621d9dc13e19643e98c, clickElement {id=f.F788F364721EC87298D251194490D952.d.58228A813944B82D4E90AF071FCFEDD7.e.3276}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51331}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51331/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (c81b139fc71a0621d9dc13e19643e98c)] -&gt; xpath: /html/body/div[3]/div/div/div[2]/div/div/div/div/div/div/div[1]/div[1]/div[2]/div/div[2]/div/div[1]/div/span]
+Session ID: c81b139fc71a0621d9dc13e19643e98c
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at FO.Reservation.test_ledger_transactions_modify_open_mode_TC_RS_12(Reservation.java:1306)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace463716413", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace463716413'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span style=&quot;right:2px;height:22px;padding-top:2px;&quot; class=&quot;webix_input_icon wxi-search&quot;&gt;&lt;/span&gt; is not clickable at point (364, 132). Other element would receive the click: &lt;div class=&quot;webix_modal&quot; style=&quot;z-index: 100;&quot;&gt;&lt;/div&gt;
+  (Session info: chrome=137.0.7151.104)
+Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c81b139fc71a0621d9dc13e19643e98c, clickElement {id=f.F788F364721EC87298D251194490D952.d.58228A813944B82D4E90AF071FCFEDD7.e.3276}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.104, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51331}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51331/devtoo..., se:cdpVersion: 137.0.7151.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (c81b139fc71a0621d9dc13e19643e98c)] -&gt; xpath: /html/body/div[3]/div/div/div[2]/div/div/div/div/div/div/div[1]/div[1]/div[2]/div/div[2]/div/div[1]/div/span]
+Session ID: c81b139fc71a0621d9dc13e19643e98c
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at FO.Reservation.test_ledger_transactions_modify_open_mode_TC_RS_12(Reservation.java:1306)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>38</td>
 <td>FO.Reservation@313b2ea6</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
@@ -409,39 +483,24 @@ Session ID: 0acb488fae9f287df41ec092f8e9254e
 <td><b>Instance</b></td>
 </tr>
 <tr>
+<td title='FO.Reservation.Test_Registration_page()'><b>Test_Registration_page</b><br>Test class: FO.Reservation</td>
+<td></td>
+<td>5</td>
+<td>FO.Reservation@313b2ea6</td></tr>
+<tr>
 <td title='FO.Reservation.test_reinstate_cancelled_reservation_TC_RS_08()'><b>test_reinstate_cancelled_reservation_TC_RS_08</b><br>Test class: FO.Reservation</td>
 <td></td>
-<td>71</td>
+<td>58</td>
 <td>FO.Reservation@313b2ea6</td></tr>
-<tr>
-<td title='FO.Reservation_checkIN.test_perform_checkin_on_matching_dates_TC_CI_02()'><b>test_perform_checkin_on_matching_dates_TC_CI_02</b><br>Test class: FO.Reservation_checkIN</td>
-<td></td>
-<td>27</td>
-<td>FO.Reservation_checkIN@2f465398</td></tr>
-<tr>
-<td title='FO.Reservation.test_create_reservation_new_mode_mandatory_fields_TC_RS_01()'><b>test_create_reservation_new_mode_mandatory_fields_TC_RS_01</b><br>Test class: FO.Reservation</td>
-<td></td>
-<td>8</td>
-<td>FO.Reservation@313b2ea6</td></tr>
-<tr>
-<td title='FO.Reservation.test_create_addon_reservation_from_existing_TC_RS_06()'><b>test_create_addon_reservation_from_existing_TC_RS_06</b><br>Test class: FO.Reservation</td>
-<td></td>
-<td>12</td>
-<td>FO.Reservation@313b2ea6</td></tr>
-<tr>
-<td title='FO.Reservation_checkIN.test_create_walkin_reservation_and_checkin_TC_WI_01()'><b>test_create_walkin_reservation_and_checkin_TC_WI_01</b><br>Test class: FO.Reservation_checkIN</td>
-<td></td>
-<td>15</td>
-<td>FO.Reservation_checkIN@2f465398</td></tr>
 <tr>
 <td title='FO.Reservation_checkIN.test_verify_registration_card_and_email_after_checkin_TC_CI_04()'><b>test_verify_registration_card_and_email_after_checkin_TC_CI_04</b><br>Test class: FO.Reservation_checkIN</td>
 <td></td>
-<td>32</td>
+<td>20</td>
 <td>FO.Reservation_checkIN@2f465398</td></tr>
 <tr>
-<td title='FO.Reservation_checkIN.test_checkin_allowed_on_matching_arrival_and_account_date_TC_CI_01()'><b>test_checkin_allowed_on_matching_arrival_and_account_date_TC_CI_01</b><br>Test class: FO.Reservation_checkIN</td>
+<td title='FO.Reservation_checkIN.test_perform_checkin_on_matching_dates_TC_CI_02()'><b>test_perform_checkin_on_matching_dates_TC_CI_02</b><br>Test class: FO.Reservation_checkIN</td>
 <td></td>
-<td>44</td>
+<td>18</td>
 <td>FO.Reservation_checkIN@2f465398</td></tr>
 <tr>
 <td title='FO.Login.testnegativepassword()'><b>testnegativepassword</b><br>Test class: FO.Login</td>
@@ -449,12 +508,17 @@ Session ID: 0acb488fae9f287df41ec092f8e9254e
 <td>2</td>
 <td>FO.Login@7a675056</td></tr>
 <tr>
-<td title='FO.Reservation.Test_Registration_page()'><b>Test_Registration_page</b><br>Test class: FO.Reservation</td>
+<td title='FO.Reservation_checkIN.test_print_registration_card_with_filters_TC_RC_01()'><b>test_print_registration_card_with_filters_TC_RC_01</b><br>Test class: FO.Reservation_checkIN</td>
 <td></td>
-<td>4</td>
+<td>26</td>
+<td>FO.Reservation_checkIN@2f465398</td></tr>
+<tr>
+<td title='FO.Reservation.test_addon_reservation_after_account_date_TC_RS_10()'><b>test_addon_reservation_after_account_date_TC_RS_10</b><br>Test class: FO.Reservation</td>
+<td></td>
+<td>21</td>
 <td>FO.Reservation@313b2ea6</td></tr>
 <tr>
-<td title='FO.Login.testnegativelogin()'><b>testnegativelogin</b><br>Test class: FO.Login</td>
+<td title='FO.Login.testloginpage()'><b>testloginpage</b><br>Test class: FO.Login</td>
 <td></td>
 <td>0</td>
 <td>FO.Login@7a675056</td></tr>
@@ -464,55 +528,60 @@ Session ID: 0acb488fae9f287df41ec092f8e9254e
 <td>0</td>
 <td>FO.Login@7a675056</td></tr>
 <tr>
-<td title='FO.Reservation.test_verify_cancelled_reservation_visibility_TC_RS_05()'><b>test_verify_cancelled_reservation_visibility_TC_RS_05</b><br>Test class: FO.Reservation</td>
+<td title='FO.Reservation.test_verify_reservation_view_mode_TC_RS_11()'><b>test_verify_reservation_view_mode_TC_RS_11</b><br>Test class: FO.Reservation</td>
 <td></td>
-<td>48</td>
+<td>16</td>
 <td>FO.Reservation@313b2ea6</td></tr>
 <tr>
-<td title='FO.Reservation_checkIN.test_print_registration_card_with_filters_TC_RC_01()'><b>test_print_registration_card_with_filters_TC_RC_01</b><br>Test class: FO.Reservation_checkIN</td>
+<td title='FO.Reservation.test_create_addon_reservation_from_existing_TC_RS_06()'><b>test_create_addon_reservation_from_existing_TC_RS_06</b><br>Test class: FO.Reservation</td>
 <td></td>
-<td>60</td>
-<td>FO.Reservation_checkIN@2f465398</td></tr>
-<tr>
-<td title='FO.Reservation.test_addon_reservation_after_account_date_TC_RS_10()'><b>test_addon_reservation_after_account_date_TC_RS_10</b><br>Test class: FO.Reservation</td>
-<td></td>
-<td>28</td>
-<td>FO.Reservation@313b2ea6</td></tr>
-<tr>
-<td title='FO.Reservation.test_split_reservation_multiple_rooms_TC_RS_07()'><b>test_split_reservation_multiple_rooms_TC_RS_07</b><br>Test class: FO.Reservation</td>
-<td></td>
-<td>17</td>
-<td>FO.Reservation@313b2ea6</td></tr>
-<tr>
-<td title='FO.Reservation.Test_Sucessfull_Login()'><b>Test_Sucessfull_Login</b><br>Test class: FO.Reservation</td>
-<td></td>
-<td>5</td>
+<td>9</td>
 <td>FO.Reservation@313b2ea6</td></tr>
 <tr>
 <td title='FO.Reservation_checkIN.Test_Sucessfull_Login()'><b>Test_Sucessfull_Login</b><br>Test class: FO.Reservation_checkIN</td>
 <td></td>
-<td>7</td>
+<td>3</td>
 <td>FO.Reservation_checkIN@2f465398</td></tr>
 <tr>
-<td title='FO.Reservation.test_verify_reservation_view_mode_TC_RS_11()'><b>test_verify_reservation_view_mode_TC_RS_11</b><br>Test class: FO.Reservation</td>
-<td></td>
-<td>25</td>
-<td>FO.Reservation@313b2ea6</td></tr>
-<tr>
-<td title='FO.Login.testnegativeuserid()'><b>testnegativeuserid</b><br>Test class: FO.Login</td>
+<td title='FO.Login.testnegativelogin()'><b>testnegativelogin</b><br>Test class: FO.Login</td>
 <td></td>
 <td>0</td>
 <td>FO.Login@7a675056</td></tr>
+<tr>
+<td title='FO.Reservation_checkIN.test_checkin_allowed_on_matching_arrival_and_account_date_TC_CI_01()'><b>test_checkin_allowed_on_matching_arrival_and_account_date_TC_CI_01</b><br>Test class: FO.Reservation_checkIN</td>
+<td></td>
+<td>33</td>
+<td>FO.Reservation_checkIN@2f465398</td></tr>
+<tr>
+<td title='FO.Reservation.test_create_reservation_new_mode_mandatory_fields_TC_RS_01()'><b>test_create_reservation_new_mode_mandatory_fields_TC_RS_01</b><br>Test class: FO.Reservation</td>
+<td></td>
+<td>12</td>
+<td>FO.Reservation@313b2ea6</td></tr>
+<tr>
+<td title='FO.Reservation.test_split_reservation_multiple_rooms_TC_RS_07()'><b>test_split_reservation_multiple_rooms_TC_RS_07</b><br>Test class: FO.Reservation</td>
+<td></td>
+<td>10</td>
+<td>FO.Reservation@313b2ea6</td></tr>
 <tr>
 <td title='FO.Login.testpositivepassword()'><b>testpositivepassword</b><br>Test class: FO.Login</td>
 <td></td>
 <td>0</td>
 <td>FO.Login@7a675056</td></tr>
 <tr>
-<td title='FO.Login.testloginpage()'><b>testloginpage</b><br>Test class: FO.Login</td>
+<td title='FO.Login.testnegativeuserid()'><b>testnegativeuserid</b><br>Test class: FO.Login</td>
 <td></td>
 <td>0</td>
 <td>FO.Login@7a675056</td></tr>
+<tr>
+<td title='FO.Reservation_checkIN.test_create_walkin_reservation_and_checkin_TC_WI_01()'><b>test_create_walkin_reservation_and_checkin_TC_WI_01</b><br>Test class: FO.Reservation_checkIN</td>
+<td></td>
+<td>9</td>
+<td>FO.Reservation_checkIN@2f465398</td></tr>
+<tr>
+<td title='FO.Reservation.Test_Sucessfull_Login()'><b>Test_Sucessfull_Login</b><br>Test class: FO.Reservation</td>
+<td></td>
+<td>9</td>
+<td>FO.Reservation@313b2ea6</td></tr>
 </table><p>
 </body>
 </html>

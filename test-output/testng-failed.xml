@@ -16,6 +16,7 @@
           <include name="test_cancel_reservation_with_reason_TC_RS_04"/>
           <include name="test_verify_updated_details_open_mode_TC_RS_03"/>
           <include name="test_ledger_transactions_modify_open_mode_TC_RS_12_Advance"/>
+          <include name="test_verify_cancelled_reservation_visibility_TC_RS_05"/>
           <include name="test_open_and_amend_saved_reservation_TC_RS_02"/>
           <include name="test_ledger_transactions_modify_open_mode_TC_RS_12"/>
         </methods>
