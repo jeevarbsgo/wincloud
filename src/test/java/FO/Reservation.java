@@ -1441,31 +1441,6 @@ public class Reservation {
 		}
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	@AfterClass
 	public void tearDown() {
 		if (driver != null) {

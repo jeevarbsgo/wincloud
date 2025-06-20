@@ -1,14 +1,22 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>TestNG Bar Chart Report</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .chart-container { display: flex; justify-content: center; margin-top: 20px; }
+        #barChart { width: 300px !important; height: 200px !important; }
+    </style>
 </head>
 <body>
     <h1>Test Summary</h1>
-    <p>Passed: 24</p>
-    <p>Failed: 2</p>
+    <p>Passed: 6</p>
+    <p>Failed: 0</p>
     <p>Skipped: 0</p>
-    <canvas id="barChart" width="400" height="200"></canvas>
+    <div class="chart-container">
+        <canvas id="barChart"></canvas>
+    </div>
     <script>
         const ctx = document.getElementById('barChart').getContext('2d');
         new Chart(ctx, {
@@ -17,15 +25,30 @@
                 labels: ['Passed', 'Failed', 'Skipped'],
                 datasets: [{
                     label: 'Test Results',
-                    data: [24, 2, 0],
-                    backgroundColor: ['green', 'red', 'orange']
+                    data: [6, 0, 0],
+                    backgroundColor: ['green', 'red', 'orange'],
+                    maxBarThickness: 40
                 }]
             },
             options: {
+                responsive: false,
+                plugins: {
+                    legend: { display: false },
+                    title: {
+                        display: true,
+                        text: 'TestNG Bar Chart Summary',
+                        font: { size: 16 }
+                    }
+                },
                 scales: {
                     y: {
                         beginAtZero: true,
-                        precision: 0
+                        precision: 0,
+                        ticks: { stepSize: 1 },
+                        title: { display: true, text: 'Tests Count' }
+                    },
+                    x: {
+                        title: { display: true, text: 'Status' }
                     }
                 }
             }

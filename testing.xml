@@ -14,6 +14,7 @@
             <class name="FO.Login"/>
              <class name="FO.Reservation"/>
             <class name="FO.Reservation_checkIN"/>
+            <class name="FO.Advance_distribution"/>
         </classes>
     </test>
 </suite>

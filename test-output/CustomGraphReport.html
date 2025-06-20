@@ -1,1 +1,43 @@
-<html><head><title>TestNG Report with Chart</title></head><body><h1>Test Summary</h1><p>Passed: 24</p><p>Failed: 2</p><p>Skipped: 0</p><canvas id='myChart' width='400' height='400'></canvas><script src='https://cdn.jsdelivr.net/npm/chart.js'></script><script>const ctx = document.getElementById('myChart').getContext('2d');new Chart(ctx, {type: 'pie', data: {labels: ['Passed', 'Failed', 'Skipped'],datasets: [{ data: [24,2,0],backgroundColor: ['green', 'red', 'orange'] }]}});</script></body></html>
+<!DOCTYPE html>
+<html>
+<head>
+<title>TestNG Report with Chart</title>
+<script src='https://cdn.jsdelivr.net/npm/chart.js'></script>
+<style>
+  body { font-family: Arial, sans-serif; text-align: center; }
+  .chart-container { display: flex; justify-content: center; margin-top: 20px; }
+  #myChart { width: 250px !important; height: 250px !important; }
+</style>
+</head>
+<body>
+<h1>Test Summary</h1>
+<p>Passed: 6</p>
+<p>Failed: 0</p>
+<p>Skipped: 0</p>
+<div class='chart-container'>
+<canvas id='myChart'></canvas>
+</div>
+<script>
+  const ctx = document.getElementById('myChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ['Passed', 'Failed', 'Skipped'],
+      datasets: [{
+        data: [6, 0, 0],
+        backgroundColor: ['green', 'red', 'orange']
+      }]
+    },
+    options: {
+      plugins: {
+        title: {
+          display: true,
+          text: 'Test Results Distribution',
+          font: { size: 16 }
+        }
+      }
+    }
+  });
+</script>
+</body>
+</html>

@@ -3,6 +3,9 @@ package FO;
 import org.testng.IReporter;
 import org.testng.ISuite;
 import org.testng.xml.XmlSuite;
+import org.testng.ISuiteResult;
+import org.testng.ITestContext;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
@@ -14,35 +17,59 @@ public class CustomGraphReporter implements IReporter {
         int passed = 0, failed = 0, skipped = 0;
 
         for (ISuite suite : suites) {
-            Map<String, org.testng.ISuiteResult> suiteResults = suite.getResults();
-            for (org.testng.ISuiteResult result : suiteResults.values()) {
-                passed += result.getTestContext().getPassedTests().size();
-                failed += result.getTestContext().getFailedTests().size();
-                skipped += result.getTestContext().getSkippedTests().size();
+            Map<String, ISuiteResult> suiteResults = suite.getResults();
+            for (ISuiteResult result : suiteResults.values()) {
+                ITestContext context = result.getTestContext();
+                passed += context.getPassedTests().size();
+                failed += context.getFailedTests().size();
+                skipped += context.getSkippedTests().size();
             }
         }
 
-        // Write HTML report with embedded chart
         try (FileWriter writer = new FileWriter(outputDirectory + "/CustomGraphReport.html")) {
-            writer.write("<html><head><title>TestNG Report with Chart</title></head><body>");
-            writer.write("<h1>Test Summary</h1>");
-            writer.write("<p>Passed: " + passed + "</p>");
-            writer.write("<p>Failed: " + failed + "</p>");
-            writer.write("<p>Skipped: " + skipped + "</p>");
+            writer.write("<!DOCTYPE html>\n<html>\n<head>\n");
+            writer.write("<title>TestNG Report with Chart</title>\n");
+            writer.write("<script src='https://cdn.jsdelivr.net/npm/chart.js'></script>\n");
+            writer.write("<style>\n");
+            writer.write("  body { font-family: Arial, sans-serif; text-align: center; }\n");
+            writer.write("  .chart-container { display: flex; justify-content: center; margin-top: 20px; }\n");
+            writer.write("  #myChart { width: 250px !important; height: 250px !important; }\n");
+            writer.write("</style>\n");
+            writer.write("</head>\n<body>\n");
 
-            // Chart.js Pie Chart
-            writer.write("<canvas id='myChart' width='400' height='400'></canvas>");
-            writer.write("<script src='https://cdn.jsdelivr.net/npm/chart.js'></script>");
-            writer.write("<script>");
-            writer.write("const ctx = document.getElementById('myChart').getContext('2d');");
-            writer.write("new Chart(ctx, {type: 'pie', data: {");
-            writer.write("labels: ['Passed', 'Failed', 'Skipped'],");
-            writer.write("datasets: [{ data: [" + passed + "," + failed + "," + skipped + "],");
-            writer.write("backgroundColor: ['green', 'red', 'orange'] }]");
-            writer.write("}});");
-            writer.write("</script>");
+            writer.write("<h1>Test Summary</h1>\n");
+            writer.write("<p>Passed: " + passed + "</p>\n");
+            writer.write("<p>Failed: " + failed + "</p>\n");
+            writer.write("<p>Skipped: " + skipped + "</p>\n");
 
-            writer.write("</body></html>");
+            writer.write("<div class='chart-container'>\n");
+            writer.write("<canvas id='myChart'></canvas>\n");
+            writer.write("</div>\n");
+
+            writer.write("<script>\n");
+            writer.write("  const ctx = document.getElementById('myChart').getContext('2d');\n");
+            writer.write("  new Chart(ctx, {\n");
+            writer.write("    type: 'pie',\n");
+            writer.write("    data: {\n");
+            writer.write("      labels: ['Passed', 'Failed', 'Skipped'],\n");
+            writer.write("      datasets: [{\n");
+            writer.write("        data: [" + passed + ", " + failed + ", " + skipped + "],\n");
+            writer.write("        backgroundColor: ['green', 'red', 'orange']\n");
+            writer.write("      }]\n");
+            writer.write("    },\n");
+            writer.write("    options: {\n");
+            writer.write("      plugins: {\n");
+            writer.write("        title: {\n");
+            writer.write("          display: true,\n");
+            writer.write("          text: 'Test Results Distribution',\n");
+            writer.write("          font: { size: 16 }\n");
+            writer.write("        }\n");
+            writer.write("      }\n");
+            writer.write("    }\n");
+            writer.write("  });\n");
+            writer.write("</script>\n");
+
+            writer.write("</body>\n</html>");
         } catch (IOException e) {
             e.printStackTrace();
         }
