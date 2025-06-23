@@ -7,6 +7,9 @@ import java.awt.event.KeyEvent;
 import java.text.DecimalFormat;
 import java.time.Duration;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -55,82 +58,82 @@ public class testclass {
 
 	// ✅ Common Robot typing method
 	public void typeCharWithRobot(char ch) throws AWTException {
-	    Robot robot = new Robot();
-	    int keyCode = getKeyCode(ch);
+		Robot robot = new Robot();
+		int keyCode = getKeyCode(ch);
 
-	    if (keyCode == -1) {
-	        throw new IllegalArgumentException("Cannot type character: " + ch);
-	    }
+		if (keyCode == -1) {
+			throw new IllegalArgumentException("Cannot type character: " + ch);
+		}
 
-	    boolean shiftNeeded = isShiftRequired(ch);
+		boolean shiftNeeded = isShiftRequired(ch);
 
-	    if (shiftNeeded) robot.keyPress(KeyEvent.VK_SHIFT);
-	    robot.keyPress(keyCode);
-	    robot.keyRelease(keyCode);
-	    if (shiftNeeded) robot.keyRelease(KeyEvent.VK_SHIFT);
+		if (shiftNeeded) robot.keyPress(KeyEvent.VK_SHIFT);
+		robot.keyPress(keyCode);
+		robot.keyRelease(keyCode);
+		if (shiftNeeded) robot.keyRelease(KeyEvent.VK_SHIFT);
 
-	    robot.delay(100); // avoid fast input issues
+		robot.delay(100); // avoid fast input issues
 	}
 
 	// Custom mapping for special characters
 	private int getKeyCode(char ch) {
-	    switch (ch) {
-	        case 'a': case 'A': return KeyEvent.VK_A;
-	        case 'b': case 'B': return KeyEvent.VK_B;
-	        case 'c': case 'C': return KeyEvent.VK_C;
-	        case 'd': case 'D': return KeyEvent.VK_D;
-	        case 'e': case 'E': return KeyEvent.VK_E;
-	        case 'f': case 'F': return KeyEvent.VK_F;
-	        case 'g': case 'G': return KeyEvent.VK_G;
-	        case 'h': case 'H': return KeyEvent.VK_H;
-	        case 'i': case 'I': return KeyEvent.VK_I;
-	        case 'j': case 'J': return KeyEvent.VK_J;
-	        case 'k': case 'K': return KeyEvent.VK_K;
-	        case 'l': case 'L': return KeyEvent.VK_L;
-	        case 'm': case 'M': return KeyEvent.VK_M;
-	        case 'n': case 'N': return KeyEvent.VK_N;
-	        case 'o': case 'O': return KeyEvent.VK_O;
-	        case 'p': case 'P': return KeyEvent.VK_P;
-	        case 'q': case 'Q': return KeyEvent.VK_Q;
-	        case 'r': case 'R': return KeyEvent.VK_R;
-	        case 's': case 'S': return KeyEvent.VK_S;
-	        case 't': case 'T': return KeyEvent.VK_T;
-	        case 'u': case 'U': return KeyEvent.VK_U;
-	        case 'v': case 'V': return KeyEvent.VK_V;
-	        case 'w': case 'W': return KeyEvent.VK_W;
-	        case 'x': case 'X': return KeyEvent.VK_X;
-	        case 'y': case 'Y': return KeyEvent.VK_Y;
-	        case 'z': case 'Z': return KeyEvent.VK_Z;
-	        case '0': return KeyEvent.VK_0;
-	        case '1': return KeyEvent.VK_1;
-	        case '2': return KeyEvent.VK_2;
-	        case '3': return KeyEvent.VK_3;
-	        case '4': return KeyEvent.VK_4;
-	        case '5': return KeyEvent.VK_5;
-	        case '6': return KeyEvent.VK_6;
-	        case '7': return KeyEvent.VK_7;
-	        case '8': return KeyEvent.VK_8;
-	        case '9': return KeyEvent.VK_9;
-	        case ' ': return KeyEvent.VK_SPACE;
-	        case '&': return KeyEvent.VK_7;
-	        case '@': return KeyEvent.VK_2;
-	        case '.': return KeyEvent.VK_PERIOD;
-	        case ',': return KeyEvent.VK_COMMA;
-	        case '-': return KeyEvent.VK_MINUS;
-	        case '_': return KeyEvent.VK_MINUS;
-	        case '/': return KeyEvent.VK_SLASH;
-	        case ':': return KeyEvent.VK_SEMICOLON;
-	        case '\'': return KeyEvent.VK_QUOTE;
-	        case '"': return KeyEvent.VK_QUOTE;
-	        case '(': return KeyEvent.VK_9;
-	        case ')': return KeyEvent.VK_0;
-	        default: return -1; // unsupported character
-	    }
+		switch (ch) {
+		case 'a': case 'A': return KeyEvent.VK_A;
+		case 'b': case 'B': return KeyEvent.VK_B;
+		case 'c': case 'C': return KeyEvent.VK_C;
+		case 'd': case 'D': return KeyEvent.VK_D;
+		case 'e': case 'E': return KeyEvent.VK_E;
+		case 'f': case 'F': return KeyEvent.VK_F;
+		case 'g': case 'G': return KeyEvent.VK_G;
+		case 'h': case 'H': return KeyEvent.VK_H;
+		case 'i': case 'I': return KeyEvent.VK_I;
+		case 'j': case 'J': return KeyEvent.VK_J;
+		case 'k': case 'K': return KeyEvent.VK_K;
+		case 'l': case 'L': return KeyEvent.VK_L;
+		case 'm': case 'M': return KeyEvent.VK_M;
+		case 'n': case 'N': return KeyEvent.VK_N;
+		case 'o': case 'O': return KeyEvent.VK_O;
+		case 'p': case 'P': return KeyEvent.VK_P;
+		case 'q': case 'Q': return KeyEvent.VK_Q;
+		case 'r': case 'R': return KeyEvent.VK_R;
+		case 's': case 'S': return KeyEvent.VK_S;
+		case 't': case 'T': return KeyEvent.VK_T;
+		case 'u': case 'U': return KeyEvent.VK_U;
+		case 'v': case 'V': return KeyEvent.VK_V;
+		case 'w': case 'W': return KeyEvent.VK_W;
+		case 'x': case 'X': return KeyEvent.VK_X;
+		case 'y': case 'Y': return KeyEvent.VK_Y;
+		case 'z': case 'Z': return KeyEvent.VK_Z;
+		case '0': return KeyEvent.VK_0;
+		case '1': return KeyEvent.VK_1;
+		case '2': return KeyEvent.VK_2;
+		case '3': return KeyEvent.VK_3;
+		case '4': return KeyEvent.VK_4;
+		case '5': return KeyEvent.VK_5;
+		case '6': return KeyEvent.VK_6;
+		case '7': return KeyEvent.VK_7;
+		case '8': return KeyEvent.VK_8;
+		case '9': return KeyEvent.VK_9;
+		case ' ': return KeyEvent.VK_SPACE;
+		case '&': return KeyEvent.VK_7;
+		case '@': return KeyEvent.VK_2;
+		case '.': return KeyEvent.VK_PERIOD;
+		case ',': return KeyEvent.VK_COMMA;
+		case '-': return KeyEvent.VK_MINUS;
+		case '_': return KeyEvent.VK_MINUS;
+		case '/': return KeyEvent.VK_SLASH;
+		case ':': return KeyEvent.VK_SEMICOLON;
+		case '\'': return KeyEvent.VK_QUOTE;
+		case '"': return KeyEvent.VK_QUOTE;
+		case '(': return KeyEvent.VK_9;
+		case ')': return KeyEvent.VK_0;
+		default: return -1; // unsupported character
+		}
 	}
 
 	// Determine if SHIFT key is needed
 	private boolean isShiftRequired(char ch) {
-	    return Character.isUpperCase(ch) || "~!@#$%^&*()_+{}|:\"<>?".indexOf(ch) >= 0;
+		return Character.isUpperCase(ch) || "~!@#$%^&*()_+{}|:\"<>?".indexOf(ch) >= 0;
 	}
 
 	@Test(priority = 0)
@@ -2873,7 +2876,7 @@ System.out.println("*************************Advance initiated for the room1 aft
 		}
 
 	}*/
-
+	/*
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 4)
 	public void test_search_guests_by_multiple_fields_TC_GS_04() throws AWTException, InterruptedException {
 		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
@@ -3037,7 +3040,7 @@ System.out.println("*************************Advance initiated for the room1 aft
 			// If the element is NOT found or clickable within the wait time, fail the test
 			Assert.fail("❌ Reservation is not listed. Test failed.");
 		}
-	
+
 		//-------------------------------------------------
 		// Searching the guest using the First name
 		//-------------------------------------------------
@@ -3062,15 +3065,77 @@ System.out.println("*************************Advance initiated for the room1 aft
 			Assert.fail("❌ Reservation is not listed. Test failed.");
 		}
 	}
+	 */
 
+	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 5)
+	public void test_verify_guests_displayed_in_sequence_order_TC_GS_05() throws InterruptedException {
+	    String methodName = new Object() {}.getClass().getEnclosingMethod().getName();
+	    System.out.println("Executing Test Method: " + methodName);
+
+	    driver.navigate().to("https://test1dns.wincloudpms.net/TravelAgentBlock/FoGuestSearch?VN=3.04.025");
+	    
+//		To check the sequential order to fail the test case enable the below lines and check
+//	    // Wait and click the checkbox
+//	    WebElement checkbox = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@role='checkbox'])[3]")));
+//	    checkbox.click();
+//	    Thread.sleep(2000);
+
+	    // Initialize Set to collect room numbers without duplicates and in insertion order
+	    Set<String> roomNumbersSet = new LinkedHashSet<>();
+
+	    // Scrollbar container
+	    WebElement scrollContainer = wait.until(ExpectedConditions.presenceOfElementLocated(
+	        By.xpath("//div[@class='webix_ss_vscroll webix_vscroll_y']")
+	    ));
+
+	    // Content container for room numbers
+	    WebElement roomColumnContainer = wait.until(ExpectedConditions.presenceOfElementLocated(
+	        By.xpath("//div[contains(@class,'webix_column') and contains(@class,'webix_first')]")
+	    ));
+
+	    long previousScrollTop = -1;
+
+	    // Loop until scroll reaches bottom
+	    while (true) {
+	        List<WebElement> visibleCells = roomColumnContainer.findElements(
+	            By.xpath(".//div[@role='gridcell' and @aria-colindex='1']")
+	        );
+
+	        for (WebElement cell : visibleCells) {
+	            String text = cell.getText().trim();
+	            if (text.matches("\\d+")) {
+	                roomNumbersSet.add(text);
+	            }
+	        }
+
+	        // Scroll down a bit
+	        js.executeScript("arguments[0].scrollTop += 100;", scrollContainer);
+	        Thread.sleep(500);
+
+	        // Detect end of scroll
+	        long currentScrollTop = (long) js.executeScript("return arguments[0].scrollTop", scrollContainer);
+	        if (currentScrollTop == previousScrollTop) {
+	            break;
+	        }
+	        previousScrollTop = currentScrollTop;
+	    }
+
+	    // Convert to list of integers
+	    List<Integer> actualRoomNumbers = roomNumbersSet.stream().map(Integer::parseInt).collect(Collectors.toList());
+
+	    // Sort a copy to compare for sequential order
+	    List<Integer> expectedSorted = new ArrayList<>(actualRoomNumbers);
+	    Collections.sort(expectedSorted);
+
+	    // Print all for debugging
+	    System.out.println("Actual Room Numbers: " + actualRoomNumbers);
+	    System.out.println("Expected Sorted Order: " + expectedSorted);
+
+	    // ✅ Assertion
+	    Assert.assertEquals(actualRoomNumbers, expectedSorted, "❌ Room numbers are not in sequential order.");
+	    System.out.println("✅ All room numbers are in sequential order.");
+	}
 }
-
-
-
-
-
-
-
 
 
 

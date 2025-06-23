@@ -5,7 +5,7 @@
     <classes>
       <class name="FO.testclass">
         <methods>
-          <include name="test_search_guests_by_multiple_fields_TC_GS_04"/>
+          <include name="test_verify_guests_displayed_in_sequence_order_TC_GS_05"/>
           <include name="setup"/>
           <include name="Test_Sucessfull_Login"/>
         </methods>

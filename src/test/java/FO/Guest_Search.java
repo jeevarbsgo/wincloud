@@ -4,7 +4,12 @@ import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -486,6 +491,74 @@ public class Guest_Search {
 			// If the element is NOT found or clickable within the wait time, fail the test
 			Assert.fail("❌ Reservation is not listed. Test failed.");
 		}
+	}
+	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 5)
+	public void test_verify_guests_displayed_in_sequence_order_TC_GS_05() throws InterruptedException {
+	    String methodName = new Object() {}.getClass().getEnclosingMethod().getName();
+	    System.out.println("Executing Test Method: " + methodName);
+
+	    driver.navigate().to("https://test1dns.wincloudpms.net/TravelAgentBlock/FoGuestSearch?VN=3.04.025");
+	    
+//		To check the sequential order to fail the test case enable the below lines and check
+//	    // Wait and click the checkbox
+//	    WebElement checkbox = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@role='checkbox'])[3]")));
+//	    checkbox.click();
+//	    Thread.sleep(2000);
+
+	    // Initialize Set to collect room numbers without duplicates and in insertion order
+	    Set<String> roomNumbersSet = new LinkedHashSet<>();
+
+	    // Scrollbar container
+	    WebElement scrollContainer = wait.until(ExpectedConditions.presenceOfElementLocated(
+	        By.xpath("//div[@class='webix_ss_vscroll webix_vscroll_y']")
+	    ));
+
+	    // Content container for room numbers
+	    WebElement roomColumnContainer = wait.until(ExpectedConditions.presenceOfElementLocated(
+	        By.xpath("//div[contains(@class,'webix_column') and contains(@class,'webix_first')]")
+	    ));
+
+	    long previousScrollTop = -1;
+
+	    // Loop until scroll reaches bottom
+	    while (true) {
+	        List<WebElement> visibleCells = roomColumnContainer.findElements(
+	            By.xpath(".//div[@role='gridcell' and @aria-colindex='1']")
+	        );
+
+	        for (WebElement cell : visibleCells) {
+	            String text = cell.getText().trim();
+	            if (text.matches("\\d+")) {
+	                roomNumbersSet.add(text);
+	            }
+	        }
+
+	        // Scroll down a bit
+	        js.executeScript("arguments[0].scrollTop += 100;", scrollContainer);
+	        Thread.sleep(500);
+
+	        // Detect end of scroll
+	        long currentScrollTop = (long) js.executeScript("return arguments[0].scrollTop", scrollContainer);
+	        if (currentScrollTop == previousScrollTop) {
+	            break;
+	        }
+	        previousScrollTop = currentScrollTop;
+	    }
+
+	    // Convert to list of integers
+	    List<Integer> actualRoomNumbers = roomNumbersSet.stream().map(Integer::parseInt).collect(Collectors.toList());
+
+	    // Sort a copy to compare for sequential order
+	    List<Integer> expectedSorted = new ArrayList<>(actualRoomNumbers);
+	    Collections.sort(expectedSorted);
+
+	    // Print all for debugging
+	    System.out.println("Actual Room Numbers: " + actualRoomNumbers);
+	    System.out.println("Expected Sorted Order: " + expectedSorted);
+
+	    // ✅ Assertion
+	    Assert.assertEquals(actualRoomNumbers, expectedSorted, "❌ Room numbers are not in sequential order.");
+	    System.out.println("✅ All room numbers are in sequential order.");
 	}
 
 }
