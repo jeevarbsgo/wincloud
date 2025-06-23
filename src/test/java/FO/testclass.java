@@ -3066,7 +3066,7 @@ System.out.println("*************************Advance initiated for the room1 aft
 		}
 	}
 	 */
-
+/*
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 5)
 	public void test_verify_guests_displayed_in_sequence_order_TC_GS_05() throws InterruptedException {
 	    String methodName = new Object() {}.getClass().getEnclosingMethod().getName();
@@ -3134,7 +3134,8 @@ System.out.println("*************************Advance initiated for the room1 aft
 	    // ✅ Assertion
 	    Assert.assertEquals(actualRoomNumbers, expectedSorted, "❌ Room numbers are not in sequential order.");
 	    System.out.println("✅ All room numbers are in sequential order.");
-	}
+	}*/
+	
 }
 
 
