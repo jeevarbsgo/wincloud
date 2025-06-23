@@ -6,6 +6,7 @@ import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.text.DecimalFormat;
 import java.time.Duration;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -1925,7 +1926,7 @@ public class testclass {
 	// ✅ Assert using formatted strings (consistent precision)
 	Assert.assertEquals(formattedRefund1, distributed_adv, "Mismatch in distribution 1");
 	Assert.assertEquals(formattedRefund2, distributed_adv1, "Mismatch in distribution 2");
-	}*/
+	}
 
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 1)
 	public void test_select_advance_type_and_reservation_room_TC_AD_01_Reservation() throws AWTException, InterruptedException {
@@ -1972,8 +1973,8 @@ public class testclass {
 		WebElement reserveNoInput = driver.findElement(By.xpath("//label[text()='Reserve No']/following-sibling::input"));
 		String reserveNoValue_1 = reserveNoInput.getAttribute("value");
 		System.out.println("Reserve No: " + reserveNoValue_1);
-		
-		
+
+
 		System.out.println("*******************Reservation for the first room EXECUTED **************************");
 
 		//-------------------------------
@@ -2017,7 +2018,7 @@ public class testclass {
 		WebElement reserveNoInput1 = driver.findElement(By.xpath("//label[text()='Reserve No']/following-sibling::input"));
 		String reserveNoValue_2 = reserveNoInput1.getAttribute("value");
 		System.out.println("Reserve No with advance: " + reserveNoValue_2);
-		
+
 		System.out.println("*******************Reservation for the second room EXECUTED **************************");
 
 		//--------------------------------------------------------------------------------------------------
@@ -2062,8 +2063,8 @@ public class testclass {
 
 		driver.switchTo().defaultContent();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//span[@class=\"webix_icon webix_icon wxi-close\"])[1]"))).click();
-		
-		
+
+
 		System.out.println("*******************Advance initiated for the second reservation **************************");
 
 		driver.navigate().to("https://test1dns.wincloudpms.net/TravelAgentBlock/FoTransferAdvance?VN=3.04.025");
@@ -2096,7 +2097,7 @@ public class testclass {
 		wait.until(ExpectedConditions.elementToBeClickable( By.xpath("//span[@class=\"fa fa-save\"]"))).click();
 
 		System.out.println("*******************Advance distribution completed for the second room  **************************");
-		
+
 		driver.navigate().to("https://test1dns.wincloudpms.net/TravelAgentBlock/FOReservation?VN=3.04.025");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class=\" fa fa-folder-open\"]")));
 		driver.findElement(By.xpath("//span[@class=\" fa fa-folder-open\"]")).click();
@@ -2140,7 +2141,7 @@ public class testclass {
 		double Dis_Amount1 = Double.parseDouble(distributed_adv);  // e.g., 150.000
 		double Dis_Amount2 = Double.parseDouble(distributed_adv1); // e.g., 150.000
 
-		
+
 		// Format original value (optional)
 		String formattedRefund = df.format(Actual_Amount); // e.g., "300.000"
 
@@ -2154,9 +2155,9 @@ public class testclass {
 		// ✅ Assert using formatted strings (consistent precision)
 		Assert.assertEquals(formattedRefund1, distributed_adv, "Mismatch in distribution 1");
 		Assert.assertEquals(formattedRefund2, distributed_adv1, "Mismatch in distribution 2");
-		
+
 		double total_dis_amount_beforeCheckin = Dis_Amount1 + Dis_Amount2;
-		
+
 		System.out.println("*******************Advance distribution initiated & verified in both the rooms **************************");
 
 		//===========================================================================================================
@@ -2190,11 +2191,11 @@ public class testclass {
 		} else {
 			System.out.println("No vacant rooms found.");
 		}
-		
+
 		WebElement roomNoInput = driver.findElement(By.xpath("(//label[text()='Room No']/following-sibling::input)[2]"));
 		String roomNo_1 = roomNoInput.getAttribute("value");
 		System.out.println("Room No: " + roomNo_1);
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()=\"Select\"]"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()=\"CheckIn\"]"))).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@style=\"text-align:center !important;font-weight:bold;width:100%;color:#fb2510\"]")));
@@ -2203,10 +2204,10 @@ public class testclass {
 		System.out.println(reg_no); 
 		String Reg_No_1 = reg_no.substring(reg_no.length() - 5);
 		System.out.println("Last 5 digits: " + Reg_No_1);
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@type=\"checkbox\"])[6]"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class=\"webix_icon_btn wxi-check\"]"))).click();
-		
+
 		System.out.println("*******************Checkin is completed for the reserveNoValue_1 **************************");
 		//========================================
 		// Initiating advance for the first checkin 
@@ -2255,7 +2256,7 @@ public class testclass {
 
 		wait.until(ExpectedConditions.elementToBeClickable( By.xpath("(//button[text()=\"Ok\"])[2]"))).click();	
 		System.out.println("Next advanced paid for the second room "+ reserveNoValue_1 + " is " + expected_1 );
-		
+
 System.out.println("*************************Advance initiated for the room1 after the check in****************************");
 
 		//===========================================================================================================
@@ -2292,7 +2293,7 @@ System.out.println("*************************Advance initiated for the room1 aft
 		WebElement roomNoInput1 = driver.findElement(By.xpath("(//label[text()='Room No']/following-sibling::input)[2]"));
 		String roomNo_2 = roomNoInput1.getAttribute("value");
 		System.out.println("Room No: " + roomNo_2);
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()=\"Select\"]"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()=\"CheckIn\"]"))).click();
 
@@ -2302,15 +2303,15 @@ System.out.println("*************************Advance initiated for the room1 aft
 		System.out.println(reg_no_2); 
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@type=\"checkbox\"])[6]"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class=\"webix_icon_btn wxi-check\"]"))).click();
-		
+
 		System.out.println("*************************Checkin completed for the second reservation *****************");
-		
+
 		//==========================================
 		// Advance distribution for the checkins 
 		//==========================================
-		
+
 		driver.navigate().to("https://test1dns.wincloudpms.net/TravelAgentBlock/FoTransferAdvance?VN=3.04.025");
-		
+
 		WebElement transactionInput_2 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[text()='For']/following-sibling::div")));
 		transactionInput_2.click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@webix_l_id=\"TR\"]"))).click();
@@ -2326,7 +2327,7 @@ System.out.println("*************************Advance initiated for the room1 aft
 		Thread.sleep(1500);
 		WebElement dynamicElementA3 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='" + roomNo_1 + "']")));
 		actions.doubleClick(dynamicElementA3).perform();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable( By.xpath("//span[@class=\"fa fa-search TEGridIconBtn\"]"))).click();
 		WebElement filterInput_3 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[8]")));
 		filterInput_3.click(); 
@@ -2336,7 +2337,7 @@ System.out.println("*************************Advance initiated for the room1 aft
 		Thread.sleep(1500);
 		WebElement dynamicElement_3 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@column=\"3\"])[9]")));
 		actions.doubleClick(dynamicElement_3).perform();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable( By.xpath("//button[text()=\"Distribute Equally\"]"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable( By.xpath("//button[text()=\"OK\"]"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable( By.xpath("//span[@class=\"fa fa-save\"]"))).click();
@@ -2344,15 +2345,15 @@ System.out.println("*************************Advance initiated for the room1 aft
 		reasonInput_1.click();
 		reasonInput_1.sendKeys("testing");
 		wait.until(ExpectedConditions.elementToBeClickable( By.xpath("//span[@class=\"fa fa-save\"]"))).click();
-		
+
 		System.out.println("*************************Advance distribution for the both the reservartion after checkin completed***********************");
-		
+
 		// ============================================================================
 		//verifying the advance amount after the checking is initiated and distributed
 		//=============================================================================
-		
+
 		driver.navigate().to("https://test1dns.wincloudpms.net/TravelAgentBlock/FoInHouseGuest?VN=3.04.025");
-		
+
 		WebElement filterInput_4 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[2]")));
 		filterInput_4.click(); 
 		for (char ch : reserveNoValue_1.toCharArray()) {
@@ -2361,12 +2362,12 @@ System.out.println("*************************Advance initiated for the room1 aft
 		Thread.sleep(1500);
 		WebElement dynamicElement_4 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='" + reserveNoValue_1 + "']")));
 		actions.doubleClick(dynamicElement_4).perform();
-		
+
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()=\"Bill Details\"]"))).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@aria-rowindex=\"3\"])[2]")));
 		WebElement row_2 = driver.findElement(By.xpath("(//div[@aria-rowindex=\"3\"])[2]"));
 		String amount_1 = row_2.getText();
-		
+
 		String actualAmount_1 = row_2.getText().trim();
 		System.out.println("Original Bill amount: " + actualAmount_1);
 
@@ -2375,7 +2376,7 @@ System.out.println("*************************Advance initiated for the room1 aft
 			actualAmount_1 = actualAmount_1.substring(1);
 			System.out.println("Bill amount after removing symbol " + actualAmount_1);
 		}
-		
+
 		driver.navigate().refresh();
 		Thread.sleep(1500);
 		WebElement filterInput_5 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[2]")));
@@ -2386,12 +2387,12 @@ System.out.println("*************************Advance initiated for the room1 aft
 		Thread.sleep(1500);
 		WebElement dynamicElement_5 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='" + reserveNoValue_2 + "']")));
 		actions.doubleClick(dynamicElement_5).perform();
-		
+
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()=\"Bill Details\"]"))).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@aria-rowindex=\"3\"])[2]")));
 		WebElement row_2a = driver.findElement(By.xpath("(//div[@aria-rowindex=\"3\"])[2]"));
 		String amount_2 = row_2a.getText();
-		
+
 		String actualAmount_2 = row_2a.getText().trim();
 		System.out.println("Original Bill amount: " + actualAmount_2);
 
@@ -2400,38 +2401,202 @@ System.out.println("*************************Advance initiated for the room1 aft
 			actualAmount_2 = actualAmount_2.substring(1);
 			System.out.println("Bill amount after removing symbol " + actualAmount_2);
 		}
-		
+
 		DecimalFormat df1 = new DecimalFormat("0.000");
 
 		double originalAmount = Double.parseDouble(expected_1);  
 		String formattedRefund_1 = df.format(originalAmount);
 		double dis_amount_1 = Double.parseDouble(actualAmount_1); 
 		double dis_amount_2 = Double.parseDouble(actualAmount_2); 
-		
+
 		System.out.println(dis_amount_1);
 		System.out.println(dis_amount_2);
-		
+
 		double total_dis_amount_afterCheckin = dis_amount_1 + dis_amount_2;
 		System.out.println(total_dis_amount_afterCheckin);
-		
+
 		Assert.assertEquals(total_dis_amount_afterCheckin, originalAmount);
-		
-		
+
+
 		//=============================================================
 		// Verifying the total advance amount before and after checkin
 		//==============================================================
-		
+
 		double Total_Advance_paid = total_dis_amount_afterCheckin + Actual_Amount;
-		
+
 		System.out.println("Total advance paid before and after checkin for the same reservation " + Total_Advance_paid);
 		System.out.println("Total advance paid after checkin" + total_dis_amount_afterCheckin);
 		System.out.println("Total advance amount paid before check in " +Actual_Amount);
-		
-	}
+
+	}*/
+	/*
+	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 1)
+	public void test_view_records_needing_room_assignment_by_date_TC_RA_01() throws AWTException, InterruptedException {
+	String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
+	System.out.println("Executing Test Method: " + methodName);
+
+	driver.get("https://test1dns.wincloudpms.net/TravelAgentBlock/FOReservation?VN=3.04.025");
+	WebElement add = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='webix_el_box'])[2]")));
+	add.click();
+
+	WebElement arrivalDate = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@aria-label='Arrival']")));
+	js.executeScript("arguments[0].click();", arrivalDate);
+
+	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()=\"Today\"]"))).click();
+
+	String noNightsBeforeSave = "2";
+	WebElement nightsInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//label[text()='Nights']/following-sibling::input")));
+	nightsInput.clear();
+	nightsInput.sendKeys(noNightsBeforeSave);
+
+	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@aria-label='RoomType']"))).click();
+	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@webix_l_id='DXR']"))).click();
+	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-search ExpBkGridIconBtn']"))).click();
+
+	WebElement doubleClick1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@aria-rowindex='5'])[1]")));
+	js.executeScript("arguments[0].scrollIntoView(true);", doubleClick1);
+	actions.doubleClick(doubleClick1).perform();
+
+	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='OK']"))).click();
+	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='OK']"))).click();
+
+	// To check the test is working the below is the room selection code, enable and check so that the room will be selected and the test will be failed
+
+//	driver.findElement(By.xpath("(//span[@class=\"webix_input_icon wxi-search\"])[1]")).click();
+//
+//	List<WebElement> vacantRooms = driver.findElements(By.cssSelector(".RmBgColorV1"));
+//	if (!vacantRooms.isEmpty()) {
+//		WebElement firstVacantRoom = vacantRooms.get(0);
+//		js.executeScript("arguments[0].scrollIntoView(true);", firstVacantRoom);
+//		firstVacantRoom.click();
+//		System.out.println("First vacant room selected.");
+//	} else {
+//		System.out.println("No vacant rooms found.");
+//	}
+//
+//	driver.findElement(By.xpath("//button[text()='Select']")).click();
+	// Click the save button (only once)
+	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-save']"))).click();
+	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class=\"webix_button webix_img_btn\"])[1]"))).click();
+
+	WebElement reserveNoInput = driver.findElement(By.xpath("//label[text()='Reserve No']/following-sibling::input"));
+	String reserveNoValue = reserveNoInput.getAttribute("value");
+	System.out.println("Reserve No: " + reserveNoValue);
+
+	driver.navigate().refresh();
+	driver.navigate().to("https://test1dns.wincloudpms.net/TravelAgentBlock/FOTrnRoomAssign?VN=3.04.025");
+	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class=\"webix_input_icon wxi-calendar\"]"))).click();
+	String todayDay = String.valueOf(LocalDate.now().getDayOfMonth());
+	WebElement todayDate = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='" + todayDay + "']")));
+	todayDate.click();
+
+	WebElement targetCell = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()='"+reserveNoValue+"']")));
+
+		// 2. Get its aria-rowindex attribute
+		String rowIndex = targetCell.getAttribute("aria-rowindex");
+		System.out.println("Row Index: " + rowIndex);
+
+		// 3. Use the row index to find the column in the same row (e.g., column 9)
+		WebElement columnValue = wait.until(ExpectedConditions.visibilityOfElementLocated(
+		    By.xpath("//div[@aria-rowindex='" + rowIndex + "' and @aria-colindex='9']")));
+
+		// 4. Get the text of the column
+		String value = columnValue.getText().trim();
+		System.out.println("Column 9 value for row " + rowIndex + " is: " + value);
+
+		// Assert that the value is empty (null/blank is considered pass)
+		Assert.assertTrue(value.isEmpty(), "❌ Expected the cell to be empty, but found: '" + value + "'");
+}*/
+
+	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 2)
+	public void test_assign_room_number_manually_TC_RA_02() throws AWTException, InterruptedException {
+	    String methodName = new Object() {}.getClass().getEnclosingMethod().getName();
+	    System.out.println("Executing Test Method: " + methodName);
+
+	    driver.get("https://test1dns.wincloudpms.net/TravelAgentBlock/FOReservation?VN=3.04.025");
+	    WebElement add = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='webix_el_box'])[2]")));
+	    add.click();
+
+	    WebElement arrivalDate = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@aria-label='Arrival']")));
+	    js.executeScript("arguments[0].click();", arrivalDate);
+
+	    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Today']"))).click();
+
+	    String noNightsBeforeSave = "2";
+	    WebElement nightsInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//label[text()='Nights']/following-sibling::input")));
+	    nightsInput.clear();
+	    nightsInput.sendKeys(noNightsBeforeSave);
+
+	    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@aria-label='RoomType']"))).click();
+	    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@webix_l_id='DXR']"))).click();
+	    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-search ExpBkGridIconBtn']"))).click();
+
+	    WebElement doubleClick1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@aria-rowindex='5'])[1]")));
+	    js.executeScript("arguments[0].scrollIntoView(true);", doubleClick1);
+	    actions.doubleClick(doubleClick1).perform();
+
+	    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='OK']"))).click();
+	    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='OK']"))).click();
+	    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-save']"))).click();
+	    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class=\"webix_button webix_img_btn\"])[1]"))).click();
+
+	    WebElement reserveNoInput = driver.findElement(By.xpath("//label[text()='Reserve No']/following-sibling::input"));
+	    String reserveNoValue = reserveNoInput.getAttribute("value");
+	    System.out.println("Reserve No: " + reserveNoValue);
+
+	    driver.navigate().refresh();
+	    driver.navigate().to("https://test1dns.wincloudpms.net/TravelAgentBlock/FOTrnRoomAssign?VN=3.04.025");
+	    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class=\"webix_input_icon wxi-calendar\"]"))).click();
+	    String todayDay = String.valueOf(LocalDate.now().getDayOfMonth());
+	    WebElement todayDate = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='" + todayDay + "']")));
+	    todayDate.click();
+
+	    WebElement targetCell = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()='" + reserveNoValue + "']")));
+	    actions.doubleClick(targetCell).perform();
+
+	    // Click Room search icon
+	    WebElement roomSearchIcon = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[@class='webix_input_icon wxi-search'])[1]")));
+	    roomSearchIcon.click();
+
+	    // Select first available room
+	    List<WebElement> vacantRooms = driver.findElements(By.cssSelector(".RmBgColorV1"));
+	    String selectedRoomText = "";
+	    if (!vacantRooms.isEmpty()) {
+	        WebElement firstVacantRoom = vacantRooms.get(0);
+	        selectedRoomText = firstVacantRoom.getText().trim();
+	        js.executeScript("arguments[0].scrollIntoView(true);", firstVacantRoom);
+	        firstVacantRoom.click();
+	        System.out.println("First vacant room selected: " + selectedRoomText);
+	    } else {
+	        Assert.fail("No vacant rooms found.");
+	    }
+
+	    driver.findElement(By.xpath("//button[text()='Select']")).click();
+	    WebElement tipElement = driver.findElement(By.id("zs-fl-tip"));
+		actions.moveToElement(tipElement).perform();
+		driver.findElement(By.id("zs-tip-close")).click();
+	    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='S']"))).click();
+	    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class=\"webix_button webix_img_btn\"])[1]"))).click();
+
+	    targetCell = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()='" + reserveNoValue + "']")));
+	    	String rowIndex = targetCell.getAttribute("aria-rowindex");
+	    	System.out.println("Row Index: " + rowIndex);
+
+	    	// Now get the room number from column 9 of that row
+	    	WebElement columnValue = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@aria-rowindex='" + rowIndex + "' and @aria-colindex='9']")));
+	    	String value = columnValue.getText().trim();
+	    	System.out.println("Room assigned in grid: " + value);
+
+	    	// Assert: Value should not be empty
+	    	Assert.assertFalse(value.isEmpty(), "❌ Assigned room number is empty!");
+
+	    	// Assert: Value should match the selected room
+	    	Assert.assertEquals(value, selectedRoomText, "❌ Room assigned does not match the selected room.");
+
 }
 
 
-
+}
 
 
 

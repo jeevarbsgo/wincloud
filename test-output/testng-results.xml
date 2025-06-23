@@ -1,69 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-20T17:57:26 IST" name="Test Suite with Chart Reporter" finished-at="2025-06-20T17:57:38 IST" duration-ms="11961">
+  <suite started-at="2025-06-23T11:12:02 IST" name="Default suite" finished-at="2025-06-23T11:12:51 IST" duration-ms="49121">
     <groups>
     </groups>
-    <test started-at="2025-06-20T17:57:26 IST" name="Login Test Cases" finished-at="2025-06-20T17:57:38 IST" duration-ms="11961">
-      <class name="FO.Login">
-        <test-method is-config="true" signature="setup()[pri:0, instance:FO.Login@8c3b9d]" started-at="2025-06-20T17:57:26 IST" name="setup" finished-at="2025-06-20T17:57:28 IST" duration-ms="2648" status="PASS">
+    <test started-at="2025-06-23T11:12:02 IST" name="Default test" finished-at="2025-06-23T11:12:51 IST" duration-ms="49121">
+      <class name="FO.testclass">
+        <test-method is-config="true" signature="setup()[pri:0, instance:FO.testclass@385e9564]" started-at="2025-06-23T11:12:02 IST" name="setup" finished-at="2025-06-23T11:12:05 IST" duration-ms="2810" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="loadLoginPage()[pri:0, instance:FO.Login@8c3b9d]" started-at="2025-06-20T17:57:28 IST" name="loadLoginPage" finished-at="2025-06-20T17:57:30 IST" duration-ms="1395" status="PASS">
+        <test-method signature="Test_Sucessfull_Login()[pri:0, instance:FO.testclass@385e9564]" started-at="2025-06-23T11:12:05 IST" name="Test_Sucessfull_Login" finished-at="2025-06-23T11:12:13 IST" duration-ms="8617" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loadLoginPage -->
-        <test-method signature="testloginpage()[pri:0, instance:FO.Login@8c3b9d]" started-at="2025-06-20T17:57:30 IST" name="testloginpage" finished-at="2025-06-20T17:57:30 IST" duration-ms="384" status="PASS">
+        </test-method> <!-- Test_Sucessfull_Login -->
+        <test-method signature="test_assign_room_number_manually_TC_RA_02()[pri:2, instance:FO.testclass@385e9564]" started-at="2025-06-23T11:12:13 IST" name="test_assign_room_number_manually_TC_RA_02" finished-at="2025-06-23T11:12:51 IST" depends-on-methods="FO.testclass.Test_Sucessfull_Login" duration-ms="37602" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testloginpage -->
-        <test-method is-config="true" signature="loadLoginPage()[pri:0, instance:FO.Login@8c3b9d]" started-at="2025-06-20T17:57:30 IST" name="loadLoginPage" finished-at="2025-06-20T17:57:31 IST" duration-ms="283" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loadLoginPage -->
-        <test-method signature="testnegativelogin()[pri:0, instance:FO.Login@8c3b9d]" started-at="2025-06-20T17:57:31 IST" name="testnegativelogin" finished-at="2025-06-20T17:57:31 IST" duration-ms="400" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testnegativelogin -->
-        <test-method is-config="true" signature="loadLoginPage()[pri:0, instance:FO.Login@8c3b9d]" started-at="2025-06-20T17:57:31 IST" name="loadLoginPage" finished-at="2025-06-20T17:57:31 IST" duration-ms="217" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loadLoginPage -->
-        <test-method signature="testnegativepassword()[pri:0, instance:FO.Login@8c3b9d]" started-at="2025-06-20T17:57:31 IST" name="testnegativepassword" finished-at="2025-06-20T17:57:34 IST" duration-ms="2961" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testnegativepassword -->
-        <test-method is-config="true" signature="loadLoginPage()[pri:0, instance:FO.Login@8c3b9d]" started-at="2025-06-20T17:57:34 IST" name="loadLoginPage" finished-at="2025-06-20T17:57:34 IST" duration-ms="274" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loadLoginPage -->
-        <test-method signature="testnegativeuserid()[pri:0, instance:FO.Login@8c3b9d]" started-at="2025-06-20T17:57:34 IST" name="testnegativeuserid" finished-at="2025-06-20T17:57:35 IST" duration-ms="607" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testnegativeuserid -->
-        <test-method is-config="true" signature="loadLoginPage()[pri:0, instance:FO.Login@8c3b9d]" started-at="2025-06-20T17:57:35 IST" name="loadLoginPage" finished-at="2025-06-20T17:57:35 IST" duration-ms="244" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loadLoginPage -->
-        <test-method signature="testpositivepassword()[pri:0, instance:FO.Login@8c3b9d]" started-at="2025-06-20T17:57:35 IST" name="testpositivepassword" finished-at="2025-06-20T17:57:36 IST" duration-ms="900" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testpositivepassword -->
-        <test-method is-config="true" signature="loadLoginPage()[pri:0, instance:FO.Login@8c3b9d]" started-at="2025-06-20T17:57:36 IST" name="loadLoginPage" finished-at="2025-06-20T17:57:36 IST" duration-ms="256" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loadLoginPage -->
-        <test-method signature="testpositiveuserid()[pri:0, instance:FO.Login@8c3b9d]" started-at="2025-06-20T17:57:36 IST" name="testpositiveuserid" finished-at="2025-06-20T17:57:37 IST" duration-ms="749" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testpositiveuserid -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:FO.Login@8c3b9d]" started-at="2025-06-20T17:57:37 IST" name="tearDown" finished-at="2025-06-20T17:57:38 IST" duration-ms="522" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- FO.Login -->
-    </test> <!-- Login Test Cases -->
-  </suite> <!-- Test Suite with Chart Reporter -->
+        </test-method> <!-- test_assign_room_number_manually_TC_RA_02 -->
+      </class> <!-- FO.testclass -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

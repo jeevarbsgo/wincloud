@@ -5,7 +5,7 @@
     <classes>
       <class name="FO.testclass">
         <methods>
-          <include name="test_select_advance_type_and_reservation_room_TC_AD_01_Reservation"/>
+          <include name="test_assign_room_number_manually_TC_RA_02"/>
           <include name="setup"/>
           <include name="Test_Sucessfull_Login"/>
         </methods>
