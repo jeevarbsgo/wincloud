@@ -5,8 +5,8 @@
     <classes>
       <class name="FO.testclass">
         <methods>
+          <include name="test_search_guests_by_multiple_fields_TC_GS_04"/>
           <include name="setup"/>
-          <include name="test_verify_current_inhouse_guests_displayed_TC_GS_01"/>
           <include name="Test_Sucessfull_Login"/>
         </methods>
       </class> <!-- FO.testclass -->
