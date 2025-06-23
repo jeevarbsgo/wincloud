@@ -46,7 +46,7 @@ public class Reservation {
 		actions = new Actions(driver);
 		js = (JavascriptExecutor) driver;
 	}
-	// ✅ Common Robot typing method
+	
 
 	// ✅ Common Robot typing method
 	public void typeCharWithRobot(char ch) throws AWTException {

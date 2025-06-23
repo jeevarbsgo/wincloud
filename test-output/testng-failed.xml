@@ -5,8 +5,8 @@
     <classes>
       <class name="FO.testclass">
         <methods>
-          <include name="test_verify_guests_displayed_in_sequence_order_TC_GS_05"/>
           <include name="setup"/>
+          <include name="test_edit_guest_name_and_personal_details_TC_GIH_01"/>
           <include name="Test_Sucessfull_Login"/>
         </methods>
       </class> <!-- FO.testclass -->

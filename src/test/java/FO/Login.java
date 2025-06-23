@@ -11,7 +11,7 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 
 import java.time.Duration;
-
+@Listeners(FO.ScreenshotListener.class)
 public class Login {
 
     WebDriver driver;

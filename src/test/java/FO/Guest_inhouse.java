@@ -5,14 +5,27 @@ import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.time.Duration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
 
+@Listeners(FO.ScreenshotListener.class)
 public class Guest_inhouse {
-	
+	WebDriver driver;
+	WebDriverWait wait;
+	Robot robot;
+	Actions actions;
+	JavascriptExecutor js;
 	@BeforeClass
 	public void setup() throws AWTException {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Jeeva\\eclipse-workspace\\Wincloud_FO\\Chromedriver\\chromedriver.exe");
@@ -28,6 +41,7 @@ public class Guest_inhouse {
 		actions = new Actions(driver);
 		js = (JavascriptExecutor) driver;
 	}
+	// ✅ Common Robot typing method
 
 	// ✅ Common Robot typing method
 	public void typeCharWithRobot(char ch) throws AWTException {
@@ -107,5 +121,36 @@ public class Guest_inhouse {
 	// Determine if SHIFT key is needed
 	private boolean isShiftRequired(char ch) {
 		return Character.isUpperCase(ch) || "~!@#$%^&*()_+{}|:\"<>?".indexOf(ch) >= 0;
+	}
+	// ✅ Getter for Actions
+	public Actions getActions() {
+		return actions;
+	}
+	// ✅ Getter for JavaScriptExecutor
+	public JavascriptExecutor getJSExecutor() {
+		return js;
+	}
+	// ✅ Getter for WebDriverWait
+	public WebDriverWait getWait() {
+		return wait;
+	}
+	// ✅ Getter for Robot
+	public Robot getRobot() {
+		return robot;
+	}
+	@Test(priority = 0)
+	public void Test_Sucessfull_Login() {
+		driver.get("https://test1dns.wincloudpms.net/WinLogin/Login/");
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ProptyText")));
+		driver.findElement(By.id("ProptyText")).sendKeys("dubaidemo" + Keys.ENTER);
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("UserName")));
+		driver.findElement(By.id("UserName")).sendKeys("wincloud" + Keys.ENTER);
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("Password"))).sendKeys("rbsgo" + Keys.ENTER);
+
+		WebElement logo = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//img[@src=\"../images/wincloud-gray.png\"]")));
+		Assert.assertTrue(logo.isDisplayed(), "Login was not successful - Wincloud logo not displayed.");
 	}
 }
