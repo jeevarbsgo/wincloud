@@ -1243,7 +1243,7 @@ public class Reservation {
 
 		WebElement day = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[text()='29'])[2]")));
 		day.click();
-
+ 
 		WebElement nightsInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//label[text()='Nights']/following-sibling::input")));
 		nightsInput.clear();
 		nightsInput.sendKeys("2");
