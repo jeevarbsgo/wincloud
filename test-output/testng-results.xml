@@ -2,39 +2,31 @@
 <testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-23T18:03:35 IST" name="Default suite" finished-at="2025-06-23T18:04:39 IST" duration-ms="64576">
+  <suite started-at="2025-06-24T12:17:42 IST" name="Default suite" finished-at="2025-06-24T12:18:28 IST" duration-ms="46677">
     <groups>
     </groups>
-    <test started-at="2025-06-23T18:03:35 IST" name="Default test" finished-at="2025-06-23T18:04:39 IST" duration-ms="64576">
+    <test started-at="2025-06-24T12:17:42 IST" name="Default test" finished-at="2025-06-24T12:18:28 IST" duration-ms="46677">
       <class name="FO.testclass">
-        <test-method is-config="true" signature="setup()[pri:0, instance:FO.testclass@757277dc]" started-at="2025-06-23T18:03:35 IST" name="setup" finished-at="2025-06-23T18:03:39 IST" duration-ms="3842" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:FO.testclass@757277dc]" started-at="2025-06-24T12:17:42 IST" name="setup" finished-at="2025-06-24T12:17:43 IST" duration-ms="1503" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Test_Sucessfull_Login()[pri:0, instance:FO.testclass@757277dc]" started-at="2025-06-23T18:03:39 IST" name="Test_Sucessfull_Login" finished-at="2025-06-23T18:03:43 IST" duration-ms="4503" status="PASS">
+        <test-method signature="Test_Sucessfull_Login()[pri:0, instance:FO.testclass@757277dc]" started-at="2025-06-24T12:17:43 IST" name="Test_Sucessfull_Login" finished-at="2025-06-24T12:17:46 IST" duration-ms="2936" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test_Sucessfull_Login -->
-        <test-method signature="test_edit_guest_name_and_personal_details_TC_GIH_01()[pri:1, instance:FO.testclass@757277dc]" started-at="2025-06-23T18:03:43 IST" name="test_edit_guest_name_and_personal_details_TC_GIH_01" finished-at="2025-06-23T18:04:38 IST" depends-on-methods="FO.testclass.Test_Sucessfull_Login" duration-ms="54995" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
+        <test-method signature="test_modify_segment_company_guest_type_and_agent_TC_GIH_02()[pri:2, instance:FO.testclass@757277dc]" started-at="2025-06-24T12:17:46 IST" name="test_modify_segment_company_guest_type_and_agent_TC_GIH_02" finished-at="2025-06-24T12:18:28 IST" depends-on-methods="FO.testclass.Test_Sucessfull_Login" duration-ms="41438" status="FAIL">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Expected condition failed: waiting for element to be clickable: By.xpath: (//button[@class='webix_button webix_img_btn'])[1] (tried for 20 second(s) with 500 milliseconds interval)
-Build info: version: '4.33.0', revision: '2c6aaad03a'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59074}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59074/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 8f18471c450391ce5532b1b6beebbf69]]>
+              <![CDATA[GuestType values should not be the same did not expect [FIT] but found [FIT]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: (//button[@class='webix_button webix_img_btn'])[1] (tried for 20 second(s) with 500 milliseconds interval)
-Build info: version: '4.33.0', revision: '2c6aaad03a'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59074}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59074/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 8f18471c450391ce5532b1b6beebbf69
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-at FO.testclass.test_edit_guest_name_and_personal_details_TC_GIH_01(testclass.java:3281)
+              <![CDATA[java.lang.AssertionError: GuestType values should not be the same did not expect [FIT] but found [FIT]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failEquals(Assert.java:1582)
+at org.testng.Assert.assertNotEqualsImpl(Assert.java:157)
+at org.testng.Assert.assertNotEquals(Assert.java:2201)
+at FO.testclass.test_modify_segment_company_guest_type_and_agent_TC_GIH_02(testclass.java:3475)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -63,10 +55,10 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_edit_guest_name_and_personal_details_TC_GIH_01 -->
+        </test-method> <!-- test_modify_segment_company_guest_type_and_agent_TC_GIH_02 -->
       </class> <!-- FO.testclass -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

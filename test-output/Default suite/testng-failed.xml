@@ -5,8 +5,8 @@
     <classes>
       <class name="FO.testclass">
         <methods>
+          <include name="test_modify_segment_company_guest_type_and_agent_TC_GIH_02"/>
           <include name="setup"/>
-          <include name="test_edit_guest_name_and_personal_details_TC_GIH_01"/>
           <include name="Test_Sucessfull_Login"/>
         </methods>
       </class> <!-- FO.testclass -->
