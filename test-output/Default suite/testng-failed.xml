@@ -5,7 +5,7 @@
     <classes>
       <class name="FO.testclass">
         <methods>
-          <include name="test_create_new_message_for_various_guest_statuses_TC_GCRM_03"/>
+          <include name="test_modify_message_details_open_mode_TC_GCRM_06"/>
           <include name="setup"/>
           <include name="Test_Sucessfull_Login"/>
         </methods>
