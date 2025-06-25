@@ -958,4 +958,137 @@ public class Guest_inhouse {
 		Assert.assertTrue(sucessfull_edit.isDisplayed(), "Element not displayed and editing other tab fails");
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[text()=\"Ok\"])[2]"))).click();
 	}
+	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 5)
+	public void test_view_inhouse_log_TC_GIH_05() throws InterruptedException, AWTException {
+		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
+		System.out.println("Executing Test Method: " + methodName);
+		//======================================================
+		// Creating a reservation 
+		//======================================================
+
+		driver.get("https://test1dns.wincloudpms.net/TravelAgentBlock/FOReservation?VN=3.04.025");
+		WebElement add = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='webix_el_box'])[2]")));
+		add.click();
+
+		WebElement arrivalDate = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@aria-label='Arrival']")));
+		js.executeScript("arguments[0].click();", arrivalDate);
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='webix_cal_month_name']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='webix_cal_month_name']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='2023']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Sep']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[text()='29'])[2]"))).click();
+
+		String noNightsBeforeSave = "2";
+		WebElement nightsInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//label[text()='Nights']/following-sibling::input")));
+		nightsInput.clear();
+		nightsInput.sendKeys(noNightsBeforeSave);
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@aria-label='RoomType']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@webix_l_id='DXR']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-search ExpBkGridIconBtn']"))).click();
+
+		WebElement doubleClick1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@aria-rowindex='5'])[1]")));
+		js.executeScript("arguments[0].scrollIntoView(true);", doubleClick1);
+		actions.doubleClick(doubleClick1).perform();
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='OK']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='OK']"))).click();
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-save']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class='webix_button webix_img_btn'])[1]"))).click();
+
+		WebElement reserveNoInput = driver.findElement(By.xpath("//label[text()='Reserve No']/following-sibling::input"));
+		String reserveNoValue = reserveNoInput.getAttribute("value");
+		System.out.println("Original Reserve No: " + reserveNoValue);
+
+		//--------------------------------------------------------
+		// performing a check in action
+		//--------------------------------------------------------
+
+		driver.navigate().refresh();
+		driver.navigate().to("https://test1dns.wincloudpms.net/TravelAgentBlock/FOReservation?MODE=C&VN=3.04.025");
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class=\" fa fa-folder-open\"]")));
+		driver.findElement(By.xpath("//span[@class=\" fa fa-folder-open\"]")).click();
+
+		WebElement filterInput_2 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[1]")));
+		filterInput_2.click(); Thread.sleep(1000);
+
+		for (char ch : reserveNoValue.toCharArray()) {
+			typeCharWithRobot(ch); // ✅ correct
+		}
+		Thread.sleep(1500);
+		WebElement dynamicElement_3 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='" + reserveNoValue + "']")));
+		actions.doubleClick(dynamicElement_3).perform();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//span[@class=\"webix_input_icon wxi-search\"])[1]")));
+		driver.findElement(By.xpath("(//span[@class=\"webix_input_icon wxi-search\"])[1]")).click();
+
+		List<WebElement> vacantRooms = driver.findElements(By.cssSelector(".RmBgColorV1"));
+		if (!vacantRooms.isEmpty()) {
+			WebElement firstVacantRoom = vacantRooms.get(0);
+			js.executeScript("arguments[0].scrollIntoView(true);", firstVacantRoom);
+			firstVacantRoom.click();
+			System.out.println("First vacant room selected.");
+		} else {
+			System.out.println("No vacant rooms found.");
+		}
+		WebElement roomNoInput = driver.findElement(By.xpath("(//label[text()='Room No']/following-sibling::input)[2]"));
+		String roomNo = roomNoInput.getAttribute("value");
+		System.out.println("Room No: " + roomNo);
+		driver.findElement(By.xpath("//button[text()='Select']")).click();
+		driver.findElement(By.xpath("//span[text()='CheckIn']")).click();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@style='text-align:center !important;font-weight:bold;width:100%;color:#fb2510']")));
+		WebElement regnum = driver.findElement(By.xpath("//div[@style='text-align:center !important;font-weight:bold;width:100%;color:#fb2510']"));
+		String reg_no = regnum.getText();
+		System.out.println(reg_no);
+
+		String lastFiveChars = reg_no.substring(reg_no.length() - 5);
+		System.out.println("Reservation Number : " + lastFiveChars);
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//input[@type='checkbox'])[6]"))).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='webix_button webix_img_btn']"))).click();
+
+		// editing and veiewing that data is present in log or not
+		
+		driver.navigate().to("https://test1dns.wincloudpms.net/TravelAgentBlock/FoInHouseGuest?VN=3.04.025");
+		WebElement filterInput_3 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[2]")));
+		filterInput_3.click(); Thread.sleep(1000);
+
+		for (char ch : reserveNoValue.toCharArray()) {
+			typeCharWithRobot(ch); // ✅ correct
+		}
+		Thread.sleep(1500);
+		WebElement dynamicElement_4 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='" + reserveNoValue + "']")));
+		actions.doubleClick(dynamicElement_4).perform();
+		WebElement adult = driver.findElement(By.xpath("//label[text()='Adult']/following-sibling::input"));
+		adult.sendKeys(Keys.chord(Keys.CONTROL, "a"), "2");
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-save']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class=\"webix_icon_btn wxi-check\"]"))).click();
+		
+		driver.navigate().refresh();
+		WebElement filterInput_4 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[2]")));
+		filterInput_4.click(); Thread.sleep(1000);
+
+		for (char ch : reserveNoValue.toCharArray()) {
+			typeCharWithRobot(ch); // ✅ correct
+		}
+		Thread.sleep(1500);
+		WebElement dynamicElement_5 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='" + reserveNoValue + "']")));
+		actions.doubleClick(dynamicElement_5).perform();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()=\"Log\"]"))).click();
+		Thread.sleep(1500);
+		WebElement cell = driver.findElement(By.xpath("(//div[@role='gridcell' and @aria-rowindex='2' and @aria-colindex='5'])[2]"));
+		String Value_before_edit = cell.getText().trim();
+		System.out.println("Before edit: " + Value_before_edit);
+
+		// Perform your editing action...
+		WebElement cell_1 = driver.findElement(By.xpath("(//div[@role='gridcell' and @aria-rowindex='2' and @aria-colindex='6'])[2]"));
+		String Value_after_edit = cell_1.getText().trim();
+		System.out.println("After edit: " + Value_after_edit);
+
+		Assert.assertNotEquals(Value_before_edit, Value_after_edit, "The value did not change after edit");
+	}
 }

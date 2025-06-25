@@ -5,8 +5,8 @@
     <classes>
       <class name="FO.testclass">
         <methods>
-          <include name="test_modify_other_tab_fields_TC_GIH_04"/>
           <include name="setup"/>
+          <include name="test_view_inhouse_log_TC_GIH_05"/>
           <include name="Test_Sucessfull_Login"/>
         </methods>
       </class> <!-- FO.testclass -->
