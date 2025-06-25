@@ -6,7 +6,7 @@
       <class name="FO.testclass">
         <methods>
           <include name="setup"/>
-          <include name="test_view_inhouse_log_TC_GIH_05"/>
+          <include name="test_create_new_complaint_for_various_guest_statuses_TC_GCRM_01"/>
           <include name="Test_Sucessfull_Login"/>
         </methods>
       </class> <!-- FO.testclass -->

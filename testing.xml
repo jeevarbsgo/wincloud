@@ -17,6 +17,7 @@
             <class name="FO.Advance_distribution"/>
             <class name="FO.Room_assignment"/>
             <class name="FO.Guest_Search"/>
+             <class name="FO.Guest_Search"/>
         </classes>
     </test>
 </suite>
