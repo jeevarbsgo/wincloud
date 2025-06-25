@@ -3513,40 +3513,70 @@ System.out.println("*************************Advance initiated for the room1 aft
 
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='OK']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='OK']"))).click();
-		
+
 		// editing the rate
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()=\"Rate Edit\"]"))).click();
 		WebElement input = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@aria-rowindex=\"1\"])[25]")));
 		String Rate_1 = input.getText();
 		System.out.println("Amount before editing: "+Rate_1);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class=\"webix_icon webix_icon wxi-close\"]"))).click();
-		
-		// making split in the reservation
-		
+
+		// Entering advance amount to perform the split up
+
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-save']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class='webix_button webix_img_btn'])[1]"))).click();
-		
-		WebElement rooms = driver.findElement(By.xpath("//label[text()='Rooms']/following-sibling::input"));
-		rooms.click(); // Focus the field (important)
-		rooms.clear();
-		rooms.sendKeys("2"); 
+
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-save']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class='webix_button webix_img_btn'])[1]"))).click();
 
 		WebElement reserveNoInput = driver.findElement(By.xpath("//label[text()='Reserve No']/following-sibling::input"));
 		String reserveNoValue = reserveNoInput.getAttribute("value");
 		System.out.println("Original Reserve No: " + reserveNoValue);
-		
+
 		WebElement scrollElement = driver.findElement(By.xpath("(//div[@class='webix_vscroll_body'])[3]"));
 		js.executeScript("arguments[0].scrollIntoView(true);", scrollElement);
 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='Ledger']"))).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='Payment']"))).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//button[text()='Advance'])[2]"))).click();
+
+		Thread.sleep(1000);
+		typeCharWithRobot('r');robot.delay(500);
+		typeCharWithRobot('b');robot.delay(500);
+		typeCharWithRobot('s');robot.delay(500);
+		typeCharWithRobot('g');robot.delay(500);
+		typeCharWithRobot('o');robot.delay(500);
+
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.keyRelease(KeyEvent.VK_ENTER);
+
+		// Switch to iframe and enter amount
+		WebElement iframe = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//iframe[contains(@src, 'TravelAgentBlock/FoResAdvance')]")));
+		driver.switchTo().frame(iframe);
+
+		String expected = "3000.000";
+
+		WebElement amountInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[text()='Amount']/following-sibling::input[@type='text']")));
+		amountInput.click();
+		amountInput.sendKeys(expected);
+
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-plus']"))).click();
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@view_id='chkNRSplitRes']"))).click();
-		WebElement noOfSplitInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[text()='No of Split']/following-sibling::input")));
-		noOfSplitInput.sendKeys(Keys.chord(Keys.CONTROL, "a"), "1");
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class=\"webix_button webix_img_btn\"])[4]"))).click();
-/*
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Ok']"))).click();
+
+
+		WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(5));
+		WebElement saveButton = wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[.//span[contains(@class, 'fa-save')]]")));
+		saveButton.click();
+
+		wait.until(ExpectedConditions.elementToBeClickable( By.xpath("(//button[text()=\"Ok\"])[2]"))).click();
+
+		driver.switchTo().defaultContent();
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[@class=\"webix_icon webix_icon wxi-close\"])[2]"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-save']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class='webix_button webix_img_btn'])[1]"))).click();
+
 		//--------------------------------------------------------
 		// performing a check in action
 		//--------------------------------------------------------
@@ -3626,8 +3656,8 @@ System.out.println("*************************Advance initiated for the room1 aft
 		actions.moveToElement(tipElement).perform();
 		driver.findElement(By.id("zs-tip-close")).click();
 
-		WebElement scrollElement = driver.findElement(By.xpath("//label[text()='Rate']/following-sibling::input"));
-		js.executeScript("arguments[0].scrollIntoView(true);", scrollElement);
+		WebElement scrollElement_1 = driver.findElement(By.xpath("//label[text()='Rate']/following-sibling::input"));
+		js.executeScript("arguments[0].scrollIntoView(true);", scrollElement_1);
 
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()=\"Save\"]"))).click();
 
@@ -3640,6 +3670,74 @@ System.out.println("*************************Advance initiated for the room1 aft
 		Assert.assertNotEquals(Rate_1, rateValue);
 		// -----------------------------------------
 
+		//===========================================================
+		// making split in amount and then verify the splitted amount
+		//===========================================================
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()=\"Bill Details\"]"))).click();
+		// Verifing the total in table 1 before drag 
+		WebElement sourceCell_1 = driver.findElement(By.xpath("(//div[@role='gridcell' and @aria-rowindex='1' and @aria-colindex='2'])[4]"));
+		String beforeDragValue_1 = sourceCell_1.getText().replace(",", "").trim();
+		if (beforeDragValue_1.length() > 1 && !Character.isDigit(beforeDragValue_1.charAt(0))) {
+			beforeDragValue_1 = beforeDragValue_1.substring(1);
+			System.out.println("Advance amount after removing symbol " + beforeDragValue_1);
+		}
+		Assert.assertEquals(beforeDragValue_1, expected.replace(",", ""), "Value before drag does not match");
+
+		// Perform the drag-and-drop
+		WebElement sourceCell = driver.findElement(By.xpath("(//div[@role='gridcell' and @aria-rowindex='2' and @aria-colindex='2'])[2]"));
+		WebElement targetCell = driver.findElement(By.xpath("(//div[@class=\"webix_ss_body\"])[6]"));
+		actions.dragAndDrop(sourceCell, targetCell).perform();
+
+		// Optional: wait a bit for value update
+		Thread.sleep(1000); // or use WebDriverWait if DOM updates dynamically
+
+		// Verify source becomes zero
+		WebElement sourceCell_2 = driver.findElement(By.xpath("(//div[@role='gridcell' and @aria-rowindex='1' and @aria-colindex='2'])[5]"));
+		String afterSourceValue = sourceCell_2.getText().replace(",", "").trim();
+		if (afterSourceValue.length() > 1 && !Character.isDigit(afterSourceValue.charAt(0))) {
+			afterSourceValue = afterSourceValue.substring(1);
+			System.out.println("Advance amount after removing symbol " + afterSourceValue);
+		}
+
+		//-------------------------------------------------------------------------------------------------------------------
+		Assert.assertEquals(afterSourceValue, expected.replace(",", ""), "Target cell value incorrect after drag-and-drop");
+		//-------------------------------------------------------------------------------------------------------------------
+
+		// Splitting Amount into equal half
+		WebElement cell = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@role='gridcell' and @aria-rowindex='2' and @aria-colindex='1'])[2]")));
+		actions.contextClick(cell).perform();
+		WebElement amount_spit =wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//a[@webix_l_id=\"1\"])[1]")));
+		actions.doubleClick(amount_spit).perform();	
+
+		WebElement splitInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[text()='Split %']/following-sibling::input")));
+		actions.doubleClick(splitInput).perform(); // double-click to select
+		splitInput.sendKeys("50");
+		Thread.sleep(1000);
+
+		actions.sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.SPACE).sendKeys(Keys.TAB).sendKeys(Keys.ENTER).sendKeys(Keys.ENTER).sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.ENTER).build().perform();
+
+
+		WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(5));
+
+		WebElement sourceCell_3 = shortWait.until(ExpectedConditions.visibilityOfElementLocated(
+				By.xpath("(//div[@role='gridcell' and @aria-rowindex='1' and @aria-colindex='2'])[4]")));
+		String beforeDragValue_3 = sourceCell_3.getText().replace(",", "").trim();
+
+		if (beforeDragValue_3.length() > 1 && !Character.isDigit(beforeDragValue_3.charAt(0))) {
+			beforeDragValue_3 = beforeDragValue_3.substring(1);
+			System.out.println("Advance amount after split 1 " + beforeDragValue_3);
+		}
+		WebElement sourceCell_4 = driver.findElement(By.xpath("(//div[@role='gridcell' and @aria-rowindex='1' and @aria-colindex='2'])[5]"));
+		String afterSourceValue_4 = sourceCell_4.getText().replace(",", "").trim();
+		if (afterSourceValue_4.length() > 1 && !Character.isDigit(afterSourceValue_4.charAt(0))) {
+			afterSourceValue_4 = afterSourceValue_4.substring(1);
+			System.out.println("Advance amount after Split 2 " + afterSourceValue_4);
+		}
+		//---------------------------------------------------------------------------------------------------------
+		Assert.assertEquals(afterSourceValue_4, beforeDragValue_3, "Amount did not match after splitted equally");
+		//---------------------------------------------------------------------------------------------------------
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[@class=\"webix_icon wxi-close\"])[1]"))).click();
 
 		//============================================================
 		// Making entry in bar posting and verify in the guest charges
@@ -3693,8 +3791,7 @@ System.out.println("*************************Advance initiated for the room1 aft
 			Assert.fail("Timed out waiting for message: Posting is Barred for Room " + roomNo);
 		}
 		//-----------------------------------------------------------------------------------------------------
-		*/
-		
+
 	}
 
 }
