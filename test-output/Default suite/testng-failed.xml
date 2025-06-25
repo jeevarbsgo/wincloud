@@ -5,7 +5,7 @@
     <classes>
       <class name="FO.testclass">
         <methods>
-          <include name="test_edit_rate_routing_post_bar_and_split_TC_GIH_03"/>
+          <include name="test_modify_other_tab_fields_TC_GIH_04"/>
           <include name="setup"/>
           <include name="Test_Sucessfull_Login"/>
         </methods>
