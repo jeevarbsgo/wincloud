@@ -17,6 +17,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -1091,4 +1092,10 @@ public class Guest_inhouse {
 
 		Assert.assertNotEquals(Value_before_edit, Value_after_edit, "The value did not change after edit");
 	}
+	 @AfterClass
+	    public void tearDown() {
+	        if (driver != null) {
+	            driver.quit();
+	        }
+}
 }

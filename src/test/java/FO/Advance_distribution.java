@@ -16,6 +16,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -153,8 +154,10 @@ public class Advance_distribution {
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("UserName")));
 		driver.findElement(By.id("UserName")).sendKeys("wincloud" + Keys.ENTER);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("Password")));
+		driver.findElement(By.id("Password")).sendKeys("Password" + Keys.ENTER);
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("Password"))).sendKeys("rbsgo" + Keys.ENTER);
 
 		WebElement logo = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//img[@src=\"../images/wincloud-gray.png\"]")));
 		Assert.assertTrue(logo.isDisplayed(), "Login was not successful - Wincloud logo not displayed.");
@@ -866,5 +869,10 @@ public class Advance_distribution {
 		System.out.println("Total advance amount paid before check in " +Actual_Amount);
 
 	}
-
+	 @AfterClass
+	    public void tearDown() {
+	        if (driver != null) {
+	            driver.quit();
+	        }
+	 }
 }

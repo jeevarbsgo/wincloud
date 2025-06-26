@@ -2,39 +2,57 @@
 <testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-25T18:07:40 IST" name="Default suite" finished-at="2025-06-25T18:09:28 IST" duration-ms="107760">
+  <suite started-at="2025-06-26T12:51:10 IST" name="Default suite" finished-at="2025-06-26T12:52:06 IST" duration-ms="55561">
     <groups>
     </groups>
-    <test started-at="2025-06-25T18:07:40 IST" name="Default test" finished-at="2025-06-25T18:09:28 IST" duration-ms="107760">
+    <test started-at="2025-06-26T12:51:10 IST" name="Default test" finished-at="2025-06-26T12:52:06 IST" duration-ms="55561">
       <class name="FO.testclass">
-        <test-method is-config="true" signature="setup()[pri:0, instance:FO.testclass@757277dc]" started-at="2025-06-25T18:07:40 IST" name="setup" finished-at="2025-06-25T18:07:43 IST" duration-ms="3029" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:FO.testclass@757277dc]" started-at="2025-06-26T12:51:10 IST" name="setup" finished-at="2025-06-26T12:51:12 IST" duration-ms="1620" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Test_Sucessfull_Login()[pri:0, instance:FO.testclass@757277dc]" started-at="2025-06-25T18:07:43 IST" name="Test_Sucessfull_Login" finished-at="2025-06-25T18:07:51 IST" duration-ms="8387" status="PASS">
+        <test-method signature="Test_Sucessfull_Login()[pri:0, instance:FO.testclass@757277dc]" started-at="2025-06-26T12:51:12 IST" name="Test_Sucessfull_Login" finished-at="2025-06-26T12:51:16 IST" duration-ms="4137" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test_Sucessfull_Login -->
-        <test-method signature="test_modify_message_details_open_mode_TC_GCRM_06()[pri:6, instance:FO.testclass@757277dc]" started-at="2025-06-25T18:07:51 IST" name="test_modify_message_details_open_mode_TC_GCRM_06" finished-at="2025-06-25T18:09:27 IST" depends-on-methods="FO.testclass.Test_Sucessfull_Login" duration-ms="95369" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
+        <test-method signature="test_delete_complaint_request_message_view_mode_TC_GCRM_08()[pri:8, instance:FO.testclass@757277dc]" started-at="2025-06-26T12:51:16 IST" name="test_delete_complaint_request_message_view_mode_TC_GCRM_08" finished-at="2025-06-26T12:52:05 IST" depends-on-methods="FO.testclass.Test_Sucessfull_Login" duration-ms="48986" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[Expected condition failed: waiting for element to be clickable: By.xpath: (//div[@aria-rowindex='5'])[1] (tried for 20 second(s) with 500 milliseconds interval)
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"(//div[@class='webix_ss_vscroll webix_vscroll_y'])[3]"}
+  (Session info: chrome=137.0.7151.122)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.33.0', revision: '2c6aaad03a'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51545}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51545/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 65dc609d845074119c881e3b837d2623]]>
+Command: [8552463eeae7e015e7d45d1815f4e710, findElement {value=(//div[@class='webix_ss_vscroll webix_vscroll_y'])[3], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.122, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58168}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58168/devtoo..., se:cdpVersion: 137.0.7151.122, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8552463eeae7e015e7d45d1815f4e710]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: (//div[@aria-rowindex='5'])[1] (tried for 20 second(s) with 500 milliseconds interval)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//div[@class='webix_ss_vscroll webix_vscroll_y'])[3]"}
+  (Session info: chrome=137.0.7151.122)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.33.0', revision: '2c6aaad03a'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51545}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51545/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 65dc609d845074119c881e3b837d2623
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-at FO.testclass.test_modify_message_details_open_mode_TC_GCRM_06(testclass.java:5109)
+Command: [8552463eeae7e015e7d45d1815f4e710, findElement {value=(//div[@class='webix_ss_vscroll webix_vscroll_y'])[3], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.122, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\Jeeva\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58168}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58168/devtoo..., se:cdpVersion: 137.0.7151.122, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8552463eeae7e015e7d45d1815f4e710
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
+at FO.testclass.test_delete_complaint_request_message_view_mode_TC_GCRM_08(testclass.java:6174)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -63,10 +81,10 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_modify_message_details_open_mode_TC_GCRM_06 -->
+        </test-method> <!-- test_delete_complaint_request_message_view_mode_TC_GCRM_08 -->
       </class> <!-- FO.testclass -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
