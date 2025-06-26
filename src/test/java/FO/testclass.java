@@ -6152,7 +6152,7 @@ actions.doubleClick(dynamicElement_9).perform();
 		WebElement dynamicElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='" + reserveNoValue + "']")));
 		actions.doubleClick(dynamicElement).perform();
 
-		String complaintText = "room is not clean1123";
+		String complaintText = "room is not clean11233";
 		WebElement complaintInput = driver.findElement(By.xpath("//label[text()='Complaint']/following-sibling::input"));
 		complaintInput.click();
 		complaintInput.clear();
@@ -6167,7 +6167,7 @@ actions.doubleClick(dynamicElement_9).perform();
 		driver.navigate().refresh();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class=\"fa fa-file-alt\"]"))).click();
 
-	
+
 		Set<String> allComplaintTexts = new HashSet<>();
 
 		// Locate the vertical scrollbar element
@@ -6199,8 +6199,7 @@ actions.doubleClick(dynamicElement_9).perform();
 		}
 
 		// Final check
-		boolean complaintFound = allComplaintTexts.stream()
-		    .anyMatch(text -> text.equalsIgnoreCase(complaintText));
+		boolean complaintFound = allComplaintTexts.stream().anyMatch(text -> text.equalsIgnoreCase(complaintText));
 
 		// Assertion
 		Assert.assertTrue(complaintFound, "Complaint '" + complaintText + "' not found in the grid after scrolling.");

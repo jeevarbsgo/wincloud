@@ -4,7 +4,9 @@ import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.time.Duration;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -2089,5 +2091,169 @@ public class Guest_complaint_req_msg {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class=\"webix_icon_btn wxi-check\"]"))).click();
 		System.out.println("message resolved ");
 
+}
+	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 8)
+	public void test_delete_complaint_request_message_view_mode_TC_GCRM_08() throws InterruptedException, AWTException {
+		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
+		System.out.println("Executing Test Method: " + methodName);
+
+		//======================================================
+		// Creating a reservation 
+		//======================================================
+
+		driver.get("https://test1dns.wincloudpms.net/TravelAgentBlock/FOReservation?VN=3.04.025");
+		WebElement add = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='webix_el_box'])[2]")));
+		add.click();
+
+		WebElement arrivalDate = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@aria-label='Arrival']")));
+		js.executeScript("arguments[0].click();", arrivalDate);
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='webix_cal_month_name']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='webix_cal_month_name']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='2023']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Sep']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[text()='29'])[2]"))).click();
+
+		String noNightsBeforeSave = "2";
+		WebElement nightsInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//label[text()='Nights']/following-sibling::input")));
+		nightsInput.clear();
+		nightsInput.sendKeys(noNightsBeforeSave);
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@aria-label='RoomType']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@webix_l_id='DXR']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-search ExpBkGridIconBtn']"))).click();
+
+		WebElement doubleClick1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@aria-rowindex='5'])[1]")));
+		js.executeScript("arguments[0].scrollIntoView(true);", doubleClick1);
+		actions.doubleClick(doubleClick1).perform();
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='OK']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='OK']"))).click();
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-save']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class='webix_button webix_img_btn'])[1]"))).click();
+
+		WebElement reserveNoInput = driver.findElement(By.xpath("//label[text()='Reserve No']/following-sibling::input"));
+		String reserveNoValue = reserveNoInput.getAttribute("value");
+		System.out.println("Original Reserve No: " + reserveNoValue);
+
+		//--------------------------------------------------------
+		// performing a check in action
+		//--------------------------------------------------------
+
+		driver.navigate().refresh();
+		driver.navigate().to("https://test1dns.wincloudpms.net/TravelAgentBlock/FOReservation?MODE=C&VN=3.04.025");
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class=\" fa fa-folder-open\"]")));
+		driver.findElement(By.xpath("//span[@class=\" fa fa-folder-open\"]")).click();
+
+		WebElement filterInput_2 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[1]")));
+		filterInput_2.click(); Thread.sleep(1000);
+
+		for (char ch : reserveNoValue.toCharArray()) {
+			typeCharWithRobot(ch); // ✅ correct
+		}
+		Thread.sleep(1500);
+		WebElement dynamicElement_3 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='" + reserveNoValue + "']")));
+		actions.doubleClick(dynamicElement_3).perform();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//span[@class=\"webix_input_icon wxi-search\"])[1]")));
+		driver.findElement(By.xpath("(//span[@class=\"webix_input_icon wxi-search\"])[1]")).click();
+
+		List<WebElement> vacantRooms = driver.findElements(By.cssSelector(".RmBgColorV1"));
+		if (!vacantRooms.isEmpty()) {
+			WebElement firstVacantRoom = vacantRooms.get(0);
+			js.executeScript("arguments[0].scrollIntoView(true);", firstVacantRoom);
+			firstVacantRoom.click();
+			System.out.println("First vacant room selected.");
+		} else {
+			System.out.println("No vacant rooms found.");
+		}
+		WebElement roomNoInput = driver.findElement(By.xpath("(//label[text()='Room No']/following-sibling::input)[2]"));
+		String roomNo = roomNoInput.getAttribute("value");
+		System.out.println("Room No: " + roomNo);
+		driver.findElement(By.xpath("//button[text()='Select']")).click();
+		driver.findElement(By.xpath("//span[text()='CheckIn']")).click();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@style='text-align:center !important;font-weight:bold;width:100%;color:#fb2510']")));
+		WebElement regnum = driver.findElement(By.xpath("//div[@style='text-align:center !important;font-weight:bold;width:100%;color:#fb2510']"));
+		String reg_no = regnum.getText();
+		System.out.println(reg_no);
+
+		String lastFiveChars = reg_no.substring(reg_no.length() - 5);
+		System.out.println("Reservation Number : " + lastFiveChars);
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//input[@type='checkbox'])[6]"))).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='webix_button webix_img_btn']"))).click();
+
+		//Raising the complaint and viewing it in view mode
+
+		// ----------------------------------------------
+		// Rasing complaint for the current guest 
+		// ----------------------------------------------
+		driver.navigate().to("https://test1dns.wincloudpms.net/TravelAgentBlock/FoGstMsgReqComp?MODID=FO&VN=3.04.025");
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class=\"webix_input_icon wxi-search\"]"))).click();
+		WebElement filterInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[2]")));
+		filterInput.click(); Thread.sleep(1000);
+
+		for (char ch : reserveNoValue.toCharArray()) {
+			typeCharWithRobot(ch); // ✅ correct
+		}
+		Thread.sleep(1500);
+		WebElement dynamicElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='" + reserveNoValue + "']")));
+		actions.doubleClick(dynamicElement).perform();
+
+		String complaintText = "room is not clean11233";
+		WebElement complaintInput = driver.findElement(By.xpath("//label[text()='Complaint']/following-sibling::input"));
+		complaintInput.click();
+		complaintInput.clear();
+		complaintInput.sendKeys(complaintText);
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-save']"))).click();
+		WebElement successIcon = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='webix_icon_btn wxi-check']")));
+		Assert.assertTrue(successIcon.isDisplayed(), "Check box is not displayed - test failed.");
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class=\"webix_icon_btn wxi-check\"]"))).click();
+
+		// viewing the complaint in the report 
+		driver.navigate().refresh();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class=\"fa fa-file-alt\"]"))).click();
+
+
+		Set<String> allComplaintTexts = new HashSet<>();
+
+		// Locate the vertical scrollbar element
+		WebElement scrollBar = driver.findElement(By.xpath("//div[@class='webix_ss_vscroll webix_vscroll_y']"));
+		// Define previous and current scroll values
+		long lastScrollTop = -1;
+		long currentScrollTop = 0;
+
+		while (true) {
+		    // Collect visible complaint cells
+		    List<WebElement> visibleCells = driver.findElements(By.xpath("//div[@role='gridcell' and @aria-colindex='3']"));
+		    for (WebElement cell : visibleCells) {
+		        allComplaintTexts.add(cell.getText().trim());
+		    }
+
+		    // Scroll down by a small step
+		    js.executeScript("arguments[0].scrollTop = arguments[0].scrollTop + 100;", scrollBar);
+		    Thread.sleep(500); // wait for dynamic content to load
+
+		    // Get current scroll position
+		    currentScrollTop = (Long) js.executeScript("return arguments[0].scrollTop;", scrollBar);
+
+		    // If scroll did not move further, break the loop
+		    if (currentScrollTop == lastScrollTop) {
+		        break;
+		    }
+
+		    lastScrollTop = currentScrollTop;
+		}
+
+		// Final check
+		boolean complaintFound = allComplaintTexts.stream().anyMatch(text -> text.equalsIgnoreCase(complaintText));
+
+		// Assertion
+		Assert.assertTrue(complaintFound, "Complaint '" + complaintText + "' not found in the grid after scrolling.");
 }
 }
