@@ -18,6 +18,7 @@
             <class name="FO.Room_assignment"/>
             <class name="FO.Guest_Search"/>
              <class name="FO.Guest_inhouse"/>
+             <class name="FO.Guest_complaint_req_msg"/>
         </classes>
     </test>
 </suite>

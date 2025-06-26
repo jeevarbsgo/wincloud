@@ -2092,8 +2092,8 @@ public class Guest_complaint_req_msg {
 		System.out.println("message resolved ");
 
 }
-	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 8)
-	public void test_delete_complaint_request_message_view_mode_TC_GCRM_08() throws InterruptedException, AWTException {
+	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 10)
+	public void test_view_reports_from_header_button_TC_GCRM_10() throws InterruptedException, AWTException {
 		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
 		System.out.println("Executing Test Method: " + methodName);
 

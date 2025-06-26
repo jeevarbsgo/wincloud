@@ -5,8 +5,8 @@
     <classes>
       <class name="FO.testclass">
         <methods>
+          <include name="test_filter_reservations_by_date_and_template_TC_RC_01"/>
           <include name="setup"/>
-          <include name="test_delete_complaint_request_message_view_mode_TC_GCRM_08"/>
           <include name="Test_Sucessfull_Login"/>
         </methods>
       </class> <!-- FO.testclass -->

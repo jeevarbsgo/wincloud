@@ -6038,7 +6038,7 @@ actions.doubleClick(dynamicElement_9).perform();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class=\"webix_icon_btn wxi-check\"]"))).click();
 		System.out.println("message resolved ");
 
-}*/
+}
 	
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 8)
 	public void test_delete_complaint_request_message_view_mode_TC_GCRM_08() throws InterruptedException, AWTException {
@@ -6203,5 +6203,128 @@ actions.doubleClick(dynamicElement_9).perform();
 
 		// Assertion
 		Assert.assertTrue(complaintFound, "Complaint '" + complaintText + "' not found in the grid after scrolling.");
-}
+}*/
+	
+	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 6)
+	public void test_filter_reservations_by_date_and_template_TC_RC_01() throws InterruptedException, AWTException {
+		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
+		System.out.println("Executing Test Method: " + methodName);
+
+		//======================================================
+		// Creating a reservation 
+		//======================================================
+
+		driver.get("https://test1dns.wincloudpms.net/TravelAgentBlock/FOReservation?VN=3.04.025");
+		WebElement add = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='webix_el_box'])[2]")));
+		add.click();
+
+		WebElement arrivalDate = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@aria-label='Arrival']")));
+		js.executeScript("arguments[0].click();", arrivalDate);
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='webix_cal_month_name']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='webix_cal_month_name']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='2023']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Sep']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[text()='29'])[2]"))).click();
+
+		String noNightsBeforeSave = "2";
+		WebElement nightsInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//label[text()='Nights']/following-sibling::input")));
+		nightsInput.clear();
+		nightsInput.sendKeys(noNightsBeforeSave);
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@aria-label='RoomType']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@webix_l_id='DXR']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-search ExpBkGridIconBtn']"))).click();
+
+		WebElement doubleClick1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@aria-rowindex='5'])[1]")));
+		js.executeScript("arguments[0].scrollIntoView(true);", doubleClick1);
+		actions.doubleClick(doubleClick1).perform();
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='OK']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='OK']"))).click();
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-save']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class='webix_button webix_img_btn'])[1]"))).click();
+
+		WebElement reserveNoInput = driver.findElement(By.xpath("//label[text()='Reserve No']/following-sibling::input"));
+		String reserveNoValue = reserveNoInput.getAttribute("value");
+		System.out.println("Original Reserve No: " + reserveNoValue);
+
+	
+		
+	// Sending mail in the reservation conformation screen 
+		
+		driver.navigate().to("https://test1dns.wincloudpms.net/HTMLViewer/FoResvConfPrint?VN=3.04.025");
+		
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[text()=\"Create Dt\"])[1]"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()=\"Arrival Dt\"]"))).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//span[@class=\"webix_input_icon wxi-calendar\"])[1]"))).click();
+		
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='webix_cal_month_name']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='webix_cal_month_name']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='2023']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Sep']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[text()='29'])[2]"))).click();
+			
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()=\"Display\"]"))).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@role='gridcell' and @aria-colindex='1']")));
+		
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@aria-label=\"Template\"]"))).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@webix_l_id=\"R1_11\"]"))).click();
+
+		// Vertical scrollbar element (adjust index if needed)
+		WebElement scrollBar = driver.findElement(By.xpath("//div[@class=\"webix_ss_vscroll webix_vscroll_y\"]"));
+
+		Set<String> seenReserveNos = new HashSet<>();
+		long lastScrollTop = -1;
+		long currentScrollTop = 0;
+		boolean found = false;
+
+		while (true) {
+		    // Get all visible cells in the reservation number column
+		    List<WebElement> visibleRows = driver.findElements(By.xpath("//div[@role='gridcell' and @aria-colindex='1']"));
+
+		    for (WebElement row : visibleRows) {
+		        String text = row.getText().trim();
+		        if (!seenReserveNos.contains(text)) {
+		            seenReserveNos.add(text);
+
+		            if (text.equals(reserveNoValue)) {
+		                js.executeScript("arguments[0].scrollIntoView(true);", row);
+		                actions.doubleClick(row).perform(); // ✅ double-click action
+		                found = true;
+		                break;
+		            }
+		        }
+		    }
+
+		    if (found) break;
+
+		    // Scroll slightly to load more rows
+		    js.executeScript("arguments[0].scrollTop = arguments[0].scrollTop + 100;", scrollBar);
+		    Thread.sleep(500); // Small delay for lazy loading
+
+		    currentScrollTop = (Long) js.executeScript("return arguments[0].scrollTop;", scrollBar);
+		    if (currentScrollTop == lastScrollTop) {
+		        break; // No further scroll possible
+		    }
+
+		    lastScrollTop = currentScrollTop;
+		}
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()=\"Send Mail\"]"))).click();
+		
+		try {
+		    WebElement successMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(
+		        By.xpath("//div[@class='webix_popup_text']/span[text()='\"Mail sent successfully\"']")));
+
+		    Assert.assertTrue(successMessage.isDisplayed(), "'Mail sent successfully' popup is not displayed.");
+		    System.out.println("Test Passed: Success popup message is visible.");
+		} catch (TimeoutException e) {
+		    Assert.fail("Test Failed: 'Mail sent successfully' popup was not found in the expected time.");
+		}
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class=\"webix_popup_button confirm\"]"))).click();
+		
+	}
 }
