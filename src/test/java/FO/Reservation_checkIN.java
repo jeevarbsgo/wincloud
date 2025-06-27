@@ -704,6 +704,7 @@ public class Reservation_checkIN {
 		}
 
 
-	}}
+	}
+	}
 
 
