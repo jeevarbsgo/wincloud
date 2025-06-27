@@ -2,24 +2,28 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-26T16:45:01 IST" name="Default suite" finished-at="2025-06-26T16:45:27 IST" duration-ms="25819">
+  <suite started-at="2025-06-27T10:48:12 IST" name="Default suite" finished-at="2025-06-27T10:48:45 IST" duration-ms="32778">
     <groups>
     </groups>
-    <test started-at="2025-06-26T16:45:01 IST" name="Default test" finished-at="2025-06-26T16:45:27 IST" duration-ms="25819">
-      <class name="FO.testclass">
-        <test-method is-config="true" signature="setup()[pri:0, instance:FO.testclass@c86b9e3]" started-at="2025-06-26T16:45:01 IST" name="setup" finished-at="2025-06-26T16:45:04 IST" duration-ms="2688" status="PASS">
+    <test started-at="2025-06-27T10:48:12 IST" name="Default test" finished-at="2025-06-27T10:48:45 IST" duration-ms="32778">
+      <class name="FO.Room_assignment">
+        <test-method is-config="true" signature="setup()[pri:0, instance:FO.Room_assignment@e4487af]" started-at="2025-06-27T10:48:12 IST" name="setup" finished-at="2025-06-27T10:48:15 IST" duration-ms="2723" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Test_Sucessfull_Login()[pri:0, instance:FO.testclass@c86b9e3]" started-at="2025-06-26T16:45:04 IST" name="Test_Sucessfull_Login" finished-at="2025-06-26T16:45:08 IST" duration-ms="3560" status="PASS">
+        <test-method signature="Test_Sucessfull_Login()[pri:0, instance:FO.Room_assignment@e4487af]" started-at="2025-06-27T10:48:15 IST" name="Test_Sucessfull_Login" finished-at="2025-06-27T10:48:20 IST" duration-ms="5344" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test_Sucessfull_Login -->
-        <test-method signature="test_filter_reservations_by_date_and_template_TC_RC_01()[pri:6, instance:FO.testclass@c86b9e3]" started-at="2025-06-26T16:45:08 IST" name="test_filter_reservations_by_date_and_template_TC_RC_01" finished-at="2025-06-26T16:45:27 IST" depends-on-methods="FO.testclass.Test_Sucessfull_Login" duration-ms="19477" status="PASS">
+        <test-method signature="test_assign_room_number_manually_TC_RA_02()[pri:2, instance:FO.Room_assignment@e4487af]" started-at="2025-06-27T10:48:20 IST" name="test_assign_room_number_manually_TC_RA_02" finished-at="2025-06-27T10:48:44 IST" depends-on-methods="FO.Room_assignment.Test_Sucessfull_Login" duration-ms="23839" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_filter_reservations_by_date_and_template_TC_RC_01 -->
-      </class> <!-- FO.testclass -->
+        </test-method> <!-- test_assign_room_number_manually_TC_RA_02 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:FO.Room_assignment@e4487af]" started-at="2025-06-27T10:48:44 IST" name="tearDown" finished-at="2025-06-27T10:48:45 IST" duration-ms="770" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- FO.Room_assignment -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

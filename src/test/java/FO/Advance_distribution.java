@@ -146,7 +146,6 @@ public class Advance_distribution {
 	public void Test_Sucessfull_Login() {
 		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
 		System.out.println("Executing Test Method: " + methodName);
-
 		driver.get("https://test1dns.wincloudpms.net/WinLogin/Login/");
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ProptyText")));
@@ -154,12 +153,11 @@ public class Advance_distribution {
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("UserName")));
 		driver.findElement(By.id("UserName")).sendKeys("wincloud" + Keys.ENTER);
-		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("Password")));
-		driver.findElement(By.id("Password")).sendKeys("Password" + Keys.ENTER);
 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("Password"))).sendKeys("rbsgo" + Keys.ENTER);
 
 		WebElement logo = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//img[@src=\"../images/wincloud-gray.png\"]")));
+
 		Assert.assertTrue(logo.isDisplayed(), "Login was not successful - Wincloud logo not displayed.");
 	}
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 1)

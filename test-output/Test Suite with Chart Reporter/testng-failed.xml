@@ -11,28 +11,11 @@
       <class name="FO.Room_assignment">
         <methods>
           <include name="setup"/>
+          <include name="test_assign_room_number_manually_TC_RA_02"/>
           <include name="Test_Sucessfull_Login"/>
-          <include name="test_view_records_needing_room_assignment_by_date_TC_RA_01"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- FO.Room_assignment -->
-      <class name="FO.Advance_distribution">
-        <methods>
-          <include name="test_select_advance_type_and_reservation_room_TC_AD_01_CheckIN"/>
-          <include name="Test_Sucessfull_Login"/>
-          <include name="test_select_advance_type_and_reservation_room_TC_AD_01_Reservation"/>
-          <include name="tearDown"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- FO.Advance_distribution -->
-      <class name="FO.Reservation">
-        <methods>
-          <include name="Test_Sucessfull_Login"/>
-          <include name="setup"/>
-          <include name="tearDown"/>
-          <include name="test_ledger_transactions_modify_open_mode_TC_RS_12"/>
-        </methods>
-      </class> <!-- FO.Reservation -->
       <class name="FO.Guest_inhouse">
         <methods>
           <include name="setup"/>
@@ -40,11 +23,17 @@
           <include name="tearDown"/>
           <include name="test_edit_guest_name_and_personal_details_TC_GIH_01"/>
           <include name="test_view_inhouse_log_TC_GIH_05"/>
-          <include name="test_modify_segment_company_guest_type_and_agent_TC_GIH_02"/>
-          <include name="test_modify_other_tab_fields_TC_GIH_04"/>
           <include name="test_edit_rate_routing_post_bar_and_split_TC_GIH_03"/>
         </methods>
       </class> <!-- FO.Guest_inhouse -->
+      <class name="FO.Guest_Search">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="Test_Sucessfull_Login"/>
+          <include name="test_check_pm_to_view_paymaster_guests_TC_GS_03"/>
+        </methods>
+      </class> <!-- FO.Guest_Search -->
     </classes>
   </test> <!-- Login Test Cases(failed) -->
 </suite> <!-- Failed suite [Test Suite with Chart Reporter] -->

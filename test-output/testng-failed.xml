@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="FO.testclass">
+      <class name="FO.Room_assignment">
         <methods>
-          <include name="test_filter_reservations_by_date_and_template_TC_RC_01"/>
           <include name="setup"/>
+          <include name="test_assign_room_number_manually_TC_RA_02"/>
           <include name="Test_Sucessfull_Login"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- FO.testclass -->
+      </class> <!-- FO.Room_assignment -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

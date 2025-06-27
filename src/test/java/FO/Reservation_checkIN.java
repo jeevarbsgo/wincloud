@@ -148,7 +148,6 @@ public class Reservation_checkIN {
 	public void Test_Sucessfull_Login() {
 		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
 		System.out.println("Executing Test Method: " + methodName);
-
 		driver.get("https://test1dns.wincloudpms.net/WinLogin/Login/");
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ProptyText")));
@@ -160,6 +159,7 @@ public class Reservation_checkIN {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("Password"))).sendKeys("rbsgo" + Keys.ENTER);
 
 		WebElement logo = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//img[@src=\"../images/wincloud-gray.png\"]")));
+
 		Assert.assertTrue(logo.isDisplayed(), "Login was not successful - Wincloud logo not displayed.");
 	}
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 1)
@@ -695,7 +695,6 @@ public class Reservation_checkIN {
 		    Assert.fail("Test Failed: 'Mail sent successfully' popup was not found in the expected time.");
 		}
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class=\"webix_popup_button confirm\"]"))).click();
-		
 	}
 	
 	@AfterClass

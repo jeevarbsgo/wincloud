@@ -144,6 +144,8 @@ public class Guest_complaint_req_msg {
 	}
 	@Test(priority = 0)
 	public void Test_Sucessfull_Login() {
+		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
+		System.out.println("Executing Test Method: " + methodName);
 		driver.get("https://test1dns.wincloudpms.net/WinLogin/Login/");
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ProptyText")));
@@ -155,6 +157,7 @@ public class Guest_complaint_req_msg {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("Password"))).sendKeys("rbsgo" + Keys.ENTER);
 
 		WebElement logo = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//img[@src=\"../images/wincloud-gray.png\"]")));
+
 		Assert.assertTrue(logo.isDisplayed(), "Login was not successful - Wincloud logo not displayed.");
 	}
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 1)

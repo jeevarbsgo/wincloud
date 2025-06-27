@@ -216,21 +216,57 @@ public class Room_assignment {
 		WebElement todayDate = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='" + todayDay + "']")));
 		todayDate.click();
 
-		WebElement targetCell = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()='"+reserveNoValue+"']")));
+		WebElement scrollContainer = wait.until(ExpectedConditions.presenceOfElementLocated(
+			    By.xpath("//div[@class='webix_ss_vscroll webix_vscroll_y']")));
 
-		// 2. Get its aria-rowindex attribute
-		String rowIndex = targetCell.getAttribute("aria-rowindex");
-		System.out.println("Row Index: " + rowIndex);
+			boolean found = false;
+			String reserveNoXpath = "//div[text()='" + reserveNoValue + "']";
 
-		// 3. Use the row index to find the column in the same row (e.g., column 9)
-		WebElement columnValue = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@aria-rowindex='" + rowIndex + "' and @aria-colindex='9']")));
+			while (!found) {
+			    List<WebElement> elements = driver.findElements(By.xpath(reserveNoXpath));
+			    if (!elements.isEmpty()) {
+			        WebElement target = elements.get(0);
+			        js.executeScript("arguments[0].scrollIntoView(true);", target);
+			        Thread.sleep(500); // allow scroll to settle
+			        found = true;
+			        break;
+			    }
 
-		// 4. Get the text of the column
-		String value = columnValue.getText().trim();
-		System.out.println("Column 9 value for row " + rowIndex + " is: " + value);
+			    // Scroll down a bit
+			    js.executeScript("arguments[0].scrollTop += 100;", scrollContainer);
+			    Thread.sleep(400);
 
-		// Assert that the value is empty (null/blank is considered pass)
-		Assert.assertTrue(value.isEmpty(), "❌ Expected the cell to be empty, but found: '" + value + "'");
+			    // Check if we reached the bottom (optional)
+			    long scrollTop = (long) js.executeScript("return arguments[0].scrollTop", scrollContainer);
+			    long scrollHeight = (long) js.executeScript("return arguments[0].scrollHeight", scrollContainer);
+			    if (scrollTop + 300 >= scrollHeight) {
+			        break; // prevent infinite loop
+			    }
+			}
+
+			if (!found) {
+			    Assert.fail("❌ Reserve number '" + reserveNoValue + "' not found in the list.");
+			}
+
+			// 2. Locate and scroll to row
+			WebElement targetCell = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(reserveNoXpath)));
+			String rowIndex = targetCell.getAttribute("aria-rowindex");
+			System.out.println("Row Index: " + rowIndex);
+
+			// 3. Get column 9 cell for the same row
+			WebElement columnValue = wait.until(ExpectedConditions.presenceOfElementLocated(
+			    By.xpath("//div[@aria-rowindex='" + rowIndex + "' and @aria-colindex='9']")));
+
+			js.executeScript("arguments[0].scrollIntoView(true);", columnValue);
+			Thread.sleep(500); // let content render
+			String value = (String) js.executeScript("return arguments[0].textContent.trim();", columnValue);
+
+			// If empty, print 'null'
+			String displayValue = value.isEmpty() ? "null" : value;
+			System.out.println("Column 9 value for row " + rowIndex + " is: " + displayValue);
+
+			// 4. Assert that the cell is empty
+			Assert.assertTrue(value.isEmpty(), "❌ Expected the cell to be empty, but found: '" + value + "'");
 	}
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 2)
 	public void test_assign_room_number_manually_TC_RA_02() throws AWTException, InterruptedException {
@@ -275,8 +311,42 @@ public class Room_assignment {
 	    WebElement todayDate = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='" + todayDay + "']")));
 	    todayDate.click();
 
-	    WebElement targetCell = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()='" + reserveNoValue + "']")));
-	    actions.doubleClick(targetCell).perform();
+	 // 1. Locate the scroll container
+	    WebElement scrollContainer = wait.until(ExpectedConditions.presenceOfElementLocated(
+	            By.xpath("//div[@class='webix_ss_vscroll webix_vscroll_y']")));
+
+	    // 2. XPath to match the reservation number text
+	    String reserveNoXpath = "//div[text()='" + reserveNoValue + "']";
+	    boolean found = false;
+
+	    // 3. Scroll until the element is found
+	    while (!found) {
+	        List<WebElement> elements = driver.findElements(By.xpath(reserveNoXpath));
+	        if (!elements.isEmpty()) {
+	            WebElement target = elements.get(0);
+	            js.executeScript("arguments[0].scrollIntoView(true);", target);
+	            Thread.sleep(500); // Allow scroll and rendering
+	           actions.doubleClick(target).perform();    
+	            found = true;
+	            break;
+	        }
+
+	        // Scroll down
+	        js.executeScript("arguments[0].scrollTop += 100;", scrollContainer);
+	        Thread.sleep(400); // Wait for new content
+
+	        // Optional: Break if at bottom
+	        long scrollTop = (long) js.executeScript("return arguments[0].scrollTop", scrollContainer);
+	        long scrollHeight = (long) js.executeScript("return arguments[0].scrollHeight", scrollContainer);
+	        if (scrollTop + 300 >= scrollHeight) {
+	            break;
+	        }
+	    }
+
+	    // 4. Fail the test if not found
+	    if (!found) {
+	        Assert.fail("❌ Reserve number '" + reserveNoValue + "' not found to click.");
+	    }
 
 	    // Click Room search icon
 	    WebElement roomSearchIcon = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[@class='webix_input_icon wxi-search'])[1]")));
@@ -302,20 +372,60 @@ public class Room_assignment {
 	    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='S']"))).click();
 	    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class=\"webix_button webix_img_btn\"])[1]"))).click();
 
-	    targetCell = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()='" + reserveNoValue + "']")));
-	    	String rowIndex = targetCell.getAttribute("aria-rowindex");
-	    	System.out.println("Row Index: " + rowIndex);
+	 // 1. Scroll to bring the reservation into view
+	    WebElement scrollContainer1 = wait.until(ExpectedConditions.presenceOfElementLocated(
+	            By.xpath("//div[@class='webix_ss_vscroll webix_vscroll_y']")));
 
-	    	// Now get the room number from column 9 of that row
-	    	WebElement columnValue = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@aria-rowindex='" + rowIndex + "' and @aria-colindex='9']")));
-	    	String value = columnValue.getText().trim();
-	    	System.out.println("Room assigned in grid: " + value);
+	    String reserveNoXpath1 = "//div[text()='" + reserveNoValue + "']";
+	    boolean found1 = false;
 
-	    	// Assert: Value should not be empty
-	    	Assert.assertFalse(value.isEmpty(), "❌ Assigned room number is empty!");
+	    while (!found1) {
+	        List<WebElement> elements = driver.findElements(By.xpath(reserveNoXpath1));
+	        if (!elements.isEmpty()) {
+	            WebElement target = elements.get(0);
+	            js.executeScript("arguments[0].scrollIntoView(true);", target);
+	            Thread.sleep(500); // Allow scroll to finish
+	            found1 = true;
+	            break;
+	        }
 
-	    	// Assert: Value should match the selected room
-	    	Assert.assertEquals(value, selectedRoomText, "❌ Room assigned does not match the selected room.");
+	        // Scroll down
+	        js.executeScript("arguments[0].scrollTop += 100;", scrollContainer1);
+	        Thread.sleep(400);
+
+	        // Optional safety check: break if end reached
+	        long scrollTop = (long) js.executeScript("return arguments[0].scrollTop", scrollContainer1);
+	        long scrollHeight = (long) js.executeScript("return arguments[0].scrollHeight", scrollContainer1);
+	        if (scrollTop + 300 >= scrollHeight) {
+	            break;
+	        }
+	    }
+
+	    if (!found1) {
+	        Assert.fail("❌ Reserve number '" + reserveNoValue + "' not found in the list.");
+	    }
+
+	    // 2. Get the row index of the reservation
+	    WebElement targetCell_1 = wait.until(ExpectedConditions.visibilityOfElementLocated(
+	            By.xpath("//div[text()='" + reserveNoValue + "']")));
+	    String rowIndex = targetCell_1.getAttribute("aria-rowindex");
+	    System.out.println("Row Index: " + rowIndex);
+
+	    // 3. Scroll to column 9 of the same row and get the value
+	    WebElement columnValue = wait.until(ExpectedConditions.presenceOfElementLocated(
+	            By.xpath("//div[@aria-rowindex='" + rowIndex + "' and @aria-colindex='9']")));
+	    js.executeScript("arguments[0].scrollIntoView(true);", columnValue);
+	    Thread.sleep(400);
+
+	    String value = (String) js.executeScript("return arguments[0].textContent.trim();", columnValue);
+	    String displayValue = value.isEmpty() ? "null" : value;
+	    System.out.println("Room assigned in grid: " + displayValue);
+
+	    // 4. Assert the value is not empty
+	    Assert.assertFalse(value.isEmpty(), "❌ Assigned room number is empty!");
+
+	    // 5. Assert value matches the selected room
+	    Assert.assertEquals(value, selectedRoomText, "❌ Room assigned does not match the selected room.");
 
 }
 	 @AfterClass
