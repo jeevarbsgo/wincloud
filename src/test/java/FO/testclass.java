@@ -34,8 +34,8 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 @Listeners(FO.ScreenshotListener.class)
-public class testclass extends Base {
-	/*WebDriver driver;
+public class testclass {
+	WebDriver driver;
 	WebDriverWait wait;
 	Robot robot;
 	Actions actions;
@@ -170,7 +170,7 @@ public class testclass extends Base {
 		Assert.assertTrue(logo.isDisplayed(), "Login was not successful - Wincloud logo not displayed.");
 	}
 
-	
+	/*
 		@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 1)
 		public void Test_Registration_page() {
 			// Navigate to the reservation page
@@ -2510,117 +2510,84 @@ System.out.println("*************************Advance initiated for the room1 aft
 
 	}*/
 	/*
-		@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 1)
+	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 1)
 	public void test_view_records_needing_room_assignment_by_date_TC_RA_01() throws AWTException, InterruptedException {
-		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
-		System.out.println("Executing Test Method: " + methodName);
+	String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
+	System.out.println("Executing Test Method: " + methodName);
 
-		driver.get("https://test1dns.wincloudpms.net/TravelAgentBlock/FOReservation?VN=3.04.025");
-		WebElement add = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='webix_el_box'])[2]")));
-		add.click();
+	driver.get("https://test1dns.wincloudpms.net/TravelAgentBlock/FOReservation?VN=3.04.025");
+	WebElement add = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='webix_el_box'])[2]")));
+	add.click();
 
-		WebElement arrivalDate = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@aria-label='Arrival']")));
-		js.executeScript("arguments[0].click();", arrivalDate);
+	WebElement arrivalDate = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@aria-label='Arrival']")));
+	js.executeScript("arguments[0].click();", arrivalDate);
 
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()=\"Today\"]"))).click();
+	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()=\"Today\"]"))).click();
 
-		String noNightsBeforeSave = "2";
-		WebElement nightsInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//label[text()='Nights']/following-sibling::input")));
-		nightsInput.clear();
-		nightsInput.sendKeys(noNightsBeforeSave);
+	String noNightsBeforeSave = "2";
+	WebElement nightsInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//label[text()='Nights']/following-sibling::input")));
+	nightsInput.clear();
+	nightsInput.sendKeys(noNightsBeforeSave);
 
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@aria-label='RoomType']"))).click();
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@webix_l_id='DXR']"))).click();
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-search ExpBkGridIconBtn']"))).click();
+	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@aria-label='RoomType']"))).click();
+	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@webix_l_id='DXR']"))).click();
+	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-search ExpBkGridIconBtn']"))).click();
 
-		WebElement doubleClick1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@aria-rowindex='5'])[1]")));
-		js.executeScript("arguments[0].scrollIntoView(true);", doubleClick1);
-		actions.doubleClick(doubleClick1).perform();
+	WebElement doubleClick1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@aria-rowindex='5'])[1]")));
+	js.executeScript("arguments[0].scrollIntoView(true);", doubleClick1);
+	actions.doubleClick(doubleClick1).perform();
 
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='OK']"))).click();
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='OK']"))).click();
+	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='OK']"))).click();
+	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='OK']"))).click();
 
-		// To check the test is working the below is the room selection code, enable and check so that the room will be selected and the test will be failed
+	// To check the test is working the below is the room selection code, enable and check so that the room will be selected and the test will be failed
 
-		//	driver.findElement(By.xpath("(//span[@class=\"webix_input_icon wxi-search\"])[1]")).click();
-		//	List<WebElement> vacantRooms = driver.findElements(By.cssSelector(".RmBgColorV1"));
-		//	if (!vacantRooms.isEmpty()) {
-		//		WebElement firstVacantRoom = vacantRooms.get(0);
-		//		js.executeScript("arguments[0].scrollIntoView(true);", firstVacantRoom);
-		//		firstVacantRoom.click();
-		//		System.out.println("First vacant room selected.");
-		//	} else {
-		//		System.out.println("No vacant rooms found.");
-		//	}
-		//	driver.findElement(By.xpath("//button[text()='Select']")).click();
+//	driver.findElement(By.xpath("(//span[@class=\"webix_input_icon wxi-search\"])[1]")).click();
+//
+//	List<WebElement> vacantRooms = driver.findElements(By.cssSelector(".RmBgColorV1"));
+//	if (!vacantRooms.isEmpty()) {
+//		WebElement firstVacantRoom = vacantRooms.get(0);
+//		js.executeScript("arguments[0].scrollIntoView(true);", firstVacantRoom);
+//		firstVacantRoom.click();
+//		System.out.println("First vacant room selected.");
+//	} else {
+//		System.out.println("No vacant rooms found.");
+//	}
+//
+//	driver.findElement(By.xpath("//button[text()='Select']")).click();
+	// Click the save button (only once)
+	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-save']"))).click();
+	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class=\"webix_button webix_img_btn\"])[1]"))).click();
 
-		// Click the save button (only once)
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-save']"))).click();
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class=\"webix_button webix_img_btn\"])[1]"))).click();
+	WebElement reserveNoInput = driver.findElement(By.xpath("//label[text()='Reserve No']/following-sibling::input"));
+	String reserveNoValue = reserveNoInput.getAttribute("value");
+	System.out.println("Reserve No: " + reserveNoValue);
 
-		WebElement reserveNoInput = driver.findElement(By.xpath("//label[text()='Reserve No']/following-sibling::input"));
-		String reserveNoValue = reserveNoInput.getAttribute("value");
-		System.out.println("Reserve No: " + reserveNoValue);
+	driver.navigate().refresh();
+	driver.navigate().to("https://test1dns.wincloudpms.net/TravelAgentBlock/FOTrnRoomAssign?VN=3.04.025");
+	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class=\"webix_input_icon wxi-calendar\"]"))).click();
+	String todayDay = String.valueOf(LocalDate.now().getDayOfMonth());
+	WebElement todayDate = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='" + todayDay + "']")));
+	todayDate.click();
 
-		driver.navigate().refresh();
-		driver.navigate().to("https://test1dns.wincloudpms.net/TravelAgentBlock/FOTrnRoomAssign?VN=3.04.025");
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class=\"webix_input_icon wxi-calendar\"]"))).click();
-		String todayDay = String.valueOf(LocalDate.now().getDayOfMonth());
-		WebElement todayDate = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='" + todayDay + "']")));
-		todayDate.click();
+	WebElement targetCell = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()='"+reserveNoValue+"']")));
 
-		WebElement scrollContainer = wait.until(ExpectedConditions.presenceOfElementLocated(
-			    By.xpath("//div[@class='webix_ss_vscroll webix_vscroll_y']")));
+		// 2. Get its aria-rowindex attribute
+		String rowIndex = targetCell.getAttribute("aria-rowindex");
+		System.out.println("Row Index: " + rowIndex);
 
-			boolean found = false;
-			String reserveNoXpath = "//div[text()='" + reserveNoValue + "']";
+		// 3. Use the row index to find the column in the same row (e.g., column 9)
+		WebElement columnValue = wait.until(ExpectedConditions.visibilityOfElementLocated(
+		    By.xpath("//div[@aria-rowindex='" + rowIndex + "' and @aria-colindex='9']")));
 
-			while (!found) {
-			    List<WebElement> elements = driver.findElements(By.xpath(reserveNoXpath));
-			    if (!elements.isEmpty()) {
-			        WebElement target = elements.get(0);
-			        js.executeScript("arguments[0].scrollIntoView(true);", target);
-			        Thread.sleep(500); // allow scroll to settle
-			        found = true;
-			        break;
-			    }
+		// 4. Get the text of the column
+		String value = columnValue.getText().trim();
+		System.out.println("Column 9 value for row " + rowIndex + " is: " + value);
 
-			    // Scroll down a bit
-			    js.executeScript("arguments[0].scrollTop += 100;", scrollContainer);
-			    Thread.sleep(400);
+		// Assert that the value is empty (null/blank is considered pass)
+		Assert.assertTrue(value.isEmpty(), "❌ Expected the cell to be empty, but found: '" + value + "'");
+}
 
-			    // Check if we reached the bottom (optional)
-			    long scrollTop = (long) js.executeScript("return arguments[0].scrollTop", scrollContainer);
-			    long scrollHeight = (long) js.executeScript("return arguments[0].scrollHeight", scrollContainer);
-			    if (scrollTop + 300 >= scrollHeight) {
-			        break; // prevent infinite loop
-			    }
-			}
-
-			if (!found) {
-			    Assert.fail("❌ Reserve number '" + reserveNoValue + "' not found in the list.");
-			}
-
-			// 2. Locate and scroll to row
-			WebElement targetCell = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(reserveNoXpath)));
-			String rowIndex = targetCell.getAttribute("aria-rowindex");
-			System.out.println("Row Index: " + rowIndex);
-
-			// 3. Get column 9 cell for the same row
-			WebElement columnValue = wait.until(ExpectedConditions.presenceOfElementLocated(
-			    By.xpath("//div[@aria-rowindex='" + rowIndex + "' and @aria-colindex='9']")));
-
-			js.executeScript("arguments[0].scrollIntoView(true);", columnValue);
-			Thread.sleep(500); // let content render
-			String value = (String) js.executeScript("return arguments[0].textContent.trim();", columnValue);
-
-			// If empty, print 'null'
-			String displayValue = value.isEmpty() ? "null" : value;
-			System.out.println("Column 9 value for row " + rowIndex + " is: " + displayValue);
-
-			// 4. Assert that the cell is empty
-			Assert.assertTrue(value.isEmpty(), "❌ Expected the cell to be empty, but found: '" + value + "'");
-	}
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 2)
 	public void test_assign_room_number_manually_TC_RA_02() throws AWTException, InterruptedException {
 	    String methodName = new Object() {}.getClass().getEnclosingMethod().getName();
@@ -2664,42 +2631,8 @@ System.out.println("*************************Advance initiated for the room1 aft
 	    WebElement todayDate = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='" + todayDay + "']")));
 	    todayDate.click();
 
-	 // 1. Locate the scroll container
-	    WebElement scrollContainer = wait.until(ExpectedConditions.presenceOfElementLocated(
-	            By.xpath("//div[@class='webix_ss_vscroll webix_vscroll_y']")));
-
-	    // 2. XPath to match the reservation number text
-	    String reserveNoXpath = "//div[text()='" + reserveNoValue + "']";
-	    boolean found = false;
-
-	    // 3. Scroll until the element is found
-	    while (!found) {
-	        List<WebElement> elements = driver.findElements(By.xpath(reserveNoXpath));
-	        if (!elements.isEmpty()) {
-	            WebElement target = elements.get(0);
-	            js.executeScript("arguments[0].scrollIntoView(true);", target);
-	            Thread.sleep(500); // Allow scroll and rendering
-	           actions.doubleClick(target).perform();    
-	            found = true;
-	            break;
-	        }
-
-	        // Scroll down
-	        js.executeScript("arguments[0].scrollTop += 100;", scrollContainer);
-	        Thread.sleep(400); // Wait for new content
-
-	        // Optional: Break if at bottom
-	        long scrollTop = (long) js.executeScript("return arguments[0].scrollTop", scrollContainer);
-	        long scrollHeight = (long) js.executeScript("return arguments[0].scrollHeight", scrollContainer);
-	        if (scrollTop + 300 >= scrollHeight) {
-	            break;
-	        }
-	    }
-
-	    // 4. Fail the test if not found
-	    if (!found) {
-	        Assert.fail("❌ Reserve number '" + reserveNoValue + "' not found to click.");
-	    }
+	    WebElement targetCell = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()='" + reserveNoValue + "']")));
+	    actions.doubleClick(targetCell).perform();
 
 	    // Click Room search icon
 	    WebElement roomSearchIcon = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[@class='webix_input_icon wxi-search'])[1]")));
@@ -2725,60 +2658,20 @@ System.out.println("*************************Advance initiated for the room1 aft
 	    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='S']"))).click();
 	    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class=\"webix_button webix_img_btn\"])[1]"))).click();
 
-	 // 1. Scroll to bring the reservation into view
-	    WebElement scrollContainer1 = wait.until(ExpectedConditions.presenceOfElementLocated(
-	            By.xpath("//div[@class='webix_ss_vscroll webix_vscroll_y']")));
+	    targetCell = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()='" + reserveNoValue + "']")));
+	    	String rowIndex = targetCell.getAttribute("aria-rowindex");
+	    	System.out.println("Row Index: " + rowIndex);
 
-	    String reserveNoXpath1 = "//div[text()='" + reserveNoValue + "']";
-	    boolean found1 = false;
+	    	// Now get the room number from column 9 of that row
+	    	WebElement columnValue = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@aria-rowindex='" + rowIndex + "' and @aria-colindex='9']")));
+	    	String value = columnValue.getText().trim();
+	    	System.out.println("Room assigned in grid: " + value);
 
-	    while (!found1) {
-	        List<WebElement> elements = driver.findElements(By.xpath(reserveNoXpath1));
-	        if (!elements.isEmpty()) {
-	            WebElement target = elements.get(0);
-	            js.executeScript("arguments[0].scrollIntoView(true);", target);
-	            Thread.sleep(500); // Allow scroll to finish
-	            found1 = true;
-	            break;
-	        }
+	    	// Assert: Value should not be empty
+	    	Assert.assertFalse(value.isEmpty(), "❌ Assigned room number is empty!");
 
-	        // Scroll down
-	        js.executeScript("arguments[0].scrollTop += 100;", scrollContainer1);
-	        Thread.sleep(400);
-
-	        // Optional safety check: break if end reached
-	        long scrollTop = (long) js.executeScript("return arguments[0].scrollTop", scrollContainer1);
-	        long scrollHeight = (long) js.executeScript("return arguments[0].scrollHeight", scrollContainer1);
-	        if (scrollTop + 300 >= scrollHeight) {
-	            break;
-	        }
-	    }
-
-	    if (!found1) {
-	        Assert.fail("❌ Reserve number '" + reserveNoValue + "' not found in the list.");
-	    }
-
-	    // 2. Get the row index of the reservation
-	    WebElement targetCell_1 = wait.until(ExpectedConditions.visibilityOfElementLocated(
-	            By.xpath("//div[text()='" + reserveNoValue + "']")));
-	    String rowIndex = targetCell_1.getAttribute("aria-rowindex");
-	    System.out.println("Row Index: " + rowIndex);
-
-	    // 3. Scroll to column 9 of the same row and get the value
-	    WebElement columnValue = wait.until(ExpectedConditions.presenceOfElementLocated(
-	            By.xpath("//div[@aria-rowindex='" + rowIndex + "' and @aria-colindex='9']")));
-	    js.executeScript("arguments[0].scrollIntoView(true);", columnValue);
-	    Thread.sleep(400);
-
-	    String value = (String) js.executeScript("return arguments[0].textContent.trim();", columnValue);
-	    String displayValue = value.isEmpty() ? "null" : value;
-	    System.out.println("Room assigned in grid: " + displayValue);
-
-	    // 4. Assert the value is not empty
-	    Assert.assertFalse(value.isEmpty(), "❌ Assigned room number is empty!");
-
-	    // 5. Assert value matches the selected room
-	    Assert.assertEquals(value, selectedRoomText, "❌ Room assigned does not match the selected room.");
+	    	// Assert: Value should match the selected room
+	    	Assert.assertEquals(value, selectedRoomText, "❌ Room assigned does not match the selected room.");
 
 }
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 2)
@@ -3297,9 +3190,20 @@ System.out.println("*************************Advance initiated for the room1 aft
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class='webix_button webix_img_btn'])[1]"))).click();
 
 		String reserveNoValue1 = driver.findElement(By.xpath("//label[text()='Reserve No']/following-sibling::input")).getAttribute("value");
+		String rateCodeValue = driver.findElement(By.xpath("//*[label[text()='Rate Code']]/input")).getAttribute("value");
+		String roomType = driver.findElement(By.xpath("//label[text()='RoomType']/following-sibling::div[@class='webix_inp_static']")).getText();
+		String adultValue = driver.findElement(By.xpath("//label[text()='Adult']/following-sibling::input")).getAttribute("value");
+		String roomsValue = driver.findElement(By.xpath("//label[text()='Rooms']/following-sibling::input")).getAttribute("value");
+		String statusValue = driver.findElement(By.xpath("//label[text()='Status']/following-sibling::div[@class='webix_inp_static']")).getText();
 		String lastname = driver.findElement(By.xpath("(//div[@column='1'])[2]")).getText();
 
 		System.out.println("Reserve No: " + reserveNoValue1);
+		System.out.println("No of Nights Before Save: " + noNightsBeforeSave);
+		System.out.println("Rate Code: " + rateCodeValue);
+		System.out.println("Room Type: " + roomType);
+		System.out.println("Adult Value: " + adultValue);
+		System.out.println("Rooms Value: " + roomsValue);
+		System.out.println("Status: " + statusValue);
 		System.out.println("Last Name: " + lastname);
 
 
@@ -3376,6 +3280,7 @@ System.out.println("*************************Advance initiated for the room1 aft
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class='webix_button webix_img_btn'])[1]"))).click();
 
 		// Assertions
+
 		Assert.assertNotEquals(lastname2, lastname, "Last name did not change.");
 
 	}
@@ -3570,7 +3475,8 @@ System.out.println("*************************Advance initiated for the room1 aft
 		Assert.assertNotEquals(companyValue, companyValue_1, "Company values should not be the same");
 		Assert.assertNotEquals(travelAgentValue_1, travelAgentValue, "Travel Agent values should not be the same");
 
-	}
+}
+
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 3)
 	public void test_edit_rate_routing_post_bar_and_split_TC_GIH_03() throws InterruptedException, AWTException {
 		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
@@ -3622,6 +3528,8 @@ System.out.println("*************************Advance initiated for the room1 aft
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-save']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class='webix_button webix_img_btn'])[1]"))).click();
 
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-save']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class='webix_button webix_img_btn'])[1]"))).click();
 
 		WebElement reserveNoInput = driver.findElement(By.xpath("//label[text()='Reserve No']/following-sibling::input"));
 		String reserveNoValue = reserveNoInput.getAttribute("value");
@@ -3808,7 +3716,7 @@ System.out.println("*************************Advance initiated for the room1 aft
 		splitInput.sendKeys("50");
 		Thread.sleep(1000);
 
-		actions.sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.ENTER).sendKeys(Keys.ENTER).sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.ENTER).build().perform();
+		actions.sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.SPACE).sendKeys(Keys.TAB).sendKeys(Keys.ENTER).sendKeys(Keys.ENTER).sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.ENTER).build().perform();
 
 
 		WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -4021,6 +3929,10 @@ System.out.println("*************************Advance initiated for the room1 aft
 
 		actions.sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.SPACE).build().perform();
 
+		WebElement tipElement = driver.findElement(By.id("zs-fl-tip"));
+		actions.moveToElement(tipElement).perform();
+		driver.findElement(By.id("zs-tip-close")).click();
+
 		WebElement reservationTextarea = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[text()='Reservation']/following-sibling::textarea")));
 		reservationTextarea.click();
 		WebElement reservation_Textarea = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//textarea[@name=\"IH_TextAreaCom\"]")));
@@ -4056,6 +3968,7 @@ System.out.println("*************************Advance initiated for the room1 aft
 		Assert.assertTrue(sucessfull_edit.isDisplayed(), "Element not displayed and editing other tab fails");
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[text()=\"Ok\"])[2]"))).click();
 	}
+
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 5)
 	public void test_view_inhouse_log_TC_GIH_05() throws InterruptedException, AWTException {
 		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
@@ -4150,7 +4063,7 @@ System.out.println("*************************Advance initiated for the room1 aft
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='webix_button webix_img_btn']"))).click();
 
 		// editing and veiewing that data is present in log or not
-		
+
 		driver.navigate().to("https://test1dns.wincloudpms.net/TravelAgentBlock/FoInHouseGuest?VN=3.04.025");
 		WebElement filterInput_3 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[2]")));
 		filterInput_3.click(); Thread.sleep(1000);
@@ -4165,7 +4078,7 @@ System.out.println("*************************Advance initiated for the room1 aft
 		adult.sendKeys(Keys.chord(Keys.CONTROL, "a"), "2");
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-save']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class=\"webix_icon_btn wxi-check\"]"))).click();
-		
+
 		driver.navigate().refresh();
 		WebElement filterInput_4 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[2]")));
 		filterInput_4.click(); Thread.sleep(1000);
@@ -6292,7 +6205,7 @@ actions.doubleClick(dynamicElement_9).perform();
 		Assert.assertTrue(complaintFound, "Complaint '" + complaintText + "' not found in the grid after scrolling.");
 }*/
 	
-	@Test(priority = 6)
+	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 6)
 	public void test_filter_reservations_by_date_and_template_TC_RC_01() throws InterruptedException, AWTException {
 		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
 		System.out.println("Executing Test Method: " + methodName);

@@ -25,8 +25,8 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 @Listeners(FO.ScreenshotListener.class)
-public class Reservation_checkIN extends Base{
-/*	WebDriver driver;
+public class Reservation_checkIN {
+	WebDriver driver;
 	WebDriverWait wait;
 	Robot robot;
 	Actions actions;
@@ -162,8 +162,7 @@ public class Reservation_checkIN extends Base{
 		WebElement logo = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//img[@src=\"../images/wincloud-gray.png\"]")));
 		Assert.assertTrue(logo.isDisplayed(), "Login was not successful - Wincloud logo not displayed.");
 	}
-	*/
-	@Test(priority = 1)
+	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 1)
 	public void test_checkin_allowed_on_matching_arrival_and_account_date_TC_CI_01() throws AWTException, InterruptedException {
 		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
 		System.out.println("Executing Test Method: " + methodName);
@@ -228,7 +227,7 @@ public class Reservation_checkIN extends Base{
 		}
 
 	}
-	@Test(priority = 2)
+	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 2)
 	public void test_perform_checkin_on_matching_dates_TC_CI_02() throws InterruptedException, AWTException {
 		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
 		System.out.println("Executing Test Method: " + methodName);
@@ -309,7 +308,7 @@ public class Reservation_checkIN extends Base{
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='webix_button webix_img_btn']")));
 		driver.findElement(By.xpath("//button[@class=\"webix_button webix_img_btn\"]")).click();
 	}
-	@Test(priority = 3)
+	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 3)
 	public void test_verify_registration_card_and_email_after_checkin_TC_CI_04() throws InterruptedException, AWTException {
 		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
 		System.out.println("Executing Test Method: " + methodName);
@@ -410,7 +409,7 @@ public class Reservation_checkIN extends Base{
 		driver.switchTo().window(mainWindow);
 
 	}
-	@Test(priority = 4)
+	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 4)
 	public void test_create_walkin_reservation_and_checkin_TC_WI_01() throws InterruptedException, AWTException {
 		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
 		System.out.println("Executing Test Method: " + methodName);
@@ -455,7 +454,7 @@ public class Reservation_checkIN extends Base{
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='webix_button webix_img_btn']")));
 		driver.findElement(By.xpath("//button[@class=\"webix_button webix_img_btn\"]")).click();
 	}
-	@Test(priority = 5)
+	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 5)
 	public void test_print_registration_card_with_filters_TC_RC_01() throws InterruptedException, AWTException {
 		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
 		System.out.println("Executing Test Method: " + methodName);
@@ -576,7 +575,7 @@ public class Reservation_checkIN extends Base{
 
 	}
 	
-	@Test(priority = 6)
+	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 6)
 	public void test_filter_reservations_by_date_and_template_TC_RC_01() throws InterruptedException, AWTException {
 		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
 		System.out.println("Executing Test Method: " + methodName);
