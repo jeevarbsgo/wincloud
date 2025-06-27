@@ -7,6 +7,7 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.util.List;
 
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -35,7 +36,7 @@ public class Room_assignment {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Jeeva\\eclipse-workspace\\Wincloud_FO\\Chromedriver\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 		ScreenshotListener.setDriver(driver);
 
@@ -45,7 +46,6 @@ public class Room_assignment {
 		actions = new Actions(driver);
 		js = (JavascriptExecutor) driver;
 	}
-	// ✅ Common Robot typing method
 
 	// ✅ Common Robot typing method
 	public void typeCharWithRobot(char ch) throws AWTException {

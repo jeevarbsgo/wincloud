@@ -35,7 +35,7 @@ public class Guest_complaint_req_msg {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Jeeva\\eclipse-workspace\\Wincloud_FO\\Chromedriver\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 		ScreenshotListener.setDriver(driver);
 
@@ -339,8 +339,8 @@ public class Guest_complaint_req_msg {
 		}
 		Thread.sleep(1500);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()=\"OK\"]"))).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()=\"Next\"]"))).click();Thread.sleep(1500);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()=\"Settle & Bill\"]"))).click();Thread.sleep(1500);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()=\"Next\"]"))).click();Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()=\"Settle & Bill\"]"))).click();Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()=\"Cancel\"]"))).click();
 		// rasing complaint for the checked out guest
 		driver.navigate().to("https://test1dns.wincloudpms.net/TravelAgentBlock/FoGstMsgReqComp?MODID=FO&VN=3.04.025");
@@ -558,8 +558,8 @@ public class Guest_complaint_req_msg {
 		}
 		Thread.sleep(1500);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()=\"OK\"]"))).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()=\"Next\"]"))).click();Thread.sleep(1500);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()=\"Settle & Bill\"]"))).click();Thread.sleep(1500);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()=\"Next\"]"))).click();Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()=\"Settle & Bill\"]"))).click();Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()=\"Cancel\"]"))).click();
 		// rasing complaint for the checked out guest
 		driver.navigate().to("https://test1dns.wincloudpms.net/TravelAgentBlock/FoGstMsgReqComp?MODID=FO&VN=3.04.025");
@@ -1263,7 +1263,7 @@ public class Guest_complaint_req_msg {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[text()=\"Complaint\"])[1]"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@webix_l_id=\"M\"]"))).click();
 
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class=\" fa fa-folder-open\"]"))).click();Thread.sleep(2000);
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class=\" fa fa-folder-open\"]"))).click();Thread.sleep(1500);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()=\"P\"]"))).click();
 		Thread.sleep(1000);
 
@@ -1418,7 +1418,7 @@ public class Guest_complaint_req_msg {
 
 		driver.navigate().refresh();
 
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class=\" fa fa-eye\"]"))).click();Thread.sleep(2000);
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class=\" fa fa-eye\"]"))).click();Thread.sleep(1500);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()=\"P\"]"))).click();
 		Thread.sleep(1000);
 
@@ -1475,7 +1475,7 @@ public class Guest_complaint_req_msg {
 		driver.navigate().refresh();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[text()=\"Complaint\"])[1]"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@webix_l_id=\"R\"]"))).click();
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class=\" fa fa-eye\"]"))).click();Thread.sleep(2000);
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class=\" fa fa-eye\"]"))).click();Thread.sleep(1500);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()=\"P\"]"))).click();
 		Thread.sleep(1000);
 
@@ -1531,7 +1531,7 @@ public class Guest_complaint_req_msg {
 		driver.navigate().refresh();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[text()=\"Complaint\"])[1]"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@webix_l_id=\"M\"]"))).click();
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class=\" fa fa-eye\"]"))).click();Thread.sleep(2000);
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class=\" fa fa-eye\"]"))).click();Thread.sleep(1500);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()=\"P\"]"))).click();
 		Thread.sleep(1000);
 
@@ -1682,7 +1682,7 @@ public class Guest_complaint_req_msg {
 
 		driver.navigate().refresh();
 
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class=\" fa fa-eye\"]"))).click();Thread.sleep(2000);
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class=\" fa fa-eye\"]"))).click();Thread.sleep(1500);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()=\"P\"]"))).click();
 		Thread.sleep(1000);
 
@@ -1738,7 +1738,7 @@ public class Guest_complaint_req_msg {
 		driver.navigate().refresh();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[text()=\"Complaint\"])[1]"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@webix_l_id=\"R\"]"))).click();
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class=\" fa fa-eye\"]"))).click();Thread.sleep(2000);
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class=\" fa fa-eye\"]"))).click();Thread.sleep(1500);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()=\"P\"]"))).click();
 		Thread.sleep(1000);
 
@@ -1793,7 +1793,7 @@ public class Guest_complaint_req_msg {
 		driver.navigate().refresh();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[text()=\"Complaint\"])[1]"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@webix_l_id=\"M\"]"))).click();
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class=\" fa fa-eye\"]"))).click();Thread.sleep(2000);
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class=\" fa fa-eye\"]"))).click();Thread.sleep(1500);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()=\"P\"]"))).click();
 		Thread.sleep(1000);
 
@@ -1942,7 +1942,7 @@ public class Guest_complaint_req_msg {
 
 		driver.navigate().refresh();
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class=' fa fa-folder-open']"))).click();Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class=' fa fa-folder-open']"))).click();Thread.sleep(1500);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()=\"P\"]"))).click();
 		Thread.sleep(1000);
 
@@ -2003,7 +2003,7 @@ public class Guest_complaint_req_msg {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[text()=\"Complaint\"])[1]"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@webix_l_id=\"R\"]"))).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class=' fa fa-folder-open']"))).click();
-		Thread.sleep(2000);
+		Thread.sleep(1500);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()=\"P\"]"))).click();
 		Thread.sleep(1000);
 
@@ -2067,7 +2067,7 @@ public class Guest_complaint_req_msg {
 		driver.navigate().refresh();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[text()=\"Complaint\"])[1]"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@webix_l_id=\"M\"]"))).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class=' fa fa-folder-open']"))).click();Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class=' fa fa-folder-open']"))).click();Thread.sleep(1500);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()=\"P\"]"))).click();
 		Thread.sleep(1000);
 

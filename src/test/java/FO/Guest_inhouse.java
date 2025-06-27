@@ -34,7 +34,7 @@ public class Guest_inhouse {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Jeeva\\eclipse-workspace\\Wincloud_FO\\Chromedriver\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 		ScreenshotListener.setDriver(driver);
 
@@ -256,7 +256,7 @@ public class Guest_inhouse {
 		driver.navigate().to("https://test1dns.wincloudpms.net/TravelAgentBlock/FoInHouseGuest?VN=3.04.025");
 
 		WebElement filterInput_1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[2]")));
-		filterInput_1.click(); Thread.sleep(2000);
+		filterInput_1.click(); Thread.sleep(1000);
 
 		for (char ch : reserveNoValue1.toCharArray()) {
 			typeCharWithRobot(ch);
@@ -404,7 +404,7 @@ public class Guest_inhouse {
 		driver.navigate().to("https://test1dns.wincloudpms.net/TravelAgentBlock/FoInHouseGuest?VN=3.04.025");
 
 		WebElement filterInput_1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[2]")));
-		filterInput_1.click(); Thread.sleep(2000);
+		filterInput_1.click(); Thread.sleep(1000);
 
 		for (char ch : reserveNoValue1.toCharArray()) {
 			typeCharWithRobot(ch);

@@ -36,7 +36,7 @@ public class Reservation {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Jeeva\\eclipse-workspace\\Wincloud_FO\\Chromedriver\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 		ScreenshotListener.setDriver(driver);
 
@@ -264,7 +264,7 @@ public class Reservation {
 
 		WebElement filterInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[1]")));
 
-		filterInput.click(); Thread.sleep(2000);
+		filterInput.click(); Thread.sleep(1000);
 
 		for (char ch : reserveNoValue1.toCharArray()) {
 			typeCharWithRobot(ch);
@@ -404,7 +404,7 @@ public class Reservation {
 		driver.findElement(By.xpath("//span[@class=\" fa fa-folder-open\"]")).click();
 
 		WebElement filterInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[1]")));
-		filterInput.click(); Thread.sleep(2000);
+		filterInput.click(); Thread.sleep(1000);
 
 		for (char ch : reserveNoValue1.toCharArray()) {
 			typeCharWithRobot(ch);
@@ -621,7 +621,7 @@ public class Reservation {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class=\" fa fa-folder-open\"]")));
 		driver.findElement(By.xpath("//span[@class=\" fa fa-folder-open\"]")).click();
 		WebElement filterInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[1]")));
-		filterInput.click(); Thread.sleep(2000);
+		filterInput.click(); Thread.sleep(1000);
 
 		for (char ch : reserveNoValue.toCharArray()) {
 			typeCharWithRobot(ch); // ✅ correct
@@ -653,7 +653,7 @@ public class Reservation {
 		driver.findElement(By.xpath("//span[@class=\" fa fa-folder-open\"]")).click();
 		WebElement filterInput1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[1]")));
 
-		filterInput1.click(); Thread.sleep(2000);
+		filterInput1.click(); Thread.sleep(1000);
 		for (char ch : reserveNoValue.toCharArray()) {
 			typeCharWithRobot(ch); // ✅ correct
 		}
@@ -768,7 +768,7 @@ public class Reservation {
 
 		WebElement filterInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[1]")));
 
-		filterInput.click(); Thread.sleep(2000);
+		filterInput.click(); Thread.sleep(1000);
 		for (char ch : reserveNoValue1.toCharArray()) {
 			typeCharWithRobot(ch); 
 		}
@@ -839,7 +839,7 @@ public class Reservation {
 
 		WebElement filterInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[1]")));
 		filterInput.click();
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 
 		for (char ch : reserveNoValue.toCharArray()) {
 			typeCharWithRobot(ch); // ✅ using common method
@@ -862,7 +862,7 @@ public class Reservation {
 
 		WebElement filterInput1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[1]")));
 		filterInput1.click();
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 
 		for (char ch : reserveNoValue.toCharArray()) {
 			typeCharWithRobot(ch); // ✅ using common method
@@ -990,7 +990,7 @@ public class Reservation {
 		WebElement tipElement = driver.findElement(By.id("zs-fl-tip"));
 		actions.moveToElement(tipElement).perform();
 		driver.findElement(By.id("zs-tip-close")).click();
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()=\"Save\"]"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-save']"))).click();

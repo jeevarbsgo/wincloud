@@ -37,7 +37,7 @@ public class Reservation_checkIN {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Jeeva\\eclipse-workspace\\Wincloud_FO\\Chromedriver\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 		ScreenshotListener.setDriver(driver);
 
@@ -271,7 +271,7 @@ public class Reservation_checkIN {
 		driver.findElement(By.xpath("//span[@class=\" fa fa-folder-open\"]")).click();
 
 		WebElement filterInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[1]")));
-		filterInput.click(); Thread.sleep(2000);
+		filterInput.click(); Thread.sleep(1000);
 
 		for (char ch : reserveNoValue.toCharArray()) {
 			typeCharWithRobot(ch);
@@ -352,7 +352,7 @@ public class Reservation_checkIN {
 		driver.findElement(By.xpath("//span[@class=\" fa fa-folder-open\"]")).click();
 
 		WebElement filterInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[1]")));
-		filterInput.click(); Thread.sleep(2000);
+		filterInput.click(); Thread.sleep(1000);
 
 		for (char ch : reserveNoValue.toCharArray()) {
 			typeCharWithRobot(ch);
@@ -498,7 +498,7 @@ public class Reservation_checkIN {
 		driver.findElement(By.xpath("//span[@class=\" fa fa-folder-open\"]")).click();
 
 		WebElement filterInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[1]")));
-		filterInput.click(); Thread.sleep(2000);
+		filterInput.click(); Thread.sleep(1000);
 
 		for (char ch : reserveNoValue.toCharArray()) {
 			typeCharWithRobot(ch);
@@ -542,7 +542,7 @@ public class Reservation_checkIN {
 		driver.navigate().to("https://test1dns.wincloudpms.net/FoPrint/FORegCardPrint?VN=3.04.025");
 
 		WebElement filterInput1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[1]")));
-		filterInput1.click(); Thread.sleep(2000);
+		filterInput1.click(); Thread.sleep(1000);
 
 		for (char ch : lastFiveChars.toCharArray()) {
 			typeCharWithRobot(ch);

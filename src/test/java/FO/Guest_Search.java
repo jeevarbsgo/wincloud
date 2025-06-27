@@ -40,7 +40,7 @@ public class Guest_Search {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Jeeva\\eclipse-workspace\\Wincloud_FO\\Chromedriver\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 		ScreenshotListener.setDriver(driver);
 
@@ -206,7 +206,7 @@ public class Guest_Search {
 		driver.findElement(By.xpath("//span[@class=\" fa fa-folder-open\"]")).click();
 
 		WebElement filterInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[1]")));
-		filterInput.click(); Thread.sleep(2000);
+		filterInput.click(); Thread.sleep(1000);
 
 		for (char ch : reserveNoValue.toCharArray()) {
 			typeCharWithRobot(ch);
@@ -239,7 +239,7 @@ public class Guest_Search {
 
 		driver.navigate().to("https://test1dns.wincloudpms.net/TravelAgentBlock/FoGuestSearch?VN=3.04.025");
 		WebElement filterInput_1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[8]")));
-		filterInput_1.click(); Thread.sleep(2000);
+		filterInput_1.click(); Thread.sleep(1000);
 
 		for (char ch : reserveNoValue.toCharArray()) {
 			typeCharWithRobot(ch);
@@ -300,7 +300,7 @@ public class Guest_Search {
 		driver.navigate().to("https://test1dns.wincloudpms.net/TravelAgentBlock/FoGuestSearch?VN=3.04.025");
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class=\"webix_custom_checkbox\"])[1]"))).click();
 		WebElement filterInput_1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[9]")));
-		filterInput_1.click(); Thread.sleep(2000);
+		filterInput_1.click(); Thread.sleep(1000);
 
 		for (char ch : reserveNoValue.toCharArray()) {
 			typeCharWithRobot(ch);
@@ -362,7 +362,7 @@ public class Guest_Search {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class=\"webix_custom_checkbox\"])[1]"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class=\"webix_custom_checkbox\"])[5]"))).click();
 		WebElement filterInput_1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[9]")));
-		filterInput_1.click(); Thread.sleep(2000);
+		filterInput_1.click(); Thread.sleep(1000);
 
 		for (char ch : reserveNoValue.toCharArray()) {
 			typeCharWithRobot(ch);
@@ -438,7 +438,7 @@ public class Guest_Search {
 		driver.findElement(By.xpath("//span[@class=\" fa fa-folder-open\"]")).click();
 
 		WebElement filterInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[1]")));
-		filterInput.click(); Thread.sleep(2000);
+		filterInput.click(); Thread.sleep(1000);
 
 		for (char ch : reserveNoValue.toCharArray()) {
 			typeCharWithRobot(ch);
@@ -481,7 +481,7 @@ public class Guest_Search {
 
 		driver.navigate().to("https://test1dns.wincloudpms.net/TravelAgentBlock/FoGuestSearch?VN=3.04.025");
 		WebElement filterInput_1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[8]")));
-		filterInput_1.click(); Thread.sleep(2000);
+		filterInput_1.click(); Thread.sleep(1000);
 
 		for (char ch : reserveNoValue.toCharArray()) {
 			typeCharWithRobot(ch);
@@ -503,7 +503,7 @@ public class Guest_Search {
 		//-------------------------------------------------
 		driver.navigate().to("https://test1dns.wincloudpms.net/TravelAgentBlock/FoGuestSearch?VN=3.04.025");
 		WebElement filterInput_2 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[1]")));
-		filterInput_2.click(); Thread.sleep(2000);
+		filterInput_2.click(); Thread.sleep(1000);
 
 		for (char ch : roomNo_1.toCharArray()) {
 			typeCharWithRobot(ch);
@@ -527,7 +527,7 @@ public class Guest_Search {
 
 		driver.navigate().to("https://test1dns.wincloudpms.net/TravelAgentBlock/FoGuestSearch?VN=3.04.025");
 		WebElement filterInput_4 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[3]")));
-		filterInput_4.click(); Thread.sleep(2000);
+		filterInput_4.click(); Thread.sleep(1000);
 
 		for (char ch : LastName.toCharArray()) {
 			typeCharWithRobot(ch);
@@ -551,7 +551,7 @@ public class Guest_Search {
 
 		driver.navigate().to("https://test1dns.wincloudpms.net/TravelAgentBlock/FoGuestSearch?VN=3.04.025");
 		WebElement filterInput_5 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[4]")));
-		filterInput_5.click(); Thread.sleep(2000);
+		filterInput_5.click(); Thread.sleep(1000);
 
 		for (char ch : FirstName.toCharArray()) {
 			typeCharWithRobot(ch);

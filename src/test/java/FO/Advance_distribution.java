@@ -35,7 +35,7 @@ public class Advance_distribution {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Jeeva\\eclipse-workspace\\Wincloud_FO\\Chromedriver\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 		ScreenshotListener.setDriver(driver);
 
@@ -316,7 +316,6 @@ public class Advance_distribution {
 			typeCharWithRobot(ch); // ✅ correct
 		}
 		Thread.sleep(1500);
-		Thread.sleep(2000);
 		WebElement dynamicElement11 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='" + reserveNoValue1 + "']")));
 		actions.doubleClick(dynamicElement11).perform();
 
@@ -607,7 +606,7 @@ public class Advance_distribution {
 		driver.findElement(By.xpath("//span[@class=\" fa fa-folder-open\"]")).click();
 
 		WebElement filterInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[1]")));
-		filterInput.click(); Thread.sleep(2000);
+		filterInput.click(); Thread.sleep(1000);
 
 		for (char ch : reserveNoValue_1.toCharArray()) {
 			typeCharWithRobot(ch); // ✅ correct
@@ -706,7 +705,7 @@ public class Advance_distribution {
 		driver.findElement(By.xpath("//span[@class=\" fa fa-folder-open\"]")).click();
 
 		WebElement filterInput2 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@row=\"1\"])[1]")));
-		filterInput2.click(); Thread.sleep(2000);
+		filterInput2.click(); Thread.sleep(1000);
 
 		for (char ch : reserveNoValue_2.toCharArray()) {
 			typeCharWithRobot(ch); // ✅ correct
