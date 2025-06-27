@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="FO.Room_assignment">
+      <class name="FO.Guest_inhouse">
         <methods>
           <include name="setup"/>
-          <include name="test_assign_room_number_manually_TC_RA_02"/>
           <include name="Test_Sucessfull_Login"/>
           <include name="tearDown"/>
+          <include name="test_modify_other_tab_fields_TC_GIH_04"/>
         </methods>
-      </class> <!-- FO.Room_assignment -->
+      </class> <!-- FO.Guest_inhouse -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

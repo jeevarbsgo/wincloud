@@ -159,6 +159,7 @@ public class Guest_inhouse {
 
 		Assert.assertTrue(logo.isDisplayed(), "Login was not successful - Wincloud logo not displayed.");
 	}
+	
 	@Test(dependsOnMethods = "Test_Sucessfull_Login", priority = 1)
 	public void test_edit_guest_name_and_personal_details_TC_GIH_01() throws InterruptedException, AWTException {
 		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
@@ -522,8 +523,6 @@ public class Guest_inhouse {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-save']"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class='webix_button webix_img_btn'])[1]"))).click();
 
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fa fa-save']"))).click();
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class='webix_button webix_img_btn'])[1]"))).click();
 
 		WebElement reserveNoInput = driver.findElement(By.xpath("//label[text()='Reserve No']/following-sibling::input"));
 		String reserveNoValue = reserveNoInput.getAttribute("value");
@@ -710,7 +709,7 @@ public class Guest_inhouse {
 		splitInput.sendKeys("50");
 		Thread.sleep(1000);
 
-		actions.sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.SPACE).sendKeys(Keys.TAB).sendKeys(Keys.ENTER).sendKeys(Keys.ENTER).sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.ENTER).build().perform();
+		actions.sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.ENTER).sendKeys(Keys.ENTER).sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.ENTER).build().perform();
 
 
 		WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -922,10 +921,6 @@ public class Guest_inhouse {
 		adultInput.sendKeys("1");
 
 		actions.sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.SPACE).build().perform();
-
-		WebElement tipElement = driver.findElement(By.id("zs-fl-tip"));
-		actions.moveToElement(tipElement).perform();
-		driver.findElement(By.id("zs-tip-close")).click();
 
 		WebElement reservationTextarea = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[text()='Reservation']/following-sibling::textarea")));
 		reservationTextarea.click();
